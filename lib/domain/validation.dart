@@ -1,16 +1,31 @@
 import 'models.dart';
 import 'time_format.dart';
 
-enum IssueKind { missingTime, timeOrder, weekdayBreak, hijriBreak, dayCount }
+enum IssueKind {
+  missingTime,
+  timeOrder,
+  weekdayBreak,
+  hijriBreak,
+  dayCount,
+
+  /// Typed text that could not be parsed as a time. Reported by the editor
+  /// (it is never stored in the poster), never by [validatePoster].
+  invalidTime,
+}
 
 class PosterIssue {
   final int? dayIndex;
   final IssueKind kind;
   final String messageAr;
+
+  /// The day field the issue is about (the slot of a missing time, the
+  /// weekday / Hijri cell of a sequence break); null for row-wide issues.
+  final DayField? field;
   const PosterIssue({
     this.dayIndex,
     required this.kind,
     required this.messageAr,
+    this.field,
   });
 }
 
@@ -54,6 +69,7 @@ List<PosterIssue> validatePoster(MonthPoster p) {
         PosterIssue(
           dayIndex: i,
           kind: IssueKind.weekdayBreak,
+          field: DayField.weekday,
           messageAr:
               'اليوم $n: اليوم ${d.weekday.ar} لا يتبع التسلسل (المتوقع ${expected.ar})',
         ),
@@ -64,6 +80,7 @@ List<PosterIssue> validatePoster(MonthPoster p) {
         PosterIssue(
           dayIndex: i,
           kind: IssueKind.hijriBreak,
+          field: DayField.hijri,
           messageAr:
               'اليوم $n: التاريخ الهجري ${d.hijriDay} لا يطابق ترتيب اليوم',
         ),
@@ -78,6 +95,7 @@ List<PosterIssue> validatePoster(MonthPoster p) {
             PosterIssue(
               dayIndex: i,
               kind: IssueKind.missingTime,
+              field: _fieldOf(slot),
               messageAr: 'اليوم $n: وقت ${slot.labelAr} غير مُدخَل',
             ),
           );

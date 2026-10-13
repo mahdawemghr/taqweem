@@ -101,4 +101,33 @@ void main() {
     expect(issues, hasLength(1));
     expect(issues.single.kind, IssueKind.dayCount);
   });
+
+  test('issues carry the field they are about', () {
+    for (final slot in PrayerSlot.values) {
+      final p = poster(tweak: (d) {
+        d[3] = d[3].copyWith(times: d[3].times.withSlot(slot, null));
+        return d;
+      });
+      final i = validatePoster(p).single;
+      expect(i.kind, IssueKind.missingTime);
+      expect(i.field, DayField.values.byName(slot.name));
+    }
+    final order = validatePoster(poster(tweak: (d) {
+      d[0] = d[0].copyWith(times: d[0].times.withSlot(PrayerSlot.fajr, 6 * 60));
+      return d;
+    }));
+    expect(order.single.kind, IssueKind.timeOrder);
+    expect(order.single.field, isNull);
+    final wd = validatePoster(poster(tweak: (d) {
+      d[2] = d[2].copyWith(weekday: d[2].weekday.next);
+      return d;
+    }));
+    expect(wd.first.field, DayField.weekday);
+    final hj = validatePoster(poster(tweak: (d) {
+      d[4] = d[4].copyWith(hijriDay: 9);
+      return d;
+    }));
+    expect(hj.single.field, DayField.hijri);
+    expect(validatePoster(poster(count: 28)).single.field, isNull);
+  });
 }

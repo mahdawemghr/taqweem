@@ -112,7 +112,8 @@ class EditorController extends Notifier<EditorState> {
   }
 
   void update(MonthPoster Function(MonthPoster) change) {
-    if (!state.isOpen) return;
+    // Late (deferred) edits may arrive after the provider was disposed.
+    if (_disposed || !state.isOpen) return;
     final cur = state.poster;
     final next = change(cur);
     _undo.add(cur);

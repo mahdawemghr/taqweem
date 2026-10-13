@@ -22,13 +22,11 @@ int? parseTimeInput(String raw) {
   if (s.isEmpty) return null;
   int h, m;
   if (s.contains(':')) {
+    // Digits only (int.tryParse alone would accept signs such as `+4:18`).
+    if (!RegExp(r'^\d{1,2}:\d{2}$').hasMatch(s)) return null;
     final parts = s.split(':');
-    if (parts.length != 2) return null;
-    final hh = int.tryParse(parts[0]);
-    final mm = int.tryParse(parts[1]);
-    if (hh == null || mm == null || parts[1].length != 2) return null;
-    h = hh;
-    m = mm;
+    h = int.parse(parts[0]);
+    m = int.parse(parts[1]);
   } else {
     if (!RegExp(r'^\d{3,4}$').hasMatch(s)) return null;
     m = int.parse(s.substring(s.length - 2));

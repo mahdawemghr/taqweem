@@ -24,6 +24,17 @@ void main() {
       expect(parseTimeInput('13:00'), isNull);
       expect(parseTimeInput('12345'), isNull);
     });
+    test('rejects signs and inner spaces in the colon form', () {
+      expect(parseTimeInput('+4:18'), isNull);
+      expect(parseTimeInput('4:+1'), isNull);
+      expect(parseTimeInput('-4:18'), isNull);
+      expect(parseTimeInput(' 4 : 18 '), isNull);
+      expect(parseTimeInput('4: 18'), isNull);
+    });
+    test('trims leading/trailing spaces', () {
+      expect(parseTimeInput('  4:18  '), 4 * 60 + 18);
+      expect(parseTimeInput(' ٤:١٨ '), 4 * 60 + 18);
+    });
   });
   group('shiftMinutes', () {
     test('adds and wraps in 12h window', () {
