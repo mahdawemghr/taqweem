@@ -4,7 +4,11 @@ import '../domain/models.dart';
 import 'shared/poster_layout.dart';
 
 export 'shared/poster_layout.dart'
-    show LayoutMetrics, PosterLayout, kDefaultContentPadding;
+    show
+        LayoutMetrics,
+        PosterLayout,
+        kDefaultContentPadding,
+        referenceTableSpec;
 
 /// Every poster is drawn at this fixed logical size and scaled for display
 /// or export.
@@ -106,4 +110,22 @@ abstract class PosterTemplate {
   String get nameAr;
   PosterTheme get theme;
   Widget build(MonthPoster p) => PosterLayout(poster: p, theme: theme);
+
+  /// Raster assets (logos) this template draws. Images load asynchronously,
+  /// so anything that captures the poster (export, goldens) or shows it
+  /// without a pop-in must [precache] them first. Empty = vector-only.
+  List<ImageProvider> get images => const [];
+
+  /// Loads every image of [images] into the image cache (completes when all
+  /// are decoded or have failed; a missing asset never throws here). Once
+  /// cached, an `Image` shows its picture in the very first frame, so a
+  /// capture taken after `await precache(context)` + one frame contains the
+  /// logos. The default (no [images]) completes immediately.
+  Future<void> precache(BuildContext context) async {
+    final list = images;
+    if (list.isEmpty) return;
+    await Future.wait([
+      for (final i in list) precacheImage(i, context, onError: (_, _) {}),
+    ]);
+  }
 }

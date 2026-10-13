@@ -2,8 +2,8 @@ import 'package:flutter/widgets.dart';
 
 import '../../domain/models.dart';
 import '../../domain/time_format.dart';
+import '../kit/kit.dart';
 import '../poster_template.dart';
-import 'fit_text.dart';
 import 'painters.dart';
 
 // ---------------------------------------------------------------------------
@@ -22,29 +22,18 @@ const double _kFooterHeight = 50;
 const double _kArticleHeadingHeight = 48;
 const double _kArticleBodyHeight = 200;
 const double _kFatihaHeight = 46;
-const double _kTableHeaderHeight = 84;
+const double _kTableHeaderHeight = KitDefaults.tableHeaderHeight;
 
 /// Width of each rotated side Q&A strip (R12).
-const double _kSideStripWidth = 52;
+const double _kSideStripWidth = KitDefaults.sideStripWidth;
 
-// Table column widths, right -> left; notes takes the remaining width
-// (≈ 402 px ≈ 49 % of the 816 px table with the default padding).
-const double _kWeekdayW = 60;
-const double _kDateW = 46; // hijri, gregorian, solar
-const double _kTimeW = 54; // fajr, shurooq, zuhr, maghrib
-
-const double _kGrid = 1;
+// Table column widths (right -> left) come from [KitDefaults]: weekday 60,
+// hijri/gregorian/solar 46, the four times 54; notes takes the remaining
+// width (≈ 402 px ≈ 49 % of the 816 px table with the default padding).
 
 /// Line-height factor for single-line cells and the side strips, so the row
 /// height (not Amiri's tall default line box) bounds the glyph size.
-const double _kTightLine = 1.2;
-
-/// Wraps [inner] in braces that print as on the reference poster: `{` at the
-/// right end, `}` at the left end. Each brace sits in its own left-to-right
-/// isolate (LRI U+2066 … PDI U+2069), so the RTL paragraph does not
-/// bidi-mirror it. (Plain `{ … }` — and LRM marks — render mirrored, i.e.
-/// `}` on the right; verified by rendering.)
-String _braced(String inner) => '\u2066{\u2069 $inner \u2066}\u2069';
+const double _kTightLine = KitDefaults.tightLine;
 
 /// Absolute positions (poster coordinates, origin top-left) of the poster's
 /// sections, handed to [PosterTheme.framePainter] so ornaments can follow
@@ -57,7 +46,7 @@ String _braced(String inner) => '\u2066{\u2069 $inner \u2066}\u2069';
 /// footer notes (.. [articleTop]) → closing article ([articleTop] ..
 /// [articleBottom] == `contentRect.bottom`).
 @immutable
-class LayoutMetrics {
+class LayoutMetrics implements LayoutMetricsLike {
   const LayoutMetrics({
     required this.size,
     required this.contentRect,
@@ -121,9 +110,11 @@ class LayoutMetrics {
   }
 
   /// Whole poster size.
+  @override
   final Size size;
 
   /// Poster rect minus [PosterTheme.contentPadding].
+  @override
   final Rect contentRect;
 
   /// Bottom of the header band (title, emblem, two quote boxes).
@@ -136,6 +127,7 @@ class LayoutMetrics {
   final double tableTop;
 
   /// Bottom of the table's column-header row.
+  @override
   final double tableHeaderBottom;
 
   /// Bottom of the last table row.
@@ -148,17 +140,69 @@ class LayoutMetrics {
   final double articleBottom;
 
   /// The table itself, without the side strips.
+  @override
   final Rect tableRect;
 
   /// Rotated side Q&A strips on the right / left edge of the main area.
   final Rect rightStripRect, leftStripRect;
 
   /// Number of day rows in the table.
+  @override
   final int rowCount;
 
   /// Height of one day row.
+  @override
   double get rowHeight =>
       rowCount == 0 ? 0 : (tableBottom - tableHeaderBottom) / rowCount;
+
+  /// Day row [i] across the table (side strips excluded).
+  @override
+  Rect rowRect(int i) => Rect.fromLTWH(
+    tableRect.left,
+    tableHeaderBottom + rowHeight * i,
+    tableRect.width,
+    rowHeight,
+  );
+
+  /// Sections: 'header', 'brace', 'main' (table + strips), 'table',
+  /// 'rightStrip', 'leftStrip', 'footer', 'article'.
+  @override
+  Rect? section(String id) => switch (id) {
+    'header' => Rect.fromLTRB(
+      contentRect.left,
+      contentRect.top,
+      contentRect.right,
+      headerBottom,
+    ),
+    'brace' => Rect.fromLTRB(
+      contentRect.left,
+      headerBottom,
+      contentRect.right,
+      braceBottom,
+    ),
+    'main' => Rect.fromLTRB(
+      contentRect.left,
+      tableTop,
+      contentRect.right,
+      tableBottom,
+    ),
+    'table' => tableRect,
+    'rightStrip' => rightStripRect,
+    'leftStrip' => leftStripRect,
+    'footer' => Rect.fromLTRB(
+      contentRect.left,
+      tableBottom,
+      contentRect.right,
+      articleTop,
+    ),
+    'article' => Rect.fromLTRB(
+      contentRect.left,
+      articleTop,
+      contentRect.right,
+      articleBottom,
+    ),
+    _ => null,
+  };
 
   @override
   bool operator ==(Object other) =>
@@ -195,10 +239,14 @@ class LayoutMetrics {
   );
 }
 
-/// The structure shared by every template, modelled on the reference
-/// "تقويم أهل البيت" poster. All colours and fonts come from [theme];
+/// The structure shared by the five original templates, modelled on the
+/// reference "تقويم أهل البيت" poster, composed from the template kit
+/// (`lib/templates/kit/`). All colours and fonts come from [theme];
 /// ornaments come only from the theme's painters. Every piece of variable
 /// text goes through [FitText], so nothing can overflow or be clipped.
+///
+/// New templates that want their own structure compose the kit blocks
+/// directly in `PosterTemplate.build` instead.
 class PosterLayout extends StatelessWidget {
   const PosterLayout({super.key, required this.poster, required this.theme});
 
@@ -208,50 +256,33 @@ class PosterLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = theme;
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: DefaultTextStyle(
-        style: TextStyle(
-          inherit: false,
-          fontFamily: t.bodyFont,
-          fontSize: 20,
-          color: t.bodyText,
-          fontWeight: FontWeight.w400,
-          decoration: TextDecoration.none,
-        ),
-        child: LayoutBuilder(
-          builder: (context, c) {
-            final size = c.biggest;
-            final metrics = LayoutMetrics.compute(size, t, poster.days.length);
-            return Stack(
-              fit: StackFit.expand,
-              children: [
-                ColoredBox(color: t.background),
-                CustomPaint(painter: t.backgroundPainter()),
-                Padding(padding: t.contentPadding, child: _content()),
-                IgnorePointer(
-                  child: CustomPaint(painter: t.framePainter(metrics)),
-                ),
-              ],
-            );
-          },
-        ),
+    return PosterPage(
+      textStyle: TextStyle(
+        inherit: false,
+        fontFamily: t.bodyFont,
+        fontSize: 20,
+        color: t.bodyText,
+        fontWeight: FontWeight.w400,
+        decoration: TextDecoration.none,
       ),
+      color: t.background,
+      backgroundPainter: (_) => t.backgroundPainter(),
+      padding: t.contentPadding,
+      foregroundPainter: (size) =>
+          t.framePainter(LayoutMetrics.compute(size, t, poster.days.length)),
+      child: _content(),
     );
   }
 
   TextStyle get _body => TextStyle(fontFamily: theme.bodyFont);
   TextStyle get _heading => TextStyle(fontFamily: theme.headingFont);
-  TextStyle get _tableHead =>
-      TextStyle(fontFamily: theme.tableFont ?? theme.headingFont);
-  TextStyle get _tableBody =>
-      TextStyle(fontFamily: theme.tableFont ?? theme.bodyFont);
+
+  /// Bold body text in [color].
+  TextStyle _bold(Color color) =>
+      _body.copyWith(color: color, fontWeight: FontWeight.w700);
 
   Widget _content() {
     final texts = poster.texts;
-    final brace = texts.braceQuote.isEmpty
-        ? ''
-        : _braced('" ${texts.braceQuote} "');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -260,14 +291,7 @@ class PosterLayout extends StatelessWidget {
           height: _kBraceHeight,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 6),
-            child: FitText(
-              brace,
-              style: _body.copyWith(
-                color: theme.bodyText,
-                fontWeight: FontWeight.w700,
-              ),
-              maxSize: 32,
-            ),
+            child: BraceQuote(texts.braceQuote, style: _bold(theme.bodyText)),
           ),
         ),
         Expanded(
@@ -276,7 +300,13 @@ class PosterLayout extends StatelessWidget {
             children: [
               // RTL: first child is the right edge.
               _sideStrip(texts.sideRight),
-              Expanded(child: _table()),
+              Expanded(
+                child: PosterTableView(
+                  key: const ValueKey('poster-table'),
+                  poster: poster,
+                  spec: referenceTableSpec(theme),
+                ),
+              ),
               _sideStrip(texts.sideLeft),
             ],
           ),
@@ -286,19 +316,22 @@ class PosterLayout extends StatelessWidget {
           height: _kFooterHeight,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(4, 6, 4, 4),
-            child: FitText(
-              texts.footerNotes,
-              style: _body.copyWith(
-                color: theme.bodyText,
-                fontWeight: FontWeight.w700,
-              ),
-              maxSize: 24,
-              maxLines: 1,
-              align: TextAlign.start,
-            ),
+            child: FooterNote(texts.footerNotes, style: _bold(theme.bodyText)),
           ),
         ),
-        _article(),
+        ClosingArticleBlock.of(
+          poster,
+          key: const ValueKey('poster-article'),
+          headingStyle: _bold(theme.titleColor).copyWith(
+            decoration: TextDecoration.underline,
+            decorationColor: theme.titleColor,
+          ),
+          bodyStyle: _bold(theme.bodyText),
+          fatihaStyle: _bold(theme.titleColor),
+          headingHeight: _kArticleHeadingHeight,
+          bodyHeight: _kArticleBodyHeight,
+          fatihaHeight: _kFatihaHeight,
+        ),
       ],
     );
   }
@@ -321,14 +354,12 @@ class PosterLayout extends StatelessWidget {
             children: [
               SizedBox(
                 height: theme.headerHeight * 0.48,
-                child: FitText(
+                child: TitleBlock.text(
                   texts.title,
                   style: _heading.copyWith(
                     color: theme.titleColor,
                     fontWeight: FontWeight.w700,
                   ),
-                  maxSize: 64,
-                  maxLines: 1,
                 ),
               ),
               Expanded(
@@ -357,44 +388,17 @@ class PosterLayout extends StatelessWidget {
         top: theme.headerHeight * 0.17,
         bottom: theme.headerHeight * 0.06,
       ),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
+      child: QuoteBlock(
+        q,
+        textStyle: _bold(theme.quoteText),
+        attributionStyle: _bold(theme.accent),
+        panel: PanelStyle(
           color: theme.quoteBoxBg,
-          border: Border.all(
+          border: BorderSide(
             color: theme.quoteBoxBorder,
             width: theme.quoteBoxBorderWidth,
           ),
-        ),
-        child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 8, 10, 6),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: FitText(
-                  q.text,
-                  style: _body.copyWith(
-                    color: theme.quoteText,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  maxSize: 28,
-                ),
-              ),
-              if (q.attribution.isNotEmpty)
-                SizedBox(
-                  height: 40,
-                  child: FitText(
-                    q.attribution,
-                    style: _body.copyWith(
-                      color: theme.accent,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    maxSize: 26,
-                    maxLines: 1,
-                  ),
-                ),
-            ],
-          ),
         ),
       ),
     );
@@ -404,247 +408,86 @@ class PosterLayout extends StatelessWidget {
 
   /// Side Q&A, rotated so it reads top → bottom like the reference (both
   /// margins in the reference run the same way: quarterTurns 3).
-  Widget _sideStrip(SideQa qa) {
-    Widget line(String label, String value) => Expanded(
-      child: FitText(
-        value.isEmpty ? '' : '$label : $value',
-        style: _body.copyWith(
-          color: theme.bodyText,
-          fontWeight: FontWeight.w700,
-          height: _kTightLine,
-        ),
-        maxSize: 24,
-        maxLines: 1,
-        align: TextAlign.start,
-      ),
-    );
-    return SizedBox(
-      width: _kSideStripWidth,
-      child: RotatedBox(
-        quarterTurns: 3,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 2, 16, 2),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [line('سؤال', qa.question), line('الجواب', qa.answer)],
-          ),
-        ),
-      ),
-    );
-  }
+  Widget _sideStrip(SideQa qa) => SideQaStrip(
+    qa,
+    width: _kSideStripWidth,
+    style: _bold(theme.bodyText).copyWith(height: _kTightLine),
+  );
+}
 
-  // ----------------------------------------------------------------- table
-
-  Widget _table() {
-    final days = poster.days;
-    return Container(
-      key: const ValueKey('poster-table'),
-      foregroundDecoration: BoxDecoration(
-        border: Border.all(
-          color: theme.gridLine,
-          width: theme.tableBorderWidth,
+/// The [TableSpec] of the shared layout for [theme]: the reference column
+/// order and widths, one panel with a rectangular outer border, zebra rows,
+/// highlighted rows and month-label cells in the theme's colours.
+///
+/// A good starting point for kit templates too (`copyWith`-style: build a
+/// new [TableSpec] reusing its parts).
+TableSpec referenceTableSpec(PosterTheme theme) {
+  final head = theme.tableFont ?? theme.headingFont;
+  final cellFont = theme.tableFont ?? theme.bodyFont;
+  final grid = BorderSide(color: theme.gridLine, width: KitDefaults.gridWidth);
+  const calHeader = CellStyle(
+    lineHeight: kFontLineHeight,
+    maxSize: KitDefaults.headerCalendarMax,
+    wrap: true,
+  );
+  const timeHeader = CellStyle(maxSize: KitDefaults.headerTimeMax);
+  final calHeaderFont = CellStyle(fontFamily: cellFont).merge(calHeader);
+  return TableSpec(
+    groups: [
+      [
+        const TableColumn.weekday(
+          style: CellStyle(maxSize: KitDefaults.weekdayMax),
         ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(height: _kTableHeaderHeight, child: _headerRow()),
-          for (var i = 0; i < days.length; i++)
-            Expanded(child: _dayRow(days[i], i)),
-        ],
-      ),
-    );
-  }
-
-  Widget _cell({
-    required double? width,
-    required Color bg,
-    required Widget child,
-    bool last = false,
-    bool bottom = true,
-  }) {
-    final side = BorderSide(color: theme.gridLine, width: _kGrid);
-    final box = DecoratedBox(
-      decoration: BoxDecoration(
-        color: bg,
-        border: Border(
-          left: last || !theme.verticalGridLines ? BorderSide.none : side,
-          bottom: bottom ? side : BorderSide.none,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(3, 1, 3, 1),
-        child: child,
-      ),
-    );
-    return width == null
-        ? Expanded(child: box)
-        : SizedBox(width: width, child: box);
-  }
-
-  Widget _headerRow() {
-    final bg = theme.tableHeaderBg;
-    final fg = theme.tableHeaderFg;
-    Widget label(String s, {double max = 30}) => FitText(
-      s,
-      style: _tableHead.copyWith(
-        color: fg,
-        fontWeight: FontWeight.w700,
-        height: _kTightLine,
-      ),
-      maxSize: max,
-      maxLines: 1,
-    );
-    Widget cal(String s) => FitText(
-      s,
-      style: _tableBody.copyWith(color: fg, fontWeight: FontWeight.w700),
-      maxSize: 20,
-    );
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _cell(width: _kWeekdayW, bg: bg, child: label('اليوم')),
-        _cell(width: _kDateW, bg: bg, child: cal(poster.hijriHeader)),
-        _cell(width: _kDateW, bg: bg, child: cal(poster.gregorianHeader)),
-        _cell(width: _kDateW, bg: bg, child: cal(poster.solarHeader)),
+        TableColumn.hijri(headerStyle: calHeaderFont),
+        TableColumn.gregorian(headerStyle: calHeaderFont),
+        TableColumn.solar(headerStyle: calHeaderFont),
         for (final s in PrayerSlot.values)
-          _cell(width: _kTimeW, bg: bg, child: label(s.labelAr, max: 26)),
-        _cell(
-          width: null,
-          bg: bg,
-          last: true,
-          child: label('ملاحظات', max: 46),
+          TableColumn.time(s, headerStyle: timeHeader),
+        const TableColumn.notes(
+          style: CellStyle(
+            lineHeight: kFontLineHeight,
+            maxSize: KitDefaults.noteMax,
+            wrap: true,
+          ),
+          headerStyle: CellStyle(maxSize: KitDefaults.headerNotesMax),
         ),
       ],
-    );
-  }
-
-  Widget _dayRow(DayRow d, int index) {
-    final isLast = index == poster.days.length - 1;
-    final rowBg = d.highlighted
-        ? theme.highlightBg
-        : (index.isEven ? theme.rowBg : theme.rowAltBg);
-    final rowFg = d.highlighted ? theme.highlightFg : theme.rowText;
-
-    Widget text(String s, Color fg, {double max = 24, bool note = false}) =>
-        FitText(
-          s,
-          style: _tableBody.copyWith(
-            color: fg,
-            fontWeight: FontWeight.w700,
-            height: note ? null : _kTightLine,
-          ),
-          maxSize: note ? 22 : max,
-          minSize: 7,
-          maxLines: note ? null : 1,
-        );
-
-    Widget dayCell(DayCell c) {
-      // Highlighted rows win over label colouring so the row reads as one.
-      final label = c.isLabel && !d.highlighted;
-      return _cell(
-        width: _kDateW,
-        bg: label ? theme.labelCellBg : rowBg,
-        bottom: !isLast,
-        child: text(
-          c.isLabel ? c.label! : '${c.number}',
-          label ? theme.labelCellFg : rowFg,
-        ),
-      );
-    }
-
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _cell(
-          width: _kWeekdayW,
-          bg: rowBg,
-          bottom: !isLast,
-          child: text(d.weekday.ar, rowFg, max: 22),
-        ),
-        _cell(
-          width: _kDateW,
-          bg: rowBg,
-          bottom: !isLast,
-          child: text('${d.hijriDay}', rowFg),
-        ),
-        dayCell(d.gregorian),
-        dayCell(d.solar),
-        for (final s in PrayerSlot.values)
-          _cell(
-            width: _kTimeW,
-            bg: rowBg,
-            bottom: !isLast,
-            // Null time renders empty, never a placeholder.
-            child: text(formatTime(d.times[s]) ?? '', rowFg),
-          ),
-        _cell(
-          width: null,
-          bg: rowBg,
-          last: true,
-          bottom: !isLast,
-          child: text(d.note, rowFg, note: true),
-        ),
-      ],
-    );
-  }
-
-  // --------------------------------------------------------------- article
-
-  Widget _article() {
-    final a = poster.texts.article;
-    return Column(
-      key: const ValueKey('poster-article'),
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        SizedBox(
-          height: _kArticleHeadingHeight,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 2),
-            child: FitText(
-              a.author.isEmpty ? '' : ':: ${a.author} ::',
-              style: _body.copyWith(
-                color: theme.titleColor,
-                fontWeight: FontWeight.w700,
-                decoration: TextDecoration.underline,
-                decorationColor: theme.titleColor,
-              ),
-              maxSize: 32,
-              maxLines: 1,
-            ),
-          ),
-        ),
-        SizedBox(
-          height: _kArticleBodyHeight,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
-            child: FitText(
-              a.body.isEmpty ? '' : _braced(a.body),
-              style: _body.copyWith(
-                color: theme.bodyText,
-                fontWeight: FontWeight.w700,
-              ),
-              maxSize: 32,
-              align: TextAlign.justify,
-            ),
-          ),
-        ),
-        SizedBox(
-          height: _kFatihaHeight,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 2),
-            child: FitText(
-              poster.texts.fatiha,
-              style: _body.copyWith(
-                color: theme.titleColor,
-                fontWeight: FontWeight.w700,
-              ),
-              maxSize: 30,
-              maxLines: 1,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
+    ],
+    headerHeight: _kTableHeaderHeight,
+    header: CellStyle(
+      background: theme.tableHeaderBg,
+      foreground: theme.tableHeaderFg,
+      fontFamily: head,
+      fontWeight: FontWeight.w700,
+      lineHeight: _kTightLine,
+      maxSize: KitDefaults.headerLabelMax,
+      wrap: false,
+    ),
+    body: CellStyle(
+      fontFamily: cellFont,
+      fontWeight: FontWeight.w700,
+      lineHeight: _kTightLine,
+      maxSize: KitDefaults.cellMax,
+      minSize: KitDefaults.cellMin,
+      wrap: false,
+    ),
+    normalRow: CellStyle(background: theme.rowBg, foreground: theme.rowText),
+    altRow: CellStyle(background: theme.rowAltBg, foreground: theme.rowText),
+    highlightRow: CellStyle(
+      background: theme.highlightBg,
+      foreground: theme.highlightFg,
+    ),
+    labelCell: CellStyle(
+      background: theme.labelCellBg,
+      foreground: theme.labelCellFg,
+    ),
+    grid: GridLines(
+      horizontal: grid,
+      vertical: theme.verticalGridLines ? grid : null,
+    ),
+    outerBorder: BorderSide(
+      color: theme.gridLine,
+      width: theme.tableBorderWidth,
+    ),
+  );
 }

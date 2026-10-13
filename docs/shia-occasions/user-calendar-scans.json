@@ -1,0 +1,941 @@
+{
+ "_meta": {
+  "source": "User's own printed calendar «تقويم أهل البيت» (times from تقويم الهادي); transcribed from scans in templates/ (S6a, 2026-10-13). Notes verbatim as printed; uncertain=true where letters were too small/blurred or text overflowed the cell. Scan 1 rows imported from the pre-cleanup seed (git HEAD lib/data/seed_reference.dart) and spot-checked (rows 12-19).",
+  "gemini_mockups_ignored": true
+ },
+ "scans": [
+  {
+   "file": "templates/WhatsApp Image 2026-10-12 at 9.09.58 PM.jpeg",
+   "hijriMonth": 5,
+   "monthNameAr": "جمادى الأولى",
+   "hijriYear": 1448,
+   "days": 30,
+   "rows": [
+    {
+     "hijriDay": 1,
+     "note": "غداً استشهاد شهيدالمحراب الخامس آية الله اشرف اصفهاني1982م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 2,
+     "note": "بدأ نزول الوحي على النبي محمد(ص)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 3,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 4,
+     "note": "وفاة الشيخ ميثم البحرانى 679هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 5,
+     "note": "مولد السيدة زينب الكبرى(ع) - يوم الممرضة المسلمة",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 6,
+     "note": "غزوة مؤته8هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 7,
+     "note": "استشهاد السيد مصطفى الخميني(ر ض)1977/10/23م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 8,
+     "note": "وفاة السيد الخونساري1313هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 9,
+     "note": "هدم مسجد رد الشمس لأمير المؤمنين(ع)في المدينة1422هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 10,
+     "note": "حرب الجمل 36هـ - اعطاء الزهراء القميص لأبنتها حتى تعطيه الحسين(ع)",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 11,
+     "note": "وفاة النبي شيث(ع) - وفاة المفسر المعروف بالفخر الرازي(رض)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 12,
+     "note": "وفاة عبدا... بن عبدالمطلب والد الرسول الأكرم(ص)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 13,
+     "note": "ذكرى استشهاد سيدة نساء العالمين فاطمة الزهراء(ع)11هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 14,
+     "note": "وفاة الدكتوراحمدالوائلي1424هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 15,
+     "note": "فتح البصرة على يدالإمام علي بن أبي طالب(ع)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 16,
+     "note": "غزوة ذات الرقاع 4هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 17,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 18,
+     "note": "ولادة ذوالقرنين - بدء نزول الألواح على النبي موسى(ع)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 19,
+     "note": "مقتل زيد بن صوحان36هـ - غداً استشهاد آيةا...قاضي الطباطبائي اول شهيد المحراب1979م",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 20,
+     "note": "إستشهاد الشهيد الأول(محمد بن مكي العاملي)786هـ(رض)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 21,
+     "note": "احراق المسجد الأقصى بيد اليهود69هـ - استشهاد الصحابي الجليل زيد بن صوحان",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 22,
+     "note": "وفاة القاسم ابن الامام موسى الكاظم(ع)192هـ - وفاة الشاعرسيد رضا الهندي1362هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 23,
+     "note": "وفاة الفقيه ابن شاذان 376هـ - يوم أمس رحيل آيةا... محمد تقي بهجت 1430هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 24,
+     "note": "وفاة السيد محمد تقي القمي1344هـ - يوم امس استبعادالامام الخميني من ايران الى تركيا1964م",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 25,
+     "note": "وفاة معاوية بن يزيد(الخير)64هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 26,
+     "note": "ولادة النبي صالح (ع) - وفاة المحقق النائيني1355هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 27,
+     "note": "تفجير ماذنتي حرم الامامين الهادي والعسكري1428هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 28,
+     "note": "وفاة السفير الثاني محمد بن عثمان304هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 29,
+     "note": "ولادة النبي إسماعيل(ع)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 30,
+     "note": "وقف الحرب العالمية الأولى1918م",
+     "highlighted": false,
+     "uncertain": false
+    }
+   ]
+  },
+  {
+   "file": "templates/WhatsApp Image 2026-10-12 at 9.09.59 PM(1).jpeg",
+   "hijriMonth": 2,
+   "monthNameAr": "صفر",
+   "hijriYear": 1448,
+   "days": 30,
+   "rows": [
+    {
+     "hijriDay": 1,
+     "note": "وصول رأس الحسين(ع)وسبايا آل البيت(ع)للشام - معركة صفين37هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 2,
+     "note": "استشهاد زيد بن على(رض)121هـ - نزول النبي(ص) بقباء",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 3,
+     "note": "احراق مسلم بن عقبة الكعبة بأمر من يزيد64هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 4,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 5,
+     "note": "ذكرى وفاة السيدة رقية بنت الإمام الحسين (ع) 61هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 6,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 7,
+     "note": "ذكرى استشهاد الإمام المجتبى (ع)50هـ ومولد الإمام الكاظم (ع)128هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 8,
+     "note": "وفاة سلمان الفارسي(رض)35هـ - وفاة آية ا...المرعشي النجفي1411هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 9,
+     "note": "وفاة عمار بن ياسر37هـ - واقعة النهروان38هـ - وفاة آية ا... الخوئي1413هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 10,
+     "note": "وفاة العالم ملا جعفر الاسترابادي1263هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 11,
+     "note": "بعد غد بداية الحرب العالمية الأولى1914/7/28م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 12,
+     "note": "وفاة النبي هارون بن عمران(ع) - اغتيال السيد محمد تقي الخوئي1415هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 13,
+     "note": "وفاة احمد بن شعيب النسائي صاحب كتاب السنن303هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 14,
+     "note": "شهادة محمد بن أبي بكر(رض)في مصر38هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 15,
+     "note": "نشوء الدولة الفاطمية في مصر - مجزرة قانا الثانية2006م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 16,
+     "note": "بعد غد استشهاد آية ا...فضل ا...النوري 1909م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 17,
+     "note": "ذكرى استشهاد الإمام علي بن موسى الرضا (ع) 203هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 18,
+     "note": "شهادة أويس القرني(رض)في صفين",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 19,
+     "note": "وصول جابر الأنصاري(رض)الى كربلاء61هـ - وفاة آية ا...المرعشي النجفي1411هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 20,
+     "note": "ذكرى أربعينية الإمام الحسين(ع)وشهداء الطف(ع)",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 21,
+     "note": "تولي عمر بن عبدالعزيز الخلا فة",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 22,
+     "note": "سقوط أول قنبلة ذرية امريكية على هيروشيما اليابانية 1945م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 23,
+     "note": "اعلان الدولة العباسية132هـ وانتهاء حكم بني أمية",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 24,
+     "note": "هزيمة اسرائيل وانسحابة من جنوب لبنان 2006/8/14م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 25,
+     "note": "وفاة السيدة مريم بنت عمران (ع) - وفاة سيف الدولة الحمداني356هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 26,
+     "note": "إستشهاد أولاد مسلم بن عقيل(ع)61هـ - تجهيز النبي(ص)لجيش أسامة",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 27,
+     "note": "إستشهاد النبي يحيى(ع) - وفاة آية ا...عبدالأعلى السبزواري1414هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 28,
+     "note": "ذكرى استشهاد النبي الأكرم(ص)11هـ - وغداً إسقاط الزهراء(ع) لمحسن",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 29,
+     "note": "نزول العذاب على قوم صالح - وفاة الشيخ محمد امين زين الدين1419هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 30,
+     "note": "وفاة ميرزااسفند بن قرايوسف848هـ الذي فتح باب المناظرة بين الشيعةوالعامة",
+     "highlighted": false,
+     "uncertain": true
+    }
+   ]
+  },
+  {
+   "file": "templates/WhatsApp Image 2026-10-12 at 9.09.59 PM(2).jpeg",
+   "hijriMonth": 5,
+   "monthNameAr": "جمادى الأولى",
+   "hijriYear": 1446,
+   "days": 30,
+   "rows": [
+    {
+     "hijriDay": 1,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 2,
+     "note": "بدأ نزول الوحي على النبي محمد(ص)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 3,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 4,
+     "note": "وفاة الشيخ ميثم البحراني 679هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 5,
+     "note": "مولد السيدة زينب الكبرى(ع) - يوم الممرضة المسلمة",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 6,
+     "note": "غزوة مؤته8هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 7,
+     "note": "بعد غد استشهاد آيةا...قاضي الطباطبائي اول شهيد المحراب1979م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 8,
+     "note": "وفاة السيد الخونسارى1313هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 9,
+     "note": "هدم مسجد رد الشمس لأمير المؤمنين(ع)في المدينة1422هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 10,
+     "note": "حرب الجمل 36هـ - اعطاء الزهراء القميص لأبنتها حتى تعطيه الحسين(ع)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 11,
+     "note": "وفاة النبي شيث(ع) - وفاة المفسر المعروف بالفخر الرازي(رض)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 12,
+     "note": "وفاة عبدا... بن عبدالمطلب والد الرسول الأكرم(ص) - استبعادالامام الخميني من ايران الى تركيا1964م",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 13,
+     "note": "ذكرى استشهاد سيدة نساء العالمين فاطمة الزهراء(ع)11هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 14,
+     "note": "وفاة الدكتوراحمدالوائلي1424هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 15,
+     "note": "فتح البصرة على يدالإمام علي بن أبي طالب(ع)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 16,
+     "note": "غزوة ذات الرقاع 4هـ اكتشاف اشعة X1895م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 17,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 18,
+     "note": "ولادة ذوالقرنين - بدء نزول الألواح على النبي موسى(ع)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 19,
+     "note": "مقتل زيد بن صوحان36هـ - وقف الحرب العالمية الأولى1918م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 20,
+     "note": "إستشهاد الشهيد الأول(محمد بن مكي العاملي)786هـ(رض)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 21,
+     "note": "احراق المسجد الأقصى بيد اليهود69هـ - استشهاد الصحابي الجليل زيد بن صوحان",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 22,
+     "note": "وفاة القاسم ابن الامام موسى الكاظم(ع)192هـ - وفاة الشاعرسيد رضا الهندي1362هـ",
+     "highlighted": true,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 23,
+     "note": "وفاة الفقيه ابن شاذان 376هـ - يوم أمس رحيل آيةا... محمد تقي بهجت 1430هـ",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 24,
+     "note": "وفاة السيد محمد تقي القمي1344هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 25,
+     "note": "وفاة معاوية بن يزيد(الخير)64هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 26,
+     "note": "ولادة النبي صالح (ع) - وفاة المحقق النائيني1355هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 27,
+     "note": "تفجيرماذنتي حرم الامامين الهادي والعسكري1428هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 28,
+     "note": "وفاة السفير الثاني محمد بن عثمان304هـ - استشهاد المجاهد عزالدين القسام1935م",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 29,
+     "note": "ولادة النبي إسماعيل(ع)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 30,
+     "note": "استشهاد شهيدالمحراب الخامس آية الله اشرف اصفهاني1982/11/14م",
+     "highlighted": false,
+     "uncertain": true
+    }
+   ]
+  },
+  {
+   "file": "templates/WhatsApp Image 2026-10-12 at 9.09.59 PM(3).jpeg",
+   "hijriMonth": 1,
+   "monthNameAr": "محرم",
+   "hijriYear": 1446,
+   "days": 29,
+   "rows": [
+    {
+     "hijriDay": 1,
+     "note": "رأس السنة الهجرية1446هـ - وفاة محمد بن الحنفية - غزوة ذات الرقاع4هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 2,
+     "note": "وصول الإمام الحسين(ع)لأرض كربلاء",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 3,
+     "note": "وصول عمر بن سعد وجيشة لأرض كربلاء - خلاص النبي يوسف(ع) من البئر",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 4,
+     "note": "فتوى شريح القاضي بقتل الامام الحسين(ع)",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 5,
+     "note": "عبورالنبي موسى(ع)البحر الأحمر وهلاك فرعون وجنوده",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 6,
+     "note": "غداً بأمرعمر بن سعد جيشه لحراسة نهر العلقمي لمنع وصول الحسين(ع) وعياله",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 7,
+     "note": "منع الماء عن أهل البيت(ع) - اليوم الذي تكلم ا... مع نبيه موسى(ع) في جبل طور",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 8,
+     "note": "خلاص النبي يوسف(ع)من السجن",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 9,
+     "note": "يوم التاسوعا - خروج يونس(ع)من بطن الحوت ويُنجيه",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 10,
+     "note": "ذكرى استشهاد الإمام الحسين (ع) وأصحابه(ع)61هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 11,
+     "note": "نقل سبايا أهل البيت(ع)الى الكوفه - وفاة النبي ادم(ع)عن عمر 930سنة",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 12,
+     "note": "دفن الأجساد الطاهرة لشهداء الطف بأرض كربلاء",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 13,
+     "note": "رحيل الخطيب الكبيرالدكتورالشيخ احمد الوائلي 2003/7/14م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 14,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 15,
+     "note": "قدوم جعفر بن ابي طالب الى الحبشة - ولادة ابن طاووس589هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 16,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 17,
+     "note": "هلاك اصحاب الفيل",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 18,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 19,
+     "note": "نقل سبايا آل الرسول(ع)من الكوفة الى الشام - مولد النبي عيسى بن مريم المسيح(ع)",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 20,
+     "note": "غداً بداية الحرب العالمية الاولى1914م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 21,
+     "note": "وفاة الشيخ أبو جعفر محمد بن الحسن الطوسي 460هـ(شيخ الطائفة)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 22,
+     "note": "وفاة حواء(س)عن عمر931سنة - غداً مجزرة قانا الثانية2006م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 23,
+     "note": "خروج زيد بن علي(رض) - وفاة العلامة النراقي 1409هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 24,
+     "note": "اندلاع ثورة زيد بن علي ضد الأمويين",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 25,
+     "note": "استشهاد الإمام زين العابدين(ع)94هـ - معركة القادسية14هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 26,
+     "note": "وفاة العالم عبدا... بن الحسين التستري1021هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 27,
+     "note": "يوم امس استشهاد آية ا...فضل ا...النوري 1909م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 28,
+     "note": "سقوط الدولة العباسية 656هـ ومقتل المعتصم وسقوط بغداد بيد المغول",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 29,
+     "note": "وفاة الشيخ نصير الدين الطوسي 458هـ",
+     "highlighted": false,
+     "uncertain": false
+    }
+   ]
+  },
+  {
+   "file": "templates/WhatsApp Image 2026-10-12 at 9.09.59 PM.jpeg",
+   "hijriMonth": 3,
+   "monthNameAr": "ربيع الأول",
+   "hijriYear": 1448,
+   "days": 29,
+   "rows": [
+    {
+     "hijriDay": 1,
+     "note": "الهجرة النبوية من مكة الى المدينة ومبيت الإمام علي(ع) على فراش النبي(ص) - دفن الرسول الأكرم(ص)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 2,
+     "note": "وصول سبايا الامام الحسين(ع)الى المدينة - رحيل آيةا...عبدالأعلى السبزواري 1993م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 3,
+     "note": "رمي كعبة بالمنجنيق واحراق الكعبة من قبل مسلم بن عقبة64هـ - اول صلاة ميت على اسعد بن زراره",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 4,
+     "note": "رحيل العلامة الشيخ يوسف البحراني1186هـ ودفن في كربلاء",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 5,
+     "note": "ذكرى وفاة السيدة سكينة بنت الإمام الحسين (ع) 117هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 6,
+     "note": "زيارة فاطمة الزهراء(س)لقبر ابيها(ص)بعد وفاته",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 7,
+     "note": "ذكرى إحراق المسجد الأقصى على يد الصهاينة 1969م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 8,
+     "note": "ذكرى إستشهاد الإمام الحسن العسكري (ع) 260هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 9,
+     "note": "أول أيام إمامة الحجّة بن الحسن(ع) - مولد السيد حسن نصرا...1380هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 10,
+     "note": "وفاة عبدالمطلب بن هاشم جد الرسول(ص) - زواج الرسول من خديجة15ق هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 11,
+     "note": "ولادة السيدة نفيسة(س) - وصول الرسول لأرض يثرب واعلان الدولة الأسلامية",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 12,
+     "note": "مولد النبي محمد(ص)على رواية - إسبوع الوحدة الإسلامية",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 13,
+     "note": "تاسيس دارالتقريب بين المذاهب الإسلامية في القاهرة",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 14,
+     "note": "مولد النبي إبراهيم الخليل(ع)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 15,
+     "note": "بناء أول مسجد في الإسلام (مسجد قباء) 1هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 16,
+     "note": "عروج النبي(ص)الى السماء برواية ابن طاووس - استشهاد الشهيدان رجائي وباهنر1981م",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 17,
+     "note": "مولدالرسول الأعظم(ص) وحفيده الإمام الصادق(ع)83هـ",
+     "highlighted": true,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 18,
+     "note": "حرب النبي إبراهيم(ع)مع النمرود - بناء المسجدالنبوي - هلاك قوم ثمود",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 19,
+     "note": "حرب النبي داود(ع)مع جالوت وقتل جالوت - اخراج جسد زيد(ع)من قبره وصلبه121هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 20,
+     "note": "وفاة بشر الحافى227هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 21,
+     "note": "هلاك قوم لوط(ع) - استشها آية ا... قدوسى 1981م",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 22,
+     "note": "غزوة بني النضير4هـ وافراج اليهود من المدينة واعفاء فدك الزهراء(س)",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 23,
+     "note": "عتق ابو طالب(ع)عتيقة النبي(ص) - استشهاد السيد حسن نصرا... امين حزب ا... 1446هـ",
+     "highlighted": false,
+     "uncertain": true
+    },
+    {
+     "hijriDay": 24,
+     "note": "وفاة آيةا...سيد محمود طالقاني1979/9/10م",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 25,
+     "note": "وفاة العلامة السيد الشريف المرتضى(علم الهدى)438هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 26,
+     "note": "صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 27,
+     "note": "معراج الرسول(ص) - وفاة الشيخ النائيني1315هـ - يوم امس وفاة السيد محسن الحكيم1390هـ",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 28,
+     "note": "إستقرار سفينة نوح(ع) على جبل الجودى بعد الطوفان",
+     "highlighted": false,
+     "uncertain": false
+    },
+    {
+     "hijriDay": 29,
+     "note": "",
+     "highlighted": false,
+     "uncertain": false
+    }
+   ]
+  }
+ ]
+}

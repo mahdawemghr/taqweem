@@ -5,7 +5,7 @@ Plan: docs/superpowers/plans/2026-10-12-taqweem-poster-generator.md
 Execution: subagent-driven (ledger: .superpowers/sdd/2026-10-12-taqweem-poster-generator/progress.md). NO git commits (user rule).
 
 ## Next Step
-T21a DONE. Shia S2 source-upgrade passes running (months 1-3, 7-9, 10-12), then S3 (user decisions: single-source items, Eid al-Zahra, Torah/Zabur days, Unity Week, Raghaib; Haqibat pages) → S4 build; then T21b polish (save-error chip Arabic, a11y pass).
+S6: user scans as source+convention (R24): transcribe 4 other posters + compare vs DB → apply main/alt swaps + add scan occasions + review minors → light re-review → T21b polish. S4a-c done (483 tests), reviewed.
 
 ### Phases / Tasks
 - [x] T1 Foundation  - [x] T2 Time format  - [x] T3 Models  - [x] T4 CalendarFill  - [x] T5 Validation
@@ -16,7 +16,7 @@ T21a DONE. Shia S2 source-upgrade passes running (months 1-3, 7-9, 10-12), then 
 
 ## NEW (2026-10-13): Shia-only content phase (user requirement; see memory shia-only-content.md)
 - [x] S1 Research Shia occasions (first pass, all 12 months; compiled in docs/shia-occasions/COMPILED.md) → docs/shia-occasions/research/
-- [ ] S2 Consolidate + independent cross-check
-- [ ] S3 User approval of compiled list + design (gate)
+- [~] S2 partial (months 4-6, 7-9 upgraded; 1-3, 10-12 first pass; rate limits) — continue only if user supplies Haqibat pages or asks
+- [x] S3 user said "continue" after list+questions (R23)
 - [ ] S4 Implement DB + grid suggestions + clean seed/suggestions
 - [ ] S5 Verify

@@ -10,8 +10,10 @@ String cleanNote(String s) =>
     s.replaceAll(RegExp(r'\s*[\r\n]+\s*'), ' ').trim();
 
 /// The occasion note of a day: RTL, up to 3 lines, committed on blur.
-/// While focused it offers occasion suggestions and publishes its
-/// controller to [activeNote] for the [HonorificBar].
+/// Below it, the day's Shia [occasions] are offered as chips (one tap adds
+/// one); while the user types, search suggestions take their place. While
+/// focused it publishes its controller to [activeNote] for the
+/// [HonorificBar].
 class _NoteField extends StatefulWidget {
   const _NoteField({
     required this.value,
@@ -22,6 +24,7 @@ class _NoteField extends StatefulWidget {
     required this.uncertain,
     required this.markerKey,
     required this.floatingLabel,
+    this.occasions = const [],
     super.key,
   });
 
@@ -33,6 +36,9 @@ class _NoteField extends StatefulWidget {
   final bool uncertain;
   final Key markerKey;
   final bool floatingLabel;
+
+  /// This day's occasions from the built-in database (mains first).
+  final List<ShiaOccasion> occasions;
 
   @override
   State<_NoteField> createState() => _NoteFieldState();
@@ -87,6 +93,14 @@ class _NoteFieldState extends State<_NoteField> {
     setState(() {});
   }
 
+  /// Adds an occasion: an empty note becomes [s]; otherwise « - [s]» is
+  /// appended, unless the note already contains it. One committed update.
+  void _addOccasion(String s) {
+    final cur = cleanNote(_ctl.text);
+    if (cur.contains(s)) return;
+    _pick(cur.isEmpty ? s : '$cur - $s');
+  }
+
   @override
   void dispose() {
     final t = cleanNote(_ctl.text);
@@ -109,9 +123,16 @@ class _NoteFieldState extends State<_NoteField> {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
     final q = _ctl.text.trim();
-    final suggestions = _focus.hasFocus && q.isNotEmpty
-        ? searchOccasions(q).where((s) => s != q).take(5).toList()
+    // "Typing": focused and the text differs from the stored note.
+    final typing =
+        _focus.hasFocus &&
+        q.isNotEmpty &&
+        cleanNote(_ctl.text) != cleanNote(widget.value);
+    final suggestions = typing
+        ? searchNoteSuggestions(q).where((s) => s != q).toList()
         : const <String>[];
+    final index = widget.dayNumber - 1;
+    final current = cleanNote(_ctl.text);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
@@ -191,8 +212,241 @@ class _NoteFieldState extends State<_NoteField> {
                 ],
               ),
             ),
+          )
+        else if (widget.occasions.isNotEmpty)
+          TextFieldTapRegion(
+            key: ValueKey('occasions-$index'),
+            child: _DayOccasions(
+              index: index,
+              occasions: widget.occasions,
+              current: current,
+              onPick: _addOccasion,
+            ),
           ),
       ],
     );
   }
+}
+
+/// «مناسبات هذا اليوم»: the day's occasions as wrapping chips.
+class _DayOccasions extends StatelessWidget {
+  const _DayOccasions({
+    required this.index,
+    required this.occasions,
+    required this.current,
+    required this.onPick,
+  });
+
+  final int index;
+  final List<ShiaOccasion> occasions;
+
+  /// The note as typed now (an occasion already in it shows a check).
+  final String current;
+  final ValueChanged<String> onPick;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.auto_awesome_rounded, size: 16, color: _gold),
+              const SizedBox(width: 6),
+              Flexible(
+                child: Text(
+                  'مناسبات هذا اليوم',
+                  style: theme.textTheme.labelMedium?.copyWith(
+                    color: cs.onSurfaceVariant,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: [
+              for (final (k, o) in occasions.indexed)
+                _OccasionChip(
+                  key: ValueKey('occ-$index-$k'),
+                  occasion: o,
+                  included: current.contains(o.noteText),
+                  onTap: () => onPick(o.noteText),
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// One occasion: solid gold for a main entry, dashed outline and italic for
+/// an alternate (another narration), ⚠ for an entry still to be verified.
+/// Long-press shows the full research note and the sources.
+class _OccasionChip extends StatelessWidget {
+  const _OccasionChip({
+    required this.occasion,
+    required this.included,
+    required this.onTap,
+    super.key,
+  });
+
+  final ShiaOccasion occasion;
+  final bool included;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    final o = occasion;
+    final text = o.noteText;
+    final alt = o.isAlternate;
+    final warn = !o.verified;
+    final fg = warn
+        ? uncertainColor
+        : alt
+        ? cs.onSurfaceVariant
+        : _goldText;
+    final border = warn
+        ? const Color(0xFFE5C98A)
+        : _gold.withValues(alpha: 0.7);
+    final tip = [
+      if (alt && o.fullNoteAr != null) o.fullNoteAr!,
+      if (warn) 'يحتاج تأكيداً من حقيبة المؤمن',
+      'المصادر: ${o.sourceNames.join('، ')}',
+    ].join('\n');
+    const radius = BorderRadius.all(Radius.circular(12));
+    final icon = included
+        ? Icons.check_rounded
+        : warn
+        ? Icons.warning_amber_rounded
+        : Icons.add_rounded;
+    return Semantics(
+      button: true,
+      label: 'مناسبة: $text',
+      hint: [
+        if (alt) 'رواية أخرى',
+        if (warn) 'يحتاج تأكيداً',
+        if (included) 'مضافة',
+      ].join('، '),
+      excludeSemantics: true,
+      child: Tooltip(
+        message: tip,
+        excludeFromSemantics: true,
+        triggerMode: TooltipTriggerMode.longPress,
+        child: CustomPaint(
+          foregroundPainter: alt
+              ? _DashedBorderPainter(
+                  color: warn ? uncertainColor : cs.outline,
+                  radius: 12,
+                )
+              : null,
+          child: Material(
+            color: warn
+                ? uncertainTint
+                : alt
+                ? cs.surface
+                : _goldTint,
+            shape: RoundedRectangleBorder(
+              borderRadius: radius,
+              side: alt ? BorderSide.none : BorderSide(color: border),
+            ),
+            clipBehavior: Clip.antiAlias,
+            child: InkWell(
+              onTap: onTap,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minHeight: 48),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(10, 6, 12, 6),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(icon, size: 18, color: fg),
+                      const SizedBox(width: 6),
+                      Flexible(
+                        child: Text(
+                          text,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: fg,
+                            fontWeight: alt ? FontWeight.w500 : FontWeight.w600,
+                            fontStyle: alt ? FontStyle.italic : null,
+                            height: 1.35,
+                          ),
+                        ),
+                      ),
+                      if (warn) ...[
+                        const SizedBox(width: 6),
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: uncertainColor.withValues(alpha: 0.12),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 6,
+                              vertical: 2,
+                            ),
+                            child: Text(
+                              'للتحقق',
+                              style: theme.textTheme.labelSmall?.copyWith(
+                                color: uncertainColor,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// A dashed rounded-rectangle outline (alternate occasion chips).
+class _DashedBorderPainter extends CustomPainter {
+  const _DashedBorderPainter({required this.color, required this.radius});
+
+  final Color color;
+  final double radius;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.2;
+    final rrect = RRect.fromRectAndRadius(
+      (Offset.zero & size).deflate(0.6),
+      Radius.circular(radius),
+    );
+    final path = Path()..addRRect(rrect);
+    const dash = 5.0, gap = 3.5;
+    for (final m in path.computeMetrics()) {
+      for (var d = 0.0; d < m.length; d += dash + gap) {
+        canvas.drawPath(m.extractPath(d, d + dash), paint);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(_DashedBorderPainter old) =>
+      old.color != color || old.radius != radius;
 }

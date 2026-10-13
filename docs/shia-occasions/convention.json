@@ -1,0 +1,779 @@
+{
+ "swaps": [
+  {
+   "event": "استشهاد الإمام الحسن المجتبى (ع)",
+   "main": {
+    "month": 2,
+    "day": 7,
+    "titleContains": "الحسن المجتبى"
+   },
+   "alternate": {
+    "month": 2,
+    "day": 28,
+    "titleContains": "الحسن المجتبى"
+   },
+   "alternateNoteAr": "على قول"
+  },
+  {
+   "event": "استشهاد الإمام علي بن موسى الرضا (ع)",
+   "main": {
+    "month": 2,
+    "day": 17,
+    "titleContains": "الرضا"
+   },
+   "alternate": {
+    "month": 2,
+    "day": 30,
+    "titleContains": "الرضا"
+   },
+   "alternateNoteAr": "على قول"
+  },
+  {
+   "event": "استشهاد السيدة فاطمة الزهراء (س)",
+   "main": {
+    "month": 5,
+    "day": 13,
+    "titleContains": "فاطمة الزهراء"
+   },
+   "alternate": {
+    "month": 6,
+    "day": 3,
+    "titleContains": "فاطمة الزهراء"
+   },
+   "mainTitleAr": "ذكرى استشهاد السيدة فاطمة الزهراء (س)",
+   "alternateNoteAr": "على رواية"
+  },
+  {
+   "event": "وفاة محمد بن عثمان العمري (رض) السفير الثاني",
+   "main": {
+    "month": 5,
+    "day": 28,
+    "titleContains": "محمد بن عثمان"
+   },
+   "alternate": {
+    "month": 5,
+    "day": 29,
+    "titleContains": "محمد بن عثمان"
+   },
+   "alternateNoteAr": "على قول"
+  },
+  {
+   "event": "وفاة عبد المطلب جد النبي (ص)",
+   "main": {
+    "month": 3,
+    "day": 10,
+    "titleContains": "عبدالمطلب"
+   },
+   "alternate": {
+    "month": 5,
+    "day": 27,
+    "titleContains": "عبد المطلب"
+   },
+   "alternateNoteAr": "على قول"
+  }
+ ],
+ "addSources": [
+  {
+   "month": 1,
+   "day": 1,
+   "titleContains": "غرة محرم",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#1-1446-d1"
+   }
+  },
+  {
+   "month": 1,
+   "day": 2,
+   "titleContains": "وصول الإمام الحسين",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#1-1446-d2"
+   }
+  },
+  {
+   "month": 1,
+   "day": 7,
+   "titleContains": "منع الماء",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#1-1446-d7"
+   }
+  },
+  {
+   "month": 1,
+   "day": 9,
+   "titleContains": "تاسوعاء",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#1-1446-d9"
+   }
+  },
+  {
+   "month": 1,
+   "day": 10,
+   "titleContains": "يوم عاشوراء",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#1-1446-d10"
+   }
+  },
+  {
+   "month": 1,
+   "day": 11,
+   "titleContains": "سبايا نحو الكوفة",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#1-1446-d11"
+   }
+  },
+  {
+   "month": 1,
+   "day": 19,
+   "titleContains": "انتقال قافلة",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#1-1446-d19"
+   }
+  },
+  {
+   "month": 1,
+   "day": 25,
+   "titleContains": "زين العابدين",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#1-1446-d25"
+   }
+  },
+  {
+   "month": 2,
+   "day": 1,
+   "titleContains": "واقعة صفين",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d1"
+   }
+  },
+  {
+   "month": 2,
+   "day": 1,
+   "titleContains": "دخول سبايا آل محمد",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d1"
+   }
+  },
+  {
+   "month": 2,
+   "day": 5,
+   "titleContains": "رقية",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d5"
+   }
+  },
+  {
+   "month": 2,
+   "day": 7,
+   "titleContains": "موسى بن جعفر الكاظم",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d7"
+   }
+  },
+  {
+   "month": 2,
+   "day": 7,
+   "titleContains": "الحسن المجتبى",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d7"
+   }
+  },
+  {
+   "month": 2,
+   "day": 8,
+   "titleContains": "سلمان",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d8"
+   }
+  },
+  {
+   "month": 2,
+   "day": 9,
+   "titleContains": "عمار بن ياسر",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d9"
+   }
+  },
+  {
+   "month": 2,
+   "day": 9,
+   "titleContains": "النهروان",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d9"
+   }
+  },
+  {
+   "month": 2,
+   "day": 17,
+   "titleContains": "الرضا",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d17"
+   }
+  },
+  {
+   "month": 2,
+   "day": 20,
+   "titleContains": "أربعينية",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d20"
+   }
+  },
+  {
+   "month": 2,
+   "day": 28,
+   "titleContains": "وفاة النبي الأكرم",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#2-1448-d28"
+   }
+  },
+  {
+   "month": 3,
+   "day": 1,
+   "titleContains": "ليلة المبيت",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#3-1448-d1"
+   }
+  },
+  {
+   "month": 3,
+   "day": 1,
+   "titleContains": "هجرة النبي",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#3-1448-d1"
+   }
+  },
+  {
+   "month": 3,
+   "day": 5,
+   "titleContains": "سكينة",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#3-1448-d5"
+   }
+  },
+  {
+   "month": 3,
+   "day": 8,
+   "titleContains": "العسكري",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#3-1448-d8"
+   }
+  },
+  {
+   "month": 3,
+   "day": 9,
+   "titleContains": "المهدي المنتظر",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#3-1448-d9"
+   }
+  },
+  {
+   "month": 3,
+   "day": 10,
+   "titleContains": "خديجة",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#3-1448-d10"
+   }
+  },
+  {
+   "month": 3,
+   "day": 17,
+   "titleContains": "مولد النبي",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#3-1448-d17"
+   }
+  },
+  {
+   "month": 3,
+   "day": 17,
+   "titleContains": "الصادق",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#3-1448-d17"
+   }
+  },
+  {
+   "month": 5,
+   "day": 5,
+   "titleContains": "زينب الكبرى",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#5-1448-d5"
+   }
+  },
+  {
+   "month": 5,
+   "day": 10,
+   "titleContains": "وقعة الجمل",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#5-1448-d10"
+   }
+  },
+  {
+   "month": 5,
+   "day": 13,
+   "titleContains": "فاطمة الزهراء",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#5-1448-d13"
+   }
+  },
+  {
+   "month": 5,
+   "day": 15,
+   "titleContains": "البصرة",
+   "source": {
+    "name": "تقويم أهل البيت (المرجع)",
+    "url": "user-calendar://user-calendar-scans.json#5-1448-d15"
+   }
+  }
+ ],
+ "scanOnly": [
+  {
+   "month": 1,
+   "day": 3,
+   "titleAr": "وصول عمر بن سعد وجيشة لأرض كربلاء",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#1-1446-d3"
+    }
+   ]
+  },
+  {
+   "month": 1,
+   "day": 4,
+   "titleAr": "فتوى شريح القاضي بقتل الامام الحسين(ع)",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#1-1446-d4"
+    }
+   ]
+  },
+  {
+   "month": 1,
+   "day": 12,
+   "titleAr": "دفن الأجساد الطاهرة لشهداء الطف بأرض كربلاء",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#1-1446-d12"
+    }
+   ]
+  },
+  {
+   "month": 1,
+   "day": 15,
+   "titleAr": "قدوم جعفر بن ابي طالب الى الحبشة",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#1-1446-d15"
+    }
+   ]
+  },
+  {
+   "month": 2,
+   "day": 14,
+   "titleAr": "شهادة محمد بن أبي بكر(رض)في مصر38هـ",
+   "category": "martyrdom",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#2-1448-d14"
+    }
+   ]
+  },
+  {
+   "month": 2,
+   "day": 18,
+   "titleAr": "شهادة أويس القرني(رض)في صفين",
+   "category": "martyrdom",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#2-1448-d18"
+    }
+   ]
+  },
+  {
+   "month": 2,
+   "day": 19,
+   "titleAr": "وصول جابر الأنصاري(رض)الى كربلاء61هـ",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#2-1448-d19"
+    }
+   ]
+  },
+  {
+   "month": 2,
+   "day": 26,
+   "titleAr": "إستشهاد أولاد مسلم بن عقيل(ع)61هـ",
+   "category": "martyrdom",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#2-1448-d26"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 1,
+   "titleAr": "دفن الرسول الأكرم(ص)",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d1"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 2,
+   "titleAr": "وصول سبايا الامام الحسين(ع)الى المدينة",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d2"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 6,
+   "titleAr": "زيارة فاطمة الزهراء(س)لقبر ابيها(ص)بعد وفاته",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d6"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 10,
+   "titleAr": "وفاة عبدالمطلب بن هاشم جد الرسول(ص)",
+   "category": "martyrdom",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d10"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 12,
+   "titleAr": "مولد النبي الأكرم محمد (ص)",
+   "category": "birth",
+   "variant": "alternate",
+   "alternateNoteAr": "على رواية",
+   "confidence": "medium",
+   "titleSource": "db",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d12"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 15,
+   "titleAr": "بناء أول مسجد في الإسلام (مسجد قباء) 1هـ",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d15"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 16,
+   "titleAr": "عروج النبي(ص)الى السماء برواية ابن طاووس",
+   "category": "event",
+   "variant": "alternate",
+   "alternateNoteAr": "على رواية ابن طاووس",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d16"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 18,
+   "titleAr": "بناء المسجدالنبوي",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d18"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 22,
+   "titleAr": "غزوة بني النضير4هـ وافراج اليهود من المدينة واعفاء فدك الزهراء(س)",
+   "category": "battle",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d22"
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "day": 27,
+   "titleAr": "معراج الرسول(ص)",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d27"
+    }
+   ]
+  },
+  {
+   "month": 5,
+   "day": 6,
+   "titleAr": "غزوة مؤته8هـ",
+   "category": "battle",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#5-1448-d6"
+    }
+   ]
+  },
+  {
+   "month": 5,
+   "day": 12,
+   "titleAr": "وفاة عبدا... بن عبدالمطلب والد الرسول الأكرم(ص)",
+   "category": "martyrdom",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#5-1448-d12"
+    }
+   ]
+  },
+  {
+   "month": 5,
+   "day": 22,
+   "titleAr": "وفاة القاسم ابن الامام موسى الكاظم(ع)192هـ",
+   "category": "martyrdom",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#5-1448-d22"
+    }
+   ]
+  },
+  {
+   "month": 5,
+   "day": 28,
+   "titleAr": "وفاة السفير الثاني محمد بن عثمان304هـ",
+   "category": "martyrdom",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#5-1448-d28"
+    }
+   ]
+  }
+ ],
+ "titleFixes": [
+  {
+   "month": 6,
+   "day": 19,
+   "from": "(والدي النبي ص)",
+   "to": "(والدي النبي (ص))"
+  },
+  {
+   "month": 8,
+   "day": 15,
+   "from": "(ليلة مولد الإمام المهدي عج)",
+   "to": "(ليلة مولد الإمام المهدي (عج))"
+  }
+ ],
+ "noteFixes": [
+  {
+   "month": 7,
+   "day": 6,
+   "from": "على قول (الكليني والمفيد بحسب تقويم رافد)",
+   "to": "على قول"
+  }
+ ],
+ "exclusions": [
+  {
+   "month": 1,
+   "day": 1,
+   "titleAr": "وفاة محمد بن الحنفية",
+   "reason": "borderline (no year; not confirmed as a Twelver commemoration) - user decides"
+  },
+  {
+   "month": 1,
+   "day": 1,
+   "titleAr": "غزوة ذات الرقاع4هـ",
+   "reason": "self-contradicting: the scans print it on both 1 Muharram and 16 Jumada I"
+  },
+  {
+   "month": 5,
+   "day": 16,
+   "titleAr": "غزوة ذات الرقاع 4هـ",
+   "reason": "self-contradicting: the scans print it on both 1 Muharram and 16 Jumada I"
+  },
+  {
+   "month": 2,
+   "day": 3,
+   "titleAr": "احراق مسلم بن عقبة الكعبة بأمر من يزيد64هـ",
+   "reason": "self-contradicting: 3 Safar vs 3 Rabi' I (3/3)"
+  },
+  {
+   "month": 5,
+   "day": 19,
+   "titleAr": "مقتل زيد بن صوحان36هـ",
+   "reason": "self-contradicting: the scans print it on both 19 and 21 Jumada I (5/21 استشهاد الصحابي الجليل زيد بن صوحان)"
+  },
+  {
+   "month": 2,
+   "day": 28,
+   "titleAr": "وغداً إسقاط الزهراء(ع) لمحسن",
+   "reason": "relative-day wording («وغداً»): the event date is 29 Safar or 28 Safar - ambiguous, user decides"
+  },
+  {
+   "month": 3,
+   "day": 26,
+   "titleAr": "صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ",
+   "reason": "verbatim title contains the denylisted name «معاوية»; user decides on a cleaned title"
+  },
+  {
+   "month": null,
+   "day": null,
+   "titleAr": "Section D of SCANS-VS-DB.md (68 items)",
+   "reason": "scholars/marja'/modern martyrs, Sunni figures and rulers, modern/unrelated history"
+  },
+  {
+   "month": null,
+   "day": null,
+   "titleAr": "Section E of SCANS-VS-DB.md (other borderline items)",
+   "reason": "earlier prophets' events, Zayd b. Ali, Nafisa, Unity Week, modern attacks on shrines, unclear wording"
+  }
+ ],
+ "userDecisions": [
+  {
+   "month": 3,
+   "day": 12,
+   "titleAr": "وصول النبي (ص) إلى المدينة (قباء) - DB 12 vs scan 11 Rabi' I «وصول الرسول لأرض يثرب» (and 2 Safar «نزول النبي(ص) بقباء»)",
+   "reason": "B7: no change; user decides"
+  },
+  {
+   "month": 5,
+   "day": 2,
+   "titleAr": "بدأ نزول الوحي على النبي محمد(ص) vs المبعث 27 رجب",
+   "reason": "B8: no change; user decides"
+  },
+  {
+   "month": 1,
+   "day": 1,
+   "titleAr": "وفاة محمد بن الحنفية",
+   "reason": "borderline; not added"
+  },
+  {
+   "month": 2,
+   "day": 28,
+   "titleAr": "وغداً إسقاط الزهراء(ع) لمحسن",
+   "reason": "not added (highlighted in the scan)"
+  },
+  {
+   "month": 3,
+   "day": 26,
+   "titleAr": "صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ",
+   "reason": "not added (denylisted word)"
+  }
+ ]
+}

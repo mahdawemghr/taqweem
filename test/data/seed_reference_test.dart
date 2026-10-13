@@ -91,7 +91,7 @@ void main() {
       for (var i = 0; i < 30; i++)
         if (d[i].uncertain.isNotEmpty) i + 1,
     ];
-    expect(flagged, [10, 19, 21, 24]);
+    expect(flagged, [10]);
     for (final n in flagged) {
       expect(d[n - 1].uncertain, {DayField.note});
     }
@@ -128,9 +128,7 @@ void main() {
   test('Arabic text is reproduced exactly as printed in the scan', () {
     final p = seedReferenceMonth();
     expect(p.texts.article.author, 'الشهيد مرتضى مطهرى');
-    expect(p.days[6].note, contains('الخميني(ر ض)'));
-    expect(p.days[18].note, contains('آيةا...قاضي'));
-    expect(p.days[22].note, contains('آيةا... محمد'));
+    expect(p.days[24].note, '');
     expect(defaultFooterNotes, contains('ان يعمل على حسب فتوى مرجعه'));
     expect(p.texts.footerNotes, defaultFooterNotes);
   });
@@ -142,7 +140,7 @@ void main() {
   test(
     'search is capped at 8, empty query gives nothing, suggestions unique',
     () {
-      expect(searchOccasions('وفاة').length, 8);
+      expect(searchOccasions('ال').length, 8);
       expect(searchOccasions('   '), isEmpty);
       expect(searchOccasions('لا يوجد شيء كهذا'), isEmpty);
       expect(occasionSuggestions.toSet().length, occasionSuggestions.length);
@@ -151,4 +149,78 @@ void main() {
       }
     },
   );
+
+  group('Shia-only cleanup (S4b)', () {
+    const removedMarkers = [
+      'اصفهاني', 'ميثم', 'الخميني', 'الخونساري', 'الوائلي', 'الفخر الرازي',
+      'الطباطبائي', 'الشهيد الأول', 'المسجد الأقصى', 'الهندي', 'ابن شاذان',
+      'بهجت', 'محمد تقي القمي', 'النائيني', 'معاوية', 'الحرب العالمية',
+      'هيروشيما', 'النسائي', 'الاسترابادي',
+    ];
+    const keptByIndex = <int, String>{
+      1: 'بدأ نزول الوحي على النبي محمد(ص)',
+      4: 'مولد السيدة زينب الكبرى(ع) - يوم الممرضة المسلمة',
+      5: 'غزوة مؤته8هـ',
+      8: 'هدم مسجد رد الشمس لأمير المؤمنين(ع)في المدينة1422هـ',
+      9: 'حرب الجمل 36هـ - اعطاء الزهراء القميص لأبنتها حتى تعطيه الحسين(ع)',
+      10: 'وفاة النبي شيث(ع)',
+      11: 'وفاة عبدا... بن عبدالمطلب والد الرسول الأكرم(ص)',
+      12: 'ذكرى استشهاد سيدة نساء العالمين فاطمة الزهراء(ع)11هـ',
+      14: 'فتح البصرة على يدالإمام علي بن أبي طالب(ع)',
+      15: 'غزوة ذات الرقاع 4هـ',
+      17: 'ولادة ذوالقرنين - بدء نزول الألواح على النبي موسى(ع)',
+      18: 'مقتل زيد بن صوحان36هـ',
+      20: 'استشهاد الصحابي الجليل زيد بن صوحان',
+      21: 'وفاة القاسم ابن الامام موسى الكاظم(ع)192هـ',
+      25: 'ولادة النبي صالح (ع)',
+      26: 'تفجير ماذنتي حرم الامامين الهادي والعسكري1428هـ',
+      27: 'وفاة السفير الثاني محمد بن عثمان304هـ',
+      28: 'ولادة النبي إسماعيل(ع)',
+    };
+    const blankIdx = [0, 2, 3, 6, 7, 13, 16, 19, 22, 23, 24, 29];
+
+    test('no seed note or suggestion contains a removed marker', () {
+      final all = [
+        ...seedReferenceMonth().days.map((d) => d.note),
+        ...occasionSuggestions,
+      ];
+      for (final s in all) {
+        for (final m in removedMarkers) {
+          expect(s.contains(m), isFalse, reason: '"$m" in "$s"');
+        }
+      }
+    });
+
+    test('kept notes are present verbatim, removed rows are blank', () {
+      final d = seedReferenceMonth().days;
+      keptByIndex.forEach((i, text) {
+        expect(d[i].note, text, reason: 'row ${i + 1}');
+        expect(occasionSuggestions, contains(text));
+      });
+      for (final i in blankIdx) {
+        expect(d[i].note, '', reason: 'row ${i + 1}');
+        expect(d[i].uncertain, isEmpty, reason: 'row ${i + 1}');
+      }
+      expect(d[9].uncertain, {DayField.note});
+    });
+
+    test('Safar block keeps only Imam / companion lines', () {
+      expect(occasionSuggestions, contains(
+          'ذكرى استشهاد الإمام المجتبى (ع)50هـ ومولد الإمام الكاظم (ع)128هـ'));
+      expect(occasionSuggestions,
+          contains('شهادة محمد بن أبي بكر(رض)في مصر38هـ'));
+      expect(occasionSuggestions,
+          contains('ذكرى استشهاد الإمام علي بن موسى الرضا (ع) 203هـ'));
+      expect(occasionSuggestions, contains('شهادة أويس القرني(رض)في صفين'));
+    });
+
+    test('highlights unchanged and no hard validation issues', () {
+      final p = seedReferenceMonth();
+      expect(
+        [for (var i = 0; i < 30; i++) if (p.days[i].highlighted) i],
+        [4, 12, 21],
+      );
+      expect(validatePoster(p), isEmpty);
+    });
+  });
 }

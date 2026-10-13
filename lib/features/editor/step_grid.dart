@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show ScrollCacheExtent;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/arabic_days.dart';
 import '../../core/arabic_digits.dart';
 import '../../domain/models.dart';
 import '../../domain/occasions_library.dart';
+import '../../domain/shia_occasion.dart';
+import '../../domain/shia_occasions_lookup.dart';
 import '../../domain/time_format.dart';
 import '../../domain/validation.dart';
 import '../../state/editor_controller.dart';
@@ -334,6 +337,35 @@ class _StepGridState extends ConsumerState<StepGrid> {
     );
   }
 
+  /// «تعبئة المناسبات تلقائياً»: after a confirmation, writes the verified
+  /// main occasions into every EMPTY note (one undo step).
+  Future<void> _autofill() async {
+    await _commitFocused();
+    if (!mounted) return;
+    final fills = autofillOccasionNotes(ref.read(editorProvider).poster);
+    if (fills.isEmpty) {
+      _snack('لا توجد مناسبات جاهزة للتعبئة');
+      return;
+    }
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (_) => _AutofillDialog(count: fills.length),
+    );
+    if (ok != true || !mounted) return;
+    var filled = 0;
+    _ctl.update((p) {
+      final days = [...p.days];
+      for (final e in fills.entries) {
+        if (e.key < days.length && days[e.key].note.trim().isEmpty) {
+          days[e.key] = days[e.key].copyWith(note: e.value);
+          filled++;
+        }
+      }
+      return p.copyWith(days: days);
+    });
+    _snack('تمت تعبئة ${arabicDays(filled)}', undo: true);
+  }
+
   Future<void> _openIssues() async {
     await _commitFocused();
     if (!mounted) return;
@@ -374,7 +406,11 @@ class _StepGridState extends ConsumerState<StepGrid> {
         );
         return Column(
           children: [
-            _ToolsBar(onShift: _openShift, onIssues: _openIssues),
+            _ToolsBar(
+              onShift: _openShift,
+              onIssues: _openIssues,
+              onAutofill: _autofill,
+            ),
             Expanded(
               child: wide
                   ? Align(
@@ -423,12 +459,48 @@ class _StepGridState extends ConsumerState<StepGrid> {
 // ---------------------------------------------------------------------------
 
 class _ToolsBar extends StatelessWidget {
-  const _ToolsBar({required this.onShift, required this.onIssues});
-  final VoidCallback onShift, onIssues;
+  const _ToolsBar({
+    required this.onShift,
+    required this.onIssues,
+    required this.onAutofill,
+  });
+  final VoidCallback onShift, onIssues, onAutofill;
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final shift = OutlinedButton.icon(
+      onPressed: onShift,
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size(48, 48),
+        padding: const EdgeInsets.symmetric(horizontal: 14),
+      ),
+      icon: const Icon(Icons.swap_vert_rounded),
+      label: const Text('إزاحة عمود'),
+    );
+    final autofill = FilledButton.tonalIcon(
+      key: const ValueKey('autofill-occasions'),
+      onPressed: onAutofill,
+      style: FilledButton.styleFrom(
+        minimumSize: const Size(48, 48),
+        padding: const EdgeInsets.symmetric(horizontal: 14),
+        backgroundColor: _goldTint,
+        foregroundColor: _goldText,
+        side: BorderSide(color: _gold.withValues(alpha: 0.5)),
+      ),
+      icon: const Icon(Icons.auto_awesome_rounded),
+      label: const Text(
+        'تعبئة المناسبات تلقائياً',
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
+    );
+    final issues = Expanded(
+      child: Align(
+        alignment: AlignmentDirectional.centerStart,
+        child: _IssuesChip(onTap: onIssues),
+      ),
+    );
     return DecoratedBox(
       decoration: BoxDecoration(
         border: Border(
@@ -436,28 +508,99 @@ class _ToolsBar extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 4, 12, 4),
-        child: Row(
+        padding: const EdgeInsets.fromLTRB(12, 4, 12, 6),
+        child: LayoutBuilder(
+          // Phones: the auto-fill button gets its own full-width line.
+          builder: (context, c) => c.maxWidth >= 600
+              ? Row(
+                  children: [
+                    issues,
+                    const SizedBox(width: 8),
+                    autofill,
+                    const SizedBox(width: 8),
+                    shift,
+                  ],
+                )
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(children: [issues, const SizedBox(width: 8), shift]),
+                    const SizedBox(height: 4),
+                    autofill,
+                  ],
+                ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Confirms «تعبئة المناسبات تلقائياً» for [count] days (pops true).
+class _AutofillDialog extends StatelessWidget {
+  const _AutofillDialog({required this.count});
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    return AlertDialog(
+      icon: const Icon(Icons.auto_awesome_rounded, color: _gold),
+      title: const Text('تعبئة المناسبات'),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
-              child: Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: _IssuesChip(onTap: onIssues),
-              ),
+            Text(
+              'سيتم ملء ${arabicDays(count)} بالمناسبات الموثّقة (الأيام التي فيها ملاحظات لن تتغير). متابعة؟',
+              style: theme.textTheme.bodyLarge,
             ),
-            const SizedBox(width: 8),
-            OutlinedButton.icon(
-              onPressed: onShift,
-              style: OutlinedButton.styleFrom(
-                minimumSize: const Size(48, 48),
-                padding: const EdgeInsets.symmetric(horizontal: 14),
+            const SizedBox(height: 14),
+            DecoratedBox(
+              decoration: BoxDecoration(
+                color: cs.surfaceContainerHigh,
+                borderRadius: BorderRadius.circular(10),
               ),
-              icon: const Icon(Icons.swap_vert_rounded),
-              label: const Text('إزاحة عمود'),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.info_outline_rounded,
+                      size: 18,
+                      color: cs.onSurfaceVariant,
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        'المصدر: قاعدة بيانات المناسبات الشيعية المدمجة — تحقق منها قبل الطباعة',
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: cs.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
       ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context, false),
+          style: TextButton.styleFrom(minimumSize: const Size(64, 48)),
+          child: const Text('إلغاء'),
+        ),
+        FilledButton(
+          onPressed: () => Navigator.pop(context, true),
+          style: FilledButton.styleFrom(minimumSize: const Size(88, 48)),
+          child: const Text('تعبئة'),
+        ),
+      ],
     );
   }
 }

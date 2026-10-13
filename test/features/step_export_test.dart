@@ -32,6 +32,21 @@ class _FakeTemplate extends PosterTemplate {
   PosterTheme get theme => const NavyGoldTemplate().theme;
 }
 
+/// A template whose [precache] waits for [gate] (simulates logos that are
+/// still decoding) and logs when it starts / finishes.
+class _GatedTemplate extends _FakeTemplate {
+  _GatedTemplate(this.log) : super('gated', 'قالب بشعار');
+  final List<String> log;
+  final gate = Completer<void>();
+
+  @override
+  Future<void> precache(BuildContext context) async {
+    log.add('precache');
+    await gate.future;
+    log.add('precached');
+  }
+}
+
 class FakeExporter implements PosterExporterApi {
   final calls = <String>[];
   final ratios = <double>[];
@@ -608,6 +623,31 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 300));
     expect(find.text('تعذّرت المشاركة'), findsOneWidget);
+  });
+
+  testWidgets('export awaits the template precache (logos) before capture', (
+    tester,
+  ) async {
+    final fake = FakeExporter();
+    final log = <String>[];
+    final gated = _GatedTemplate(log);
+    await pumpExport(
+      tester,
+      fake,
+      templates: [gated],
+      poster: seedReferenceMonth().copyWith(templateId: 'gated'),
+    );
+    // Preview + picker warm-up started precaching; the gate is still shut.
+    expect(log, contains('precache'));
+    expect(log, isNot(contains('precached')));
+    log.clear();
+    await tapKey(tester, 'export-png');
+    expect(log, ['precache'], reason: 'export asked for the logos');
+    expect(fake.calls, isEmpty, reason: 'no capture before logos decode');
+    gated.gate.complete();
+    await settle(tester);
+    expect(fake.calls, ['png', 'save']);
+    expect(log.indexOf('precached'), greaterThanOrEqualTo(0));
   });
 
   testWidgets('capture uses the displayed template key and name suffix', (

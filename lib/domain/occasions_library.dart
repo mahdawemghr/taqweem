@@ -1,43 +1,33 @@
-/// Occasion strings transcribed verbatim from the reference scans in
-/// `templates/` — only notes that were clearly legible. No invented entries.
+import 'shia_occasion.dart';
+import 'shia_occasions_lookup.dart';
+
+/// Shia-relevant notes from the reference scans, verbatim; scholar/Sunni/
+/// unrelated entries removed per project rule.
 const List<String> occasionSuggestions = [
   // جمادى الأول 1448 (9.09.58 PM)
-  'غداً استشهاد شهيدالمحراب الخامس آية الله اشرف اصفهاني1982م',
   'بدأ نزول الوحي على النبي محمد(ص)',
-  'وفاة الشيخ ميثم البحرانى 679هـ',
   'مولد السيدة زينب الكبرى(ع) - يوم الممرضة المسلمة',
   'غزوة مؤته8هـ',
-  'استشهاد السيد مصطفى الخميني(ر ض)1977/10/23م',
-  'وفاة السيد الخونساري1313هـ',
   'هدم مسجد رد الشمس لأمير المؤمنين(ع)في المدينة1422هـ',
   'حرب الجمل 36هـ - اعطاء الزهراء القميص لأبنتها حتى تعطيه الحسين(ع)',
-  'وفاة النبي شيث(ع) - وفاة المفسر المعروف بالفخر الرازي(رض)',
+  'وفاة النبي شيث(ع)',
   'وفاة عبدا... بن عبدالمطلب والد الرسول الأكرم(ص)',
   'ذكرى استشهاد سيدة نساء العالمين فاطمة الزهراء(ع)11هـ',
-  'وفاة الدكتوراحمدالوائلي1424هـ',
   'فتح البصرة على يدالإمام علي بن أبي طالب(ع)',
   'غزوة ذات الرقاع 4هـ',
   'ولادة ذوالقرنين - بدء نزول الألواح على النبي موسى(ع)',
-  'مقتل زيد بن صوحان36هـ - غداً استشهاد آيةا...قاضي الطباطبائي اول شهيد المحراب1979م',
-  'إستشهاد الشهيد الأول(محمد بن مكي العاملي)786هـ(رض)',
-  'احراق المسجد الأقصى بيد اليهود69هـ - استشهاد الصحابي الجليل زيد بن صوحان',
-  'وفاة القاسم ابن الامام موسى الكاظم(ع)192هـ - وفاة الشاعرسيد رضا الهندي1362هـ',
-  'وفاة الفقيه ابن شاذان 376هـ - يوم أمس رحيل آيةا... محمد تقي بهجت 1430هـ',
-  'وفاة السيد محمد تقي القمي1344هـ - يوم امس استبعادالامام الخميني من ايران الى تركيا1964م',
-  'وفاة معاوية بن يزيد(الخير)64هـ',
-  'ولادة النبي صالح (ع) - وفاة المحقق النائيني1355هـ',
+  'مقتل زيد بن صوحان36هـ',
+  'استشهاد الصحابي الجليل زيد بن صوحان',
+  'وفاة القاسم ابن الامام موسى الكاظم(ع)192هـ',
+  'ولادة النبي صالح (ع)',
   'تفجير ماذنتي حرم الامامين الهادي والعسكري1428هـ',
   'وفاة السفير الثاني محمد بن عثمان304هـ',
   'ولادة النبي إسماعيل(ع)',
-  'وقف الحرب العالمية الأولى1918م',
   // صفر 1448 (9.09.59 PM(1)) — rows re-verified at 4x, exactly as printed
   'ذكرى استشهاد الإمام المجتبى (ع)50هـ ومولد الإمام الكاظم (ع)128هـ',
-  'وفاة العالم ملا جعفر الاسترابادي1263هـ',
-  'وفاة احمد بن شعيب النسائي صاحب كتاب السنن303هـ',
   'شهادة محمد بن أبي بكر(رض)في مصر38هـ',
   'ذكرى استشهاد الإمام علي بن موسى الرضا (ع) 203هـ',
   'شهادة أويس القرني(رض)في صفين',
-  'سقوط أول قنبلة ذرية امريكية على هيروشيما اليابانية 1945م',
 ];
 
 /// Suggestions containing [query] (trimmed substring match), at most 8.
@@ -45,4 +35,21 @@ List<String> searchOccasions(String query) {
   final q = query.trim();
   if (q.isEmpty) return const [];
   return occasionSuggestions.where((s) => s.contains(q)).take(8).toList();
+}
+
+/// What the note field suggests while typing [query]: the Shia occasions
+/// database first (as printed, [ShiaOccasion.noteText]), then the cleaned
+/// [occasionSuggestions]; normalised duplicates once, at most [limit].
+List<String> searchNoteSuggestions(String query, {int limit = 5}) {
+  if (query.trim().isEmpty || limit <= 0) return const [];
+  final seen = <String>{};
+  final out = <String>[];
+  for (final s in [
+    for (final o in searchShiaOccasions(query, limit: limit * 4)) o.noteText,
+    ...searchOccasions(query),
+  ]) {
+    if (out.length >= limit) break;
+    if (seen.add(normalizeArabic(s))) out.add(s);
+  }
+  return out;
 }

@@ -55,6 +55,18 @@ class PosterExporter {
     );
   }
 
+  /// Makes an on-screen poster of [template] ready for [toPng]: waits until
+  /// the template's raster assets are decoded ([PosterTemplate.precache]),
+  /// then for the frame that lays out and paints them. Call it right before
+  /// every capture; a vector-only template only waits for the frame.
+  static Future<void> prepareCapture(
+    BuildContext context,
+    PosterTemplate template,
+  ) async {
+    await template.precache(context);
+    await WidgetsBinding.instance.endOfFrame;
+  }
+
   /// Captures the [RepaintBoundary] behind [boundaryKey] as PNG bytes.
   /// [pixelRatio] is clamped to 1..4 (NaN becomes 3). Engine failures (e.g.
   /// out of memory at high ratios) surface as [ExportException].

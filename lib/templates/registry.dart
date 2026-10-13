@@ -4,6 +4,7 @@ import 'cream_gold.dart';
 import 'deep_green.dart';
 import 'minimal_modern.dart';
 import 'mosque_blue.dart';
+import 'navy_calligraphy.dart';
 import 'navy_gold.dart';
 import 'poster_template.dart';
 
@@ -15,6 +16,7 @@ List<PosterTemplate> get allTemplates => const <PosterTemplate>[
   MinimalModernTemplate(),
   DeepGreenTemplate(),
   MosqueBlueTemplate(),
+  NavyCalligraphyTemplate(),
 ];
 
 /// The template with [id]; unknown ids resolve to the first registered

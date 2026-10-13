@@ -60,6 +60,14 @@ class _StepExportState extends ConsumerState<StepExport> {
     final i = _templates.indexWhere((t) => t.id == widget.poster.templateId);
     _page = i < 0 ? 0 : i;
     _pages = PageController(initialPage: _page);
+    // Warm every template's logos so swiping to a page never shows a poster
+    // whose logo pops in a frame later.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      for (final t in _templates) {
+        unawaited(t.precache(context));
+      }
+    });
     if (i < 0 && _templates.isNotEmpty) {
       // The stored template no longer exists: make the poster agree with
       // what the picker shows (and the exported file name).
@@ -223,8 +231,10 @@ class _StepExportState extends ConsumerState<StepExport> {
       throw const ExportException('No templates available.');
     }
     final t = templates[math.min(_page, templates.length - 1)];
-    // The page must be laid out and painted before it is captured.
-    await WidgetsBinding.instance.endOfFrame;
+    // The page (and its logos) must be loaded, laid out and painted before
+    // it is captured.
+    await PosterExporter.prepareCapture(context, t);
+    if (!mounted) throw const ExportException('Export step closed.');
     final png = await api.toPng(_keyFor(t.id), pixelRatio: ratio);
     final pdf = kind == _Kind.pdf;
     final bytes = pdf ? await api.toPdf(png, size: _pdfSize) : png;

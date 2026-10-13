@@ -10,6 +10,7 @@ import 'package:taqweem/features/preview/poster_preview.dart';
 import 'package:taqweem/templates/registry.dart';
 
 import '../test_helpers/load_fonts.dart';
+import '../test_helpers/precache.dart';
 
 void main() {
   setUpAll(loadAppFonts);
@@ -46,6 +47,8 @@ void main() {
         ),
       );
       await tester.pump();
+      // What StepExport does before capturing: decode the logos + a frame.
+      await precacheTemplate(tester, t);
 
       final result = await tester.runAsync(() async {
         final png = await PosterExporter.toPng(key, pixelRatio: 2);

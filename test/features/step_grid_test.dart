@@ -6,6 +6,7 @@ import 'package:taqweem/core/app_theme.dart';
 import 'package:taqweem/data/seed_reference.dart';
 import 'package:taqweem/domain/calendar_fill.dart';
 import 'package:taqweem/domain/models.dart';
+import 'package:taqweem/domain/occasions_library.dart';
 import 'package:taqweem/domain/time_format.dart';
 import 'package:taqweem/domain/weekday.dart';
 import 'package:taqweem/features/editor/editor_shell.dart';
@@ -205,7 +206,12 @@ void main() {
 
   testWidgets('e) occasion suggestion tap fills the note', (tester) async {
     final c = await pumpGrid(tester, generated());
+    // The built-in Shia database comes first while typing.
     await tester.enterText(note(0), 'الزهراء');
+    await tester.pump();
+    expect(find.text(searchNoteSuggestions('الزهراء').first), findsOneWidget);
+    // The cleaned library still follows for its own wording.
+    await tester.enterText(note(0), 'نساء العالمين');
     await tester.pump();
     const s = 'ذكرى استشهاد سيدة نساء العالمين فاطمة الزهراء(ع)11هـ';
     expect(find.text(s), findsOneWidget);
@@ -839,8 +845,15 @@ void main() {
   testWidgets('M9 done on day 30 maghrib unfocuses', (tester) async {
     final c = await pumpGrid(tester, generated());
     final f = find.byKey(const ValueKey('grid-list'));
-    await tester.drag(f, const Offset(0, -20000));
-    await tester.pumpAndSettle();
+    // Rows carry occasion chips: one fling may stop short of the end.
+    for (
+      var k = 0;
+      k < 4 && cell(29, PrayerSlot.maghrib).evaluate().isEmpty;
+      k++
+    ) {
+      await tester.drag(f, const Offset(0, -20000));
+      await tester.pumpAndSettle();
+    }
     await tester.enterText(cell(29, PrayerSlot.maghrib), '505');
     await tester.testTextInput.receiveAction(TextInputAction.done);
     await tester.pumpAndSettle();

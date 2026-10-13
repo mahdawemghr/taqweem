@@ -175,6 +175,12 @@ class _DayRowItemState extends ConsumerState<_DayRowItem> {
     final isLast = ref.watch(
       editorProvider.select((s) => i == s.poster.days.length - 1),
     );
+    final month = ref.watch(
+      editorProvider.select((s) => s.poster.hijriMonthIndex),
+    );
+    final daysInMonth = ref.watch(
+      editorProvider.select((s) => s.poster.days.length),
+    );
     final issues = ref.watch(
       gridIssuesProvider.select(
         (l) => [
@@ -238,6 +244,11 @@ class _DayRowItemState extends ConsumerState<_DayRowItem> {
       floatingLabel: !widget.wide,
       onCommit: (t) => _updateRow((r) => r.copyWith(note: t)),
       onToggleUncertain: () => _toggleUncertain(DayField.note),
+      occasions: occasionsFor(
+        hijriMonthIndex: month,
+        day: row.hijriDay,
+        daysInMonth: daysInMonth,
+      ),
     );
 
     DateChip date(DayField f, DayCell c) => DateChip(

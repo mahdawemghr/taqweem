@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 
 import '../../domain/models.dart';
@@ -13,7 +15,14 @@ import '../../templates/registry.dart';
 ///
 /// System text scaling is disabled inside the poster so accessibility font
 /// sizes can never break its layout.
-class PosterPreview extends StatelessWidget {
+///
+/// Logos: on its first build (and whenever the template changes) the preview
+/// starts [PosterTemplate.precache], so the template's images are decoded
+/// into the shared image cache once; every later preview of that template
+/// (home thumbnails, editor mini preview, export pages) then shows its logo
+/// in the very first frame instead of popping it in. Vector-only templates
+/// make this a no-op.
+class PosterPreview extends StatefulWidget {
   const PosterPreview({
     super.key,
     required this.poster,
@@ -28,16 +37,49 @@ class PosterPreview extends StatelessWidget {
   final PosterTemplate? template;
 
   @override
+  State<PosterPreview> createState() => _PosterPreviewState();
+}
+
+class _PosterPreviewState extends State<PosterPreview> {
+  /// Id of the template whose images were last precached by this preview.
+  String? _warmed;
+
+  PosterTemplate get _template =>
+      widget.template ?? templateById(widget.poster.templateId);
+
+  void _warm() {
+    final t = _template;
+    if (_warmed == t.id) return;
+    _warmed = t.id;
+    unawaited(t.precache(context));
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _warm();
+  }
+
+  @override
+  void didUpdateWidget(PosterPreview oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _warm();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final t = template ?? templateById(poster.templateId);
+    final t = _template;
     final mq = MediaQuery.maybeOf(context) ?? const MediaQueryData();
     Widget child = FittedBox(
       child: RepaintBoundary(
-        key: boundaryKey,
-        child: SizedBox.fromSize(size: kPosterSize, child: t.build(poster)),
+        key: widget.boundaryKey,
+        child: SizedBox.fromSize(
+          size: kPosterSize,
+          child: t.build(widget.poster),
+        ),
       ),
     );
-    final w = width;
+    final w = widget.width;
     if (w != null) {
       child = SizedBox(
         width: w,

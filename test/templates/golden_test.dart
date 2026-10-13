@@ -11,6 +11,7 @@ import 'package:taqweem/features/preview/poster_preview.dart';
 import 'package:taqweem/templates/registry.dart';
 
 import '../test_helpers/load_fonts.dart';
+import '../test_helpers/precache.dart';
 
 void main() {
   setUpAll(loadAppFonts);
@@ -23,6 +24,8 @@ void main() {
       final poster = seedReferenceMonth().copyWith(templateId: t.id);
       await tester.pumpWidget(MaterialApp(
           home: Scaffold(body: PosterPreview(poster: poster, width: 1000))));
+      // Logos load asynchronously: decode them before comparing.
+      await precacheTemplate(tester, t);
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
       await expectLater(
