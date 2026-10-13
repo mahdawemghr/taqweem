@@ -1,0 +1,1122 @@
+{
+ "months": [
+  {
+   "month": 1,
+   "monthNameAr": "محرم",
+   "occasions": [
+    {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "غرة محرم - رأس السنة الهجرية",
+     "category": "other",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر محرم",
+       "url": "https://ar.wikishia.net/view/شهر_محرم",
+       "statesDate": "1 محرم (صيام اليوم الأول وصلاة الليلة الأولى)"
+      },
+      {
+       "name": "منتدى العتبة العباسية (الكفيل) - جدول مناسبات محرم",
+       "url": "https://forums.alkafeel.net/node/35636?p=383678",
+       "statesDate": "1: رأس السنة الهجرية"
+      }
+     ],
+     "confidence": "medium",
+     "notes": null
+    },
+    {
+     "day": 2,
+     "isNight": false,
+     "titleAr": "وصول الإمام الحسين (ع) وأصحابه إلى كربلاء",
+     "category": "event",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر محرم",
+       "url": "https://ar.wikishia.net/view/شهر_محرم",
+       "statesDate": "2 محرم 61هـ"
+      },
+      {
+       "name": "منتدى العتبة العباسية (الكفيل) - جدول مناسبات محرم",
+       "url": "https://forums.alkafeel.net/node/35636?p=383678",
+       "statesDate": "2: وصول سيد الشهداء (ع) إلى كربلاء سنة 61هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 7,
+     "isNight": false,
+     "titleAr": "منع الماء عن الإمام الحسين (ع) وأهل بيته وأصحابه",
+     "category": "event",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر محرم",
+       "url": "https://ar.wikishia.net/view/شهر_محرم",
+       "statesDate": "7 محرم 61هـ"
+      },
+      {
+       "name": "منتدى العتبة العباسية (الكفيل) - جدول مناسبات محرم",
+       "url": "https://forums.alkafeel.net/node/35636?p=383678",
+       "statesDate": "7: منع الماء عن أهل البيت (ع) في كربلاء"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 9,
+     "isNight": false,
+     "titleAr": "تاسوعاء - حصار مخيم الإمام الحسين (ع)",
+     "category": "event",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر محرم",
+       "url": "https://ar.wikishia.net/view/شهر_محرم",
+       "statesDate": "9 محرم: تاسوعاء"
+      },
+      {
+       "name": "منتدى الكفيل - تواريخ المناسبات الدينية",
+       "url": "https://forums.alkafeel.net/node/10018",
+       "statesDate": "9 محرم: تاسوعاء (ليلة الوداع)"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 10,
+     "isNight": false,
+     "titleAr": "يوم عاشوراء - استشهاد الإمام الحسين (ع) وأهل بيته وأصحابه",
+     "category": "martyrdom",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر محرم",
+       "url": "https://ar.wikishia.net/view/شهر_محرم",
+       "statesDate": "10 محرم 61هـ"
+      },
+      {
+       "name": "منتدى العتبة العباسية (الكفيل) - جدول مناسبات محرم",
+       "url": "https://forums.alkafeel.net/node/35636?p=383678",
+       "statesDate": "10: ذكرى يوم عاشوراء (واقعة الطف) 61هـ"
+      },
+      {
+       "name": "منتدى الكفيل - تواريخ المناسبات الدينية",
+       "url": "https://forums.alkafeel.net/node/10018",
+       "statesDate": "10 محرم: عاشوراء"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 11,
+     "isNight": false,
+     "titleAr": "سَوق أهل بيت الإمام الحسين (ع) سبايا نحو الكوفة",
+     "category": "event",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر محرم",
+       "url": "https://ar.wikishia.net/view/شهر_محرم",
+       "statesDate": "11 محرم 61هـ"
+      },
+      {
+       "name": "منتدى العتبة العباسية (الكفيل) - جدول مناسبات محرم",
+       "url": "https://forums.alkafeel.net/node/35636?p=383678",
+       "statesDate": "11: سبي العترة الطاهرة (ع) إلى الكوفة"
+      }
+     ],
+     "confidence": "medium",
+     "notes": null
+    },
+    {
+     "day": 19,
+     "isNight": false,
+     "titleAr": "انتقال قافلة سبايا أهل البيت (ع) من الكوفة إلى الشام",
+     "category": "event",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر محرم",
+       "url": "https://ar.wikishia.net/view/شهر_محرم",
+       "statesDate": "19 محرم 61هـ"
+      },
+      {
+       "name": "منتدى العتبة العباسية (الكفيل) - جدول مناسبات محرم",
+       "url": "https://forums.alkafeel.net/node/35636?p=383678",
+       "statesDate": "19: انتقال سبايا أهل البيت (ع) من الكوفة إلى الشام 61هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 25,
+     "isNight": false,
+     "titleAr": "ذكرى استشهاد الإمام زين العابدين علي بن الحسين السجاد (ع)",
+     "category": "martyrdom",
+     "figure": "Imam Zayn al-Abidin",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر محرم",
+       "url": "https://ar.wikishia.net/view/شهر_محرم",
+       "statesDate": "25 محرم (وبديله 12 محرم) 94 أو 95هـ"
+      },
+      {
+       "name": "WikiShia - 25 محرم",
+       "url": "https://ar.wikishia.net/view/25_محرم",
+       "statesDate": "25 محرم 95هـ"
+      },
+      {
+       "name": "منتدى العتبة العباسية (الكفيل) - جدول مناسبات محرم",
+       "url": "https://forums.alkafeel.net/node/35636?p=383678",
+       "statesDate": "25: ذكرى شهادة الإمام علي بن الحسين (ع) 95هـ"
+      },
+      {
+       "name": "منتدى الكفيل - تواريخ المناسبات الدينية",
+       "url": "https://forums.alkafeel.net/node/10018",
+       "statesDate": "25 محرم"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Main per WikiShia day page, alkafeel tables. WikiShia month table also gives 12 Muharram (see unconfirmed). Year 94 or 95 AH."
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "ليلة عاشوراء (ليلة 10 محرم)",
+     "claimedDay": 10,
+     "reason": "Night is attested only by WikiShia (month page observances + category page 'ليلة عاشوراء'); no second independent Shia page opened. Universally commemorated - controller may add as isNight on day 10 if accepted."
+    },
+    {
+     "titleAr": "ورود عمر بن سعد بجيشه إلى كربلاء",
+     "claimedDay": 3,
+     "reason": "Only alkafeel forum tables state 3 Muharram; WikiShia lists the event without a day."
+    },
+    {
+     "titleAr": "وصول السبايا إلى الكوفة",
+     "claimedDay": 12,
+     "reason": "Only alkafeel forum (35636). WikiShia month table does not list it; it lists 12 Muharram only as alternate date of Imam al-Sajjad's martyrdom."
+    },
+    {
+     "titleAr": "دفن شهداء الطف (الحسين وأهل بيته)",
+     "claimedDay": 13,
+     "reason": "Only alkafeel forum (35636) gives 13 Muharram; WikiShia category lists the burial without a day. Tried: WikiShia month page, alkafeel x3."
+    },
+    {
+     "titleAr": "استشهاد الإمام السجاد (ع) على قول 12 محرم",
+     "claimedDay": 12,
+     "reason": "Alternate stated only in WikiShia month table (94/95 AH); no second Shia source opened. Alternate not confirmed."
+    },
+    {
+     "titleAr": "استشهاد النبي يحيى (ع)",
+     "claimedDay": 6,
+     "reason": "WikiShia month table only; alkafeel/WikiShia Safar tables put Yahya on 20 or 25 Safar (conflict)."
+    },
+    {
+     "titleAr": "نفي الإمام الجواد (ع) إلى بغداد",
+     "claimedDay": 28,
+     "reason": "WikiShia month table only (220 AH)."
+    },
+    {
+     "titleAr": "حصار مكة ورمي الكعبة بالمنجنيق (جيش يزيد)",
+     "claimedDay": 26,
+     "reason": "WikiShia says 26 Muharram 64 AH; same event is dated 3 Safar (WikiShia) / 3 Rabi' I (alkafeel) - conflict."
+    },
+    {
+     "titleAr": "غزوة ذات الرقاع",
+     "claimedDay": 1,
+     "reason": "alkafeel forum only."
+    },
+    {
+     "titleAr": "تحويل القبلة (2هـ)",
+     "claimedDay": 16,
+     "reason": "alkafeel forum only; other Shia calendars put it in Rajab/Sha'ban."
+    },
+    {
+     "titleAr": "قدوم أصحاب الفيل إلى مكة",
+     "claimedDay": 17,
+     "reason": "alkafeel forum only."
+    }
+   ],
+   "excluded": [
+    {
+     "title": "عبور النبي موسى (ع) البحر - 5 محرم",
+     "reason": "Outside Ahl al-Bayt scope; alkafeel only."
+    },
+    {
+     "title": "واقعة الحرة 63هـ (13 محرم، alkafeel)",
+     "reason": "Historical event, single source; outside scope unless user decides."
+    },
+    {
+     "title": "معركة القادسية 14هـ (25 محرم، alkafeel)",
+     "reason": "Not an Ahl al-Bayt/Shia commemoration."
+    },
+    {
+     "title": "تفجير حرم الإمام الرضا (ع) 10 محرم 1415هـ؛ تفجير مرقد العسكريين (ع) 23 محرم 1427هـ",
+     "reason": "Modern events (WikiShia) - excluded as modern; user may decide."
+    },
+    {
+     "title": "صيام 21 محرم / صلوات ليالي وأيام محرم",
+     "reason": "Acts of worship, not dated occasions (WikiShia); user may add."
+    }
+   ]
+  },
+  {
+   "month": 2,
+   "monthNameAr": "صفر",
+   "occasions": [
+    {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "دخول سبايا آل محمد (ع) ورؤوس الشهداء إلى الشام",
+     "category": "event",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر صفر",
+       "url": "https://ar.wikishia.net/view/شهر_صفر",
+       "statesDate": "1 صفر 61هـ"
+      },
+      {
+       "name": "WikiShia - 1 صفر",
+       "url": "https://ar.wikishia.net/view/1_صفر",
+       "statesDate": "1 صفر 61هـ"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "1 صفر: دخول قافلة السبايا والرؤوس إلى الشام 61هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "واقعة صفين - الحرب الأخيرة وإتمام الحجة على أهل الشام",
+     "category": "battle",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - 1 صفر",
+       "url": "https://ar.wikishia.net/view/1_صفر",
+       "statesDate": "1 صفر 37هـ"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "1 صفر: واقعة صفين 37هـ"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Exact start day differs in narrations; calendars place the final phase on 1 Safar."
+    },
+    {
+     "day": 5,
+     "isNight": false,
+     "titleAr": "استشهاد السيدة رقية بنت الإمام الحسين (ع) في الشام",
+     "category": "martyrdom",
+     "figure": "Lady Ruqayya bint al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - 5 صفر",
+       "url": "https://ar.wikishia.net/view/5_صفر",
+       "statesDate": "5 صفر 61هـ"
+      },
+      {
+       "name": "منتدى الكفيل - 5 صفر وفاة رقية بنت الحسين (ع) (العنوان من نتيجة البحث)",
+       "url": "https://forums.alkafeel.net/node/924023",
+       "statesDate": "5 صفر وفاة رقية بنت الإمام الحسين (ع)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "alkafeel node/49201 lists 3 Safar (conflict, see unconfirmed); title of node 924023 was seen in search results, page body not read."
+    },
+    {
+     "day": 7,
+     "isNight": false,
+     "titleAr": "مولد الإمام موسى بن جعفر الكاظم (ع)",
+     "category": "birth",
+     "figure": "Imam al-Kadhim",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر صفر",
+       "url": "https://ar.wikishia.net/view/شهر_صفر",
+       "statesDate": "7 صفر 128هـ"
+      },
+      {
+       "name": "WikiShia - 7 صفر",
+       "url": "https://ar.wikishia.net/view/7_صفر",
+       "statesDate": "7 صفر 128هـ (على رواية)"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "7 صفر: ميلاد الإمام الكاظم (ع) 128هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 8,
+     "isNight": false,
+     "titleAr": "وفاة سلمان المحمدي (الفارسي) (رض)",
+     "category": "other",
+     "figure": "Salman al-Farsi",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - 8 صفر",
+       "url": "https://ar.wikishia.net/view/8_صفر",
+       "statesDate": "8 صفر 36هـ"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "8 صفر: وفاة سلمان المحمدي عام 35هـ"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Year differs (35/36 AH); alkafeel node/49201 gives 7 Safar."
+    },
+    {
+     "day": 9,
+     "isNight": false,
+     "titleAr": "استشهاد عمار بن ياسر (رض) في صفين",
+     "category": "martyrdom",
+     "figure": "Ammar ibn Yasir",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - 9 صفر",
+       "url": "https://ar.wikishia.net/view/9_صفر",
+       "statesDate": "9 صفر 37هـ"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "9 صفر: شهادة عمار بن ياسر في صفين"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "alkafeel node/49201 gives 8 Safar."
+    },
+    {
+     "day": 9,
+     "isNight": false,
+     "titleAr": "معركة النهروان",
+     "category": "battle",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - 9 صفر",
+       "url": "https://ar.wikishia.net/view/9_صفر",
+       "statesDate": "9 صفر 38هـ"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "9 صفر: معركة النهروان 38هـ"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر صفر",
+       "url": "https://forums.alkafeel.net/node/49201?p=49201",
+       "statesDate": "9 صفر: معركة النهروان 38هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 17,
+     "isNight": false,
+     "titleAr": "استشهاد الإمام علي بن موسى الرضا (ع)",
+     "category": "martyrdom",
+     "figure": "Imam al-Ridha",
+     "variant": "alternate",
+     "alternateNoteAr": "على رواية (أخرى)",
+     "sources": [
+      {
+       "name": "WikiShia - عشرة صفر",
+       "url": "https://ar.wikishia.net/view/عشرة_صفر",
+       "statesDate": "17 صفر (صندوق التنقل)"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "17 صفر: شهادة الإمام الرضا (ع) 203هـ"
+      },
+      {
+       "name": "WikiShia - الإمام الرضا (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الرضا_عليه_السلام",
+       "statesDate": "17 صفر - من روايات الكليني"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Alternate to last-of-Safar; WikiShia Ridha article cites Kulayni listing 17 Safar."
+    },
+    {
+     "day": 20,
+     "isNight": false,
+     "titleAr": "أربعينية الإمام الحسين (ع) - زيارة الأربعين",
+     "category": "event",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر صفر",
+       "url": "https://ar.wikishia.net/view/شهر_صفر",
+       "statesDate": "20 صفر 61هـ"
+      },
+      {
+       "name": "WikiShia - 20 صفر",
+       "url": "https://ar.wikishia.net/view/20_صفر",
+       "statesDate": "20 صفر: الأربعين الحسيني"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "20 صفر: أربعينية الإمام الحسين (ع)"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر صفر",
+       "url": "https://forums.alkafeel.net/node/49201?p=49201",
+       "statesDate": "20 صفر: الأربعين"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 20,
+     "isNight": false,
+     "titleAr": "عودة أهل بيت الإمام الحسين (ع) إلى كربلاء",
+     "category": "event",
+     "figure": "Imam al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - 20 صفر",
+       "url": "https://ar.wikishia.net/view/20_صفر",
+       "statesDate": "20 صفر 61هـ (على رواية)"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "20 صفر: ورود السبايا إلى كربلاء 61هـ"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "WikiShia Safar page puts the return on 17 Safar in one place; 20 Safar given by WikiShia day page and alkafeel."
+    },
+    {
+     "day": 28,
+     "isNight": false,
+     "titleAr": "وفاة النبي الأكرم محمد (ص)",
+     "category": "martyrdom",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر صفر",
+       "url": "https://ar.wikishia.net/view/شهر_صفر",
+       "statesDate": "28 صفر 11هـ"
+      },
+      {
+       "name": "WikiShia - 28 صفر",
+       "url": "https://ar.wikishia.net/view/28_صفر",
+       "statesDate": "28 صفر 11هـ (بحسب التقاويم)"
+      },
+      {
+       "name": "WikiShia - وفاة النبي (ص) (ملخص نتيجة البحث فقط)",
+       "url": "https://ar.wikishia.net/view/وفاة_النبي_(ص)",
+       "statesDate": "28 صفر على القول المشهور عند الشيعة"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر صفر",
+       "url": "https://forums.alkafeel.net/node/49201?p=49201",
+       "statesDate": "28 صفر"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 28,
+     "isNight": false,
+     "titleAr": "استشهاد الإمام الحسن المجتبى (ع)",
+     "category": "martyrdom",
+     "figure": "Imam al-Hasan al-Mujtaba",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر صفر",
+       "url": "https://ar.wikishia.net/view/شهر_صفر",
+       "statesDate": "28 صفر 50هـ"
+      },
+      {
+       "name": "WikiShia - 28 صفر",
+       "url": "https://ar.wikishia.net/view/28_صفر",
+       "statesDate": "28 صفر 50هـ"
+      },
+      {
+       "name": "WikiShia - الإمام الحسن المجتبى (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الحسن_المجتبى",
+       "statesDate": "28 صفر 50هـ (إطار المعلومات)"
+      },
+      {
+       "name": "snn.ir (خبر: إجماع العلماء على 28 صفر)",
+       "url": "https://snn.ir/fa/news/164687/اجماع-علما-بر-شهادت-امام-حسن-مجتبي-ع-در-روز-28-صفر-است",
+       "statesDate": "الإجماع على 28 صفر"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر صفر",
+       "url": "https://forums.alkafeel.net/node/49201?p=49201",
+       "statesDate": "28 صفر"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 7,
+     "isNight": false,
+     "titleAr": "استشهاد الإمام الحسن المجتبى (ع)",
+     "category": "martyrdom",
+     "figure": "Imam al-Hasan al-Mujtaba",
+     "variant": "alternate",
+     "alternateNoteAr": "على رواية",
+     "sources": [
+      {
+       "name": "WikiShia - شهر صفر",
+       "url": "https://ar.wikishia.net/view/شهر_صفر",
+       "statesDate": "7 صفر 50هـ"
+      },
+      {
+       "name": "WikiShia - 7 صفر",
+       "url": "https://ar.wikishia.net/view/7_صفر",
+       "statesDate": "7 صفر 50هـ (على رواية)"
+      },
+      {
+       "name": "WikiShia - عشرة صفر",
+       "url": "https://ar.wikishia.net/view/عشرة_صفر",
+       "statesDate": "7 صفر (صندوق التنقل)"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "7 صفر: شهادة الإمام الحسن المجتبى (ع) 50هـ"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Second view; some contemporary researchers prefer it (per snn.ir)."
+    },
+    {
+     "day": 30,
+     "isNight": false,
+     "titleAr": "استشهاد الإمام علي بن موسى الرضا (ع) - آخر صفر",
+     "category": "martyrdom",
+     "figure": "Imam al-Ridha",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - شهر صفر",
+       "url": "https://ar.wikishia.net/view/شهر_صفر",
+       "statesDate": "آخر صفر (29) 203هـ"
+      },
+      {
+       "name": "WikiShia - 30 صفر",
+       "url": "https://ar.wikishia.net/view/30_صفر",
+       "statesDate": "30 صفر: آخر صفر 203هـ"
+      },
+      {
+       "name": "WikiShia - الإمام الرضا (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الرضا_عليه_السلام",
+       "statesDate": "آخر صفر 203هـ - الطبرسي؛ الأشهر"
+      },
+      {
+       "name": "WikiShia - عشرة صفر",
+       "url": "https://ar.wikishia.net/view/عشرة_صفر",
+       "statesDate": "اليوم الأخير من صفر"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "28 صفر: في آخر صفر 203هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Day 30 used because it is the last day of Safar when the month is complete; if month has 29 days the occasion falls on 29. Alkafeel tables place the same view at 28 Safar (typo/variant)."
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "ولادة الإمام الباقر (ع) على رواية",
+     "claimedDay": 1,
+     "reason": "Conflict: alkafeel node/7109 gives 1 Safar, alkafeel node/49201 gives 2 Safar; WikiShia day page 1 Safar does not list it. Main date (1 Rajab) is outside my months."
+    },
+    {
+     "titleAr": "شهادة زيد بن علي بن الحسين",
+     "claimedDay": 3,
+     "reason": "Conflict: alkafeel 3 Safar vs WikiShia 1 Safar (122/131 AH); borderline figure."
+    },
+    {
+     "titleAr": "شهادة رقية بنت الحسين (ع) - 3 صفر",
+     "claimedDay": 3,
+     "reason": "Only alkafeel node/49201; contradicted by WikiShia 5 Safar."
+    },
+    {
+     "titleAr": "شهادة الإمام الرضا (ع) 9 صفر",
+     "claimedDay": 9,
+     "reason": "Only alkafeel node/49201 (listing both 9 and 28)."
+    },
+    {
+     "titleAr": "وفاة النبي (ص) 26 أو 27 صفر",
+     "claimedDay": 27,
+     "reason": "alkafeel node/49201 says 26, node/7109 says 27; no corroboration."
+    },
+    {
+     "titleAr": "شهادة محمد بن أبي بكر والي مصر",
+     "claimedDay": 14,
+     "reason": "alkafeel node/7109 only."
+    },
+    {
+     "titleAr": "زيارة جابر بن عبد الله الأنصاري لقبر الحسين (ع)",
+     "claimedDay": 20,
+     "reason": "WikiShia 20 Safar page only."
+    },
+    {
+     "titleAr": "هجرة النبي (ص) ومبيت علي (ع) على الفراش - 29 صفر",
+     "claimedDay": 29,
+     "reason": "alkafeel node/7109 only; WikiShia/alkafeel node/50004 date Laylat al-Mabit to 1 Rabi' I (see month 3)."
+    },
+    {
+     "titleAr": "وفاة السيدة مريم بنت عمران / النبي يحيى (ع) 20 أو 25 صفر",
+     "claimedDay": 25,
+     "reason": "Out of scope (prophets); conflicting single sources."
+    }
+   ],
+   "excluded": [
+    {
+     "title": "وفاة السيد أبو القاسم الخوئي (8 صفر)، السيد المرعشي (7 صفر)، ولادة السيد علي خامنئي (28 صفر) ...",
+     "reason": "Marja'/scholars/modern - excluded by rule."
+    },
+    {
+     "title": "مقتل أبو بكر البغدادي (28 صفر 1441)",
+     "reason": "Modern politics - excluded."
+    },
+    {
+     "title": "سيطرة الفاطميين على الإسكندرية 8 صفر 307هـ",
+     "reason": "Non-religious historical event."
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "monthNameAr": "ربيع الأول",
+   "occasions": [
+    {
+     "day": 1,
+     "isNight": true,
+     "titleAr": "ليلة المبيت - مبيت الإمام علي (ع) على فراش النبي (ص)",
+     "category": "night",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ربيع الأول",
+       "url": "https://ar.wikishia.net/view/ربيع_الأول",
+       "statesDate": "1 ربيع الأول 1هـ"
+      },
+      {
+       "name": "WikiShia - 1 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/1_ربيع_الأول",
+       "statesDate": "1 ربيع الأول: ليلة المبيت وهجرة النبي"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "01: بات أمير المؤمنين (ع) على فراش النبي (ص)"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "1 ربيع الأول"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "هجرة النبي الأكرم (ص) من مكة إلى المدينة",
+     "category": "event",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ربيع الأول",
+       "url": "https://ar.wikishia.net/view/ربيع_الأول",
+       "statesDate": "1 ربيع الأول 1هـ"
+      },
+      {
+       "name": "WikiShia - 1 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/1_ربيع_الأول",
+       "statesDate": "1 ربيع الأول 1هـ"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "01"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Exit from Thawr cave is stated as night of 4 Rabi' I by alkafeel node/7109 (single)."
+    },
+    {
+     "day": 5,
+     "isNight": false,
+     "titleAr": "وفاة السيدة سكينة بنت الإمام الحسين (ع)",
+     "category": "martyrdom",
+     "figure": "Lady Sakina bint al-Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ربيع الأول",
+       "url": "https://ar.wikishia.net/view/ربيع_الأول",
+       "statesDate": "5 ربيع الأول 117هـ"
+      },
+      {
+       "name": "WikiShia - 5 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/5_ربيع_الأول",
+       "statesDate": "5 ربيع الأول 117هـ"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "05: توفيت السيدة سكينة بنت الإمام الحسين (ع) 117"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "5 ربيع الأول"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 8,
+     "isNight": false,
+     "titleAr": "استشهاد الإمام الحسن بن علي العسكري (ع)",
+     "category": "martyrdom",
+     "figure": "Imam al-Hasan al-Askari",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ربيع الأول",
+       "url": "https://ar.wikishia.net/view/ربيع_الأول",
+       "statesDate": "8 ربيع الأول 260هـ"
+      },
+      {
+       "name": "WikiShia - 8 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/8_ربيع_الأول",
+       "statesDate": "8 ربيع الأول 260هـ (بحسب التقاويم)"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "08: استشهد الإمام الحسن العسكري (ع) 260"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 9,
+     "isNight": false,
+     "titleAr": "بداية إمامة الإمام المهدي المنتظر (عج)",
+     "category": "event",
+     "figure": "Imam al-Mahdi",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - 9 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/9_ربيع_الأول",
+       "statesDate": "9 ربيع الأول 260هـ"
+      },
+      {
+       "name": "WikiShia - ربيع الأول",
+       "url": "https://ar.wikishia.net/view/ربيع_الأول",
+       "statesDate": "9 ربيع الأول 260هـ"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Both sources are WikiShia pages; alkafeel node/50004 states 8 (see alternate)."
+    },
+    {
+     "day": 8,
+     "isNight": false,
+     "titleAr": "بداية إمامة الإمام المهدي (عج) وبدء الغيبة الصغرى",
+     "category": "event",
+     "figure": "Imam al-Mahdi",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول",
+     "sources": [
+      {
+       "name": "WikiShia - 8 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/8_ربيع_الأول",
+       "statesDate": "8 ربيع الأول 260هـ: بداية الغيبة الصغرى"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "08: توج الإمام الثاني عشر المهدي المنتظر (ع)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": null
+    },
+    {
+     "day": 10,
+     "isNight": false,
+     "titleAr": "زواج النبي الأكرم (ص) من السيدة خديجة الكبرى (س)",
+     "category": "event",
+     "figure": "Prophet Muhammad / Lady Khadija",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ربيع الأول",
+       "url": "https://ar.wikishia.net/view/ربيع_الأول",
+       "statesDate": "10 ربيع الأول (قبل البعثة بـ15 سنة)"
+      },
+      {
+       "name": "WikiShia - 10 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/10_ربيع_الأول",
+       "statesDate": "10 ربيع الأول"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "10: زواج رسول الله (ص) من خديجة بنت خويلد"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 12,
+     "isNight": false,
+     "titleAr": "وصول النبي الأكرم (ص) إلى المدينة المنورة (قباء) مهاجراً",
+     "category": "event",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - 12 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/12_ربيع_الأول",
+       "statesDate": "12 ربيع الأول 1هـ (بحسب التقاويم)"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "12: دخل النبي الأكرم (ص) المدينة المنورة"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "alkafeel node/7109 puts the arrival at 10 Rabi' I (conflict, medium)."
+    },
+    {
+     "day": 17,
+     "isNight": false,
+     "titleAr": "مولد النبي الأكرم محمد (ص)",
+     "category": "birth",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ربيع الأول",
+       "url": "https://ar.wikishia.net/view/ربيع_الأول",
+       "statesDate": "17 ربيع الأول - عام الفيل"
+      },
+      {
+       "name": "WikiShia - 17 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/17_ربيع_الأول",
+       "statesDate": "17 ربيع الأول"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "17: ولد سيد الكائنات"
+      },
+      {
+       "name": "منتدى الكفيل - ولادة النبي 17 ربيع الأول (يستشهد بأعيان الشيعة ومنتهى الآمال)",
+       "url": "https://forums.alkafeel.net/node/927145",
+       "statesDate": "17 ربيع الأول (أعيان الشيعة، منتهى الآمال)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Main view (mashhur among Imamiyya). Alternate 12 Rabi' I -> see unconfirmed."
+    },
+    {
+     "day": 17,
+     "isNight": false,
+     "titleAr": "مولد الإمام جعفر بن محمد الصادق (ع)",
+     "category": "birth",
+     "figure": "Imam al-Sadiq",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ربيع الأول",
+       "url": "https://ar.wikishia.net/view/ربيع_الأول",
+       "statesDate": "17 ربيع الأول 83هـ"
+      },
+      {
+       "name": "WikiShia - 17 ربيع الأول",
+       "url": "https://ar.wikishia.net/view/17_ربيع_الأول",
+       "statesDate": "17 ربيع الأول 83هـ"
+      },
+      {
+       "name": "منتدى الكفيل - مناسبات شهر ربيع الأول",
+       "url": "https://forums.alkafeel.net/node/50004",
+       "statesDate": "17: ولد الإمام السادس 83"
+      },
+      {
+       "name": "منتدى الكفيل - تقويم المناسبات الإسلامية",
+       "url": "https://forums.alkafeel.net/node/7109",
+       "statesDate": "17 ربيع الأول"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "مولد النبي (ص) على قول 12 ربيع الأول",
+     "claimedDay": 12,
+     "reason": "WikiShia 12 Rabi' I page attributes 12th to Sunni view (على قول أهل السنة); a Shia attribution (Kulayni/Mas'udi) appeared only in a search-result snippet of a forum post not opened. Tried: WikiShia 12/17 pages, alkafeel 927145."
+    },
+    {
+     "titleAr": "استشهاد الإمام العسكري (ع) على رواية 1 ربيع الأول",
+     "claimedDay": 1,
+     "reason": "WikiShia 1 Rabi' I page only."
+    },
+    {
+     "titleAr": "استشهاد الإمام العسكري (ع) 5 ربيع الأول",
+     "claimedDay": 5,
+     "reason": "alkafeel node/7109 only."
+    },
+    {
+     "titleAr": "وفاة عبد المطلب جد النبي (ص)",
+     "claimedDay": 10,
+     "reason": "WikiShia 10 Rabi' I page + alkafeel node/50004 say 10; node/7109 says 8 -> conflict; not an Infallible; kept unconfirmed."
+    },
+    {
+     "titleAr": "مقدم السيدة المعصومة (س) إلى قم",
+     "claimedDay": 23,
+     "reason": "WikiShia Rabi' I page only (201 AH)."
+    },
+    {
+     "titleAr": "صلح الإمام الحسن (ع) مع معاوية (41هـ)",
+     "claimedDay": 26,
+     "reason": "alkafeel node/50004 says 26, node/7109 says 22 -> conflict; other Shia calendars put it in Rabi' II/Jumada I."
+    },
+    {
+     "titleAr": "بناء مسجد قباء 15 ربيع الأول؛ بناء المسجد النبوي 18؛ غزوة بني النضير 22",
+     "claimedDay": 15,
+     "reason": "alkafeel only, day numbers conflict between posts."
+    },
+    {
+     "titleAr": "غزوة دومة الجندل 1 ربيع الأول؛ غزوة غطفان 12",
+     "claimedDay": 1,
+     "reason": "alkafeel only."
+    },
+    {
+     "titleAr": "الهجوم على بيت السيدة فاطمة (س) 1 ربيع الأول 11هـ",
+     "claimedDay": 1,
+     "reason": "WikiShia 1 Rabi' I only."
+    },
+    {
+     "titleAr": "بداية أسبوع الوحدة الإسلامية 12-17 ربيع الأول",
+     "claimedDay": 12,
+     "reason": "Listed by WikiShia/alkafeel but a modern (20th c.) institution - see excluded."
+    }
+   ],
+   "excluded": [
+    {
+     "title": "9 ربيع الأول - عيد الزهراء (س) / فرحة الزهراء",
+     "reason": "Widely celebrated by many Shia but WikiShia (Persian) says the attribution to the killing of Umar b. al-Khattab lacks established basis, no marja' text found; WikiShia Arabic day page does not mention it. USER DECISION. Sources opened: ar/fa WikiShia 9 Rabi' I, alkafeel threads (search result summaries)."
+    },
+    {
+     "title": "9 ربيع الأول - مقتل عمر بن سعد (66هـ، على قول المجلسي في زاد المعاد)",
+     "reason": "Death of an anti-Ahl-al-Bayt figure."
+    },
+    {
+     "title": "12 ربيع الأول - وفاة النبي (ص) (قول أهل السنة بحسب ويكي شيعة)",
+     "reason": "WikiShia attributes it to Sunni narration; Shia main date is 28 Safar."
+    },
+    {
+     "title": "12 ربيع الأول - وفاة أحمد بن حنبل، المعتصم العباسي، انتهاء الدولة الأموية 132هـ؛ 9: هشام بن عبد الملك",
+     "reason": "Sunni/rulers/non-religious."
+    },
+    {
+     "title": "ولادات/وفيات علماء ومراجع (السيد الصدر 17، السيستاني 9، نصر الله 8 ...)",
+     "reason": "Scholars/modern figures excluded by rule."
+    }
+   ]
+  }
+ ]
+}

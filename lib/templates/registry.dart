@@ -1,18 +1,26 @@
 import 'package:flutter/widgets.dart';
 
+import 'cream_gold.dart';
+import 'deep_green.dart';
+import 'minimal_modern.dart';
+import 'mosque_blue.dart';
 import 'navy_gold.dart';
 import 'poster_template.dart';
 
-/// Every shipped template, in picker order. Each template task appends its
-/// class here (Task 10 adds `NavyGoldTemplate()` FIRST, so it becomes the
-/// default for unknown ids).
+/// Every shipped template, in picker order. Navy & Gold is FIRST, so it is
+/// the default for unknown ids.
 List<PosterTemplate> get allTemplates => const <PosterTemplate>[
   NavyGoldTemplate(),
+  CreamGoldTemplate(),
+  MinimalModernTemplate(),
+  DeepGreenTemplate(),
+  MosqueBlueTemplate(),
 ];
 
 /// The template with [id]; unknown ids resolve to the first registered
-/// template (Navy & Gold once Task 10 lands). Never throws: while no
-/// template is registered yet it returns a plain white/black fallback.
+/// template (Navy & Gold). Never throws: should [allTemplates] ever be empty
+/// it returns a plain white/black fallback (defensive only; unreachable while
+/// templates are registered).
 PosterTemplate templateById(String id) {
   final all = allTemplates;
   for (final t in all) {
@@ -34,7 +42,8 @@ class _BlankPainter extends CustomPainter {
 CustomPainter _blank() => const _BlankPainter();
 CustomPainter _blankFrame(LayoutMetrics? _) => const _BlankPainter();
 
-/// Minimal white/black template used only while [allTemplates] is empty.
+/// Defensive fallback: minimal white/black template used only if
+/// [allTemplates] is empty. Kept so [templateById] can never throw.
 class _FallbackTemplate extends PosterTemplate {
   const _FallbackTemplate();
 

@@ -111,7 +111,7 @@ class TimeCellAccessory extends StatelessWidget {
                     style: TextButton.styleFrom(minimumSize: size),
                     iconAlignment: IconAlignment.end,
                     icon: const Icon(Icons.arrow_forward),
-                    label: const Text('التالي'),
+                    label: const Text('الحقل التالي'),
                   ),
                   const SizedBox(width: 4),
                   FilledButton.tonal(
@@ -249,9 +249,15 @@ class _TimeCellState extends State<TimeCell> {
     if (widget.value != _shown && !_error) {
       _ctl.text = formatTime(widget.value) ?? '';
       _shown = widget.value;
-      // Restored invalid text: shown in red, retried on the next blur.
-      _dirty = _error = _recorded = widget.pendingInvalid != null;
+      // The outside value replaces any typed text: no pending edit, no
+      // error, and the recorded invalid entry is released (after the build).
       _dirty = false;
+      _error = false;
+      if (_recorded) {
+        _recorded = false;
+        final invalid = widget.onInvalid;
+        if (invalid != null) scheduleMicrotask(() => invalid(null));
+      }
     }
   }
 

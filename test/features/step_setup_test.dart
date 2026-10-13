@@ -6,8 +6,11 @@ import 'package:taqweem/core/app_theme.dart';
 import 'package:taqweem/data/seed_reference.dart';
 import 'package:taqweem/domain/calendar_fill.dart';
 import 'package:taqweem/domain/models.dart';
+import 'package:taqweem/domain/time_format.dart';
 import 'package:taqweem/domain/weekday.dart';
 import 'package:taqweem/features/editor/editor_shell.dart';
+import 'package:taqweem/features/editor/invalid_times.dart';
+import 'package:taqweem/features/editor/step_grid.dart';
 import 'package:taqweem/features/editor/step_setup.dart';
 import 'package:taqweem/state/editor_controller.dart';
 import 'package:taqweem/state/providers.dart';
@@ -492,6 +495,7 @@ void main() {
   ) async {
     await pumpShell(tester, blank());
     expect(find.text('قريباً', skipOffstage: false), findsNothing);
+    expect(find.byType(StepGrid, skipOffstage: false), findsNothing);
     await enter(tester, 'sYear', '1405');
     await pick(tester, 'sMonth', 'مهر');
     await enter(tester, 'sDay', '21');
@@ -554,6 +558,29 @@ void main() {
       ),
       findsOneWidget,
     );
+  });
+
+  testWidgets('N5a) regenerating the days clears recorded invalid times', (
+    tester,
+  ) async {
+    final c = await pumpShell(tester, generated(dayCount: 30));
+    c.read(invalidTimesProvider.notifier).put(0, PrayerSlot.fajr, '4:75');
+    expect(c.read(invalidTimesProvider), isNotEmpty);
+    await tapVisible(tester, createButton('تحديث الأيام'));
+    expect(c.read(invalidTimesProvider), isEmpty);
+  });
+
+  testWidgets('N5b) shrinking prunes invalid times; growing does not revive', (
+    tester,
+  ) async {
+    final c = await pumpShell(tester, generated(dayCount: 30));
+    final store = c.read(invalidTimesProvider.notifier);
+    store.put(29, PrayerSlot.fajr, '4:75');
+    store.put(3, PrayerSlot.zuhr, '9:99');
+    await tapVisible(tester, find.text('29 يوماً'));
+    expect(c.read(invalidTimesProvider), {(3, PrayerSlot.zuhr): '9:99'});
+    await tapVisible(tester, find.text('30 يوماً'));
+    expect(c.read(invalidTimesProvider), {(3, PrayerSlot.zuhr): '9:99'});
   });
 
   testWidgets('R1-3c) shrinking underivable rows still works', (tester) async {

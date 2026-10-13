@@ -34,7 +34,6 @@ const double _kDateW = 46; // hijri, gregorian, solar
 const double _kTimeW = 54; // fajr, shurooq, zuhr, maghrib
 
 const double _kGrid = 1;
-const double _kOuterGrid = 2.5;
 
 /// Line-height factor for single-line cells and the side strips, so the row
 /// height (not Amiri's tall default line box) bounds the glyph size.
@@ -243,6 +242,10 @@ class PosterLayout extends StatelessWidget {
 
   TextStyle get _body => TextStyle(fontFamily: theme.bodyFont);
   TextStyle get _heading => TextStyle(fontFamily: theme.headingFont);
+  TextStyle get _tableHead =>
+      TextStyle(fontFamily: theme.tableFont ?? theme.headingFont);
+  TextStyle get _tableBody =>
+      TextStyle(fontFamily: theme.tableFont ?? theme.bodyFont);
 
   Widget _content() {
     final texts = poster.texts;
@@ -357,7 +360,10 @@ class PosterLayout extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: theme.quoteBoxBg,
-          border: Border.all(color: theme.quoteBoxBorder, width: 2.5),
+          border: Border.all(
+            color: theme.quoteBoxBorder,
+            width: theme.quoteBoxBorderWidth,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 8, 10, 6),
@@ -434,7 +440,10 @@ class PosterLayout extends StatelessWidget {
     return Container(
       key: const ValueKey('poster-table'),
       foregroundDecoration: BoxDecoration(
-        border: Border.all(color: theme.gridLine, width: _kOuterGrid),
+        border: Border.all(
+          color: theme.gridLine,
+          width: theme.tableBorderWidth,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -459,7 +468,7 @@ class PosterLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: bg,
         border: Border(
-          left: last ? BorderSide.none : side,
+          left: last || !theme.verticalGridLines ? BorderSide.none : side,
           bottom: bottom ? side : BorderSide.none,
         ),
       ),
@@ -478,7 +487,7 @@ class PosterLayout extends StatelessWidget {
     final fg = theme.tableHeaderFg;
     Widget label(String s, {double max = 30}) => FitText(
       s,
-      style: _heading.copyWith(
+      style: _tableHead.copyWith(
         color: fg,
         fontWeight: FontWeight.w700,
         height: _kTightLine,
@@ -488,7 +497,7 @@ class PosterLayout extends StatelessWidget {
     );
     Widget cal(String s) => FitText(
       s,
-      style: _body.copyWith(color: fg, fontWeight: FontWeight.w700),
+      style: _tableBody.copyWith(color: fg, fontWeight: FontWeight.w700),
       maxSize: 20,
     );
     return Row(
@@ -520,7 +529,7 @@ class PosterLayout extends StatelessWidget {
     Widget text(String s, Color fg, {double max = 24, bool note = false}) =>
         FitText(
           s,
-          style: _body.copyWith(
+          style: _tableBody.copyWith(
             color: fg,
             fontWeight: FontWeight.w700,
             height: note ? null : _kTightLine,

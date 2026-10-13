@@ -10,7 +10,8 @@ const double kFitTextFloor = 6;
 /// The font size is chosen from [maxSize] downwards in 0.5 steps (binary
 /// search, a handful of layouts per text); the largest size
 /// whose laid-out text fits both the available width (wrapping allowed unless
-/// [maxLines] limits it) and the available height wins. If nothing down to
+/// [maxLines] limits it) and the available height wins; the widest single word
+/// must also fit the width, so a word is never broken across lines. If nothing down to
 /// [minSize] fits, shrinking continues to [kFitTextFloor]; if [maxLines] is
 /// what prevents fitting, the line limit is dropped and the search repeats
 /// (words are never lost); if even that fails the floor-size paragraph is
@@ -121,9 +122,23 @@ class FitText extends StatelessWidget {
       textScaler: TextScaler.noScaling,
     )..layout(maxWidth: maxWidth);
     debugLayoutCount++;
-    final fits =
+    var fits =
         !tp.didExceedMaxLines && tp.height <= maxHeight && tp.width <= maxWidth;
     tp.dispose();
+    if (fits) {
+      // Word-break guard (R22): the widest unbreakable word must fit the
+      // box, otherwise the line breaker splits it mid-glyph-run. It is
+      // measured on an unconstrained layout: after a constrained layout the
+      // engine reports the width of the already-split fragment instead.
+      // Monotone in the font size, so the binary search stays valid.
+      final free = TextPainter(
+        text: TextSpan(text: text, style: style),
+        textDirection: TextDirection.rtl,
+        textScaler: TextScaler.noScaling,
+      )..layout();
+      fits = free.minIntrinsicWidth <= maxWidth;
+      free.dispose();
+    }
     return fits;
   }
 }

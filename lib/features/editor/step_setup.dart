@@ -8,6 +8,7 @@ import '../../domain/models.dart';
 import '../../domain/month_names.dart';
 import '../../domain/weekday.dart';
 import '../../state/editor_controller.dart';
+import 'invalid_times.dart';
 
 // ---------------------------------------------------------------------------
 // Pure helpers (no widgets)
@@ -538,6 +539,8 @@ class _StepSetupState extends ConsumerState<StepSetup> {
         ),
       );
     }
+    // Entries of removed rows must not come back on a later row.
+    ref.read(invalidTimesProvider.notifier).pruneFrom(n);
     setState(() => _dayCount = n);
   }
 
@@ -552,6 +555,8 @@ class _StepSetupState extends ConsumerState<StepSetup> {
       if (ok != true || !mounted) return;
     }
     final f = CalendarFill.generate(setup);
+    // The old rows' invalid entries do not belong to the new days.
+    ref.read(invalidTimesProvider.notifier).clear();
     _ctl.update(
       (p) => p.copyWith(
         days: f.days,

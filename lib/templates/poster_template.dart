@@ -40,6 +40,10 @@ class PosterTheme {
     this.emblemPainter,
     this.contentPadding = kDefaultContentPadding,
     this.headerHeight = 250,
+    this.verticalGridLines = true,
+    this.tableBorderWidth = 2.5,
+    this.quoteBoxBorderWidth = 2.5,
+    this.tableFont,
   });
 
   final Color background,
@@ -64,6 +68,11 @@ class PosterTheme {
   /// Font families bundled in pubspec: 'ArefRuqaa' | 'Amiri' | 'Tajawal'.
   final String headingFont, bodyFont;
 
+  /// Optional family for everything inside the table (header labels and
+  /// every day-row cell). Null keeps [headingFont] for header labels and
+  /// [bodyFont] for cells.
+  final String? tableFont;
+
   /// Full-poster pattern / silhouette, painted below the content.
   final CustomPainter Function() backgroundPainter;
 
@@ -78,6 +87,16 @@ class PosterTheme {
 
   final EdgeInsets contentPadding;
   final double headerHeight;
+
+  /// Whether table cells draw vertical separators between columns. When
+  /// false only the horizontal row hairlines are drawn.
+  final bool verticalGridLines;
+
+  /// Stroke width of the table's outer border (in [gridLine]).
+  final double tableBorderWidth;
+
+  /// Stroke width of the header quote boxes' border (in [quoteBoxBorder]).
+  final double quoteBoxBorderWidth;
 }
 
 /// One selectable visual template.

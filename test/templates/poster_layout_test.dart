@@ -83,6 +83,7 @@ Future<void> _pump(WidgetTester tester, MonthPoster p) async {
 }
 
 void main() {
+  tableFontTests();
   setUpAll(loadAppFonts);
 
   testWidgets('renders the seed poster', (tester) async {
@@ -129,28 +130,35 @@ void main() {
     final footer = tester.getRect(find.byKey(const ValueKey('poster-footer')));
     expect(near(footer.top, m.tableBottom), isTrue);
     expect(near(footer.bottom, m.articleTop), isTrue);
-    final article =
-        tester.getRect(find.byKey(const ValueKey('poster-article')));
+    final article = tester.getRect(
+      find.byKey(const ValueKey('poster-article')),
+    );
     expect(near(article.top, m.articleTop), isTrue);
     expect(near(article.bottom, m.articleBottom), isTrue);
-    final heading = tester.getRect(find.byWidgetPredicate(
-        (w) => w is FitText && w.text.startsWith(':: ')));
+    final heading = tester.getRect(
+      find.byWidgetPredicate((w) => w is FitText && w.text.startsWith(':: ')),
+    );
     expect(near(heading.top, m.articleTop + 2), isTrue); // 2 px padding
   });
 
-  testWidgets('column proportions follow the reference (R11)',
-      (tester) async {
+  testWidgets('column proportions follow the reference (R11)', (tester) async {
     await _pump(tester, seedReferenceMonth());
-    final notesCell = tester.getRect(find
-        .ancestor(
-            of: find.text('ملاحظات'), matching: find.byType(DecoratedBox))
-        .first);
+    final notesCell = tester.getRect(
+      find
+          .ancestor(
+            of: find.text('ملاحظات'),
+            matching: find.byType(DecoratedBox),
+          )
+          .first,
+    );
     expect(notesCell.width, inInclusiveRange(395, 410));
     // ≈ 49 % of the 816 px table.
     expect(notesCell.width / 816, closeTo(0.49, 0.01));
-    final weekday = tester.getRect(find
-        .ancestor(of: find.text('اليوم'), matching: find.byType(DecoratedBox))
-        .first);
+    final weekday = tester.getRect(
+      find
+          .ancestor(of: find.text('اليوم'), matching: find.byType(DecoratedBox))
+          .first,
+    );
     expect(weekday.width, 60);
     expect(weekday.height, 84);
   });
@@ -158,7 +166,8 @@ void main() {
   testWidgets('all day rows share the height equally', (tester) async {
     await _pump(tester, seedReferenceMonth());
     Rect cellOf(Finder text) => tester.getRect(
-        find.ancestor(of: text, matching: find.byType(DecoratedBox)).first);
+      find.ancestor(of: text, matching: find.byType(DecoratedBox)).first,
+    );
     final first = cellOf(find.text('1').first); // hijri day 1
     final last = cellOf(find.text('5:05')); // maghrib on day 30
     expect(first.height, greaterThan(40));
@@ -170,18 +179,21 @@ void main() {
     expect(h1, closeTo(h0, 0.01));
   });
 
-  testWidgets('braces print like the reference: { at right, } at left',
-      (tester) async {
+  testWidgets('braces print like the reference: { at right, } at left', (
+    tester,
+  ) async {
     await _pump(tester, seedReferenceMonth());
     final brace = find.byWidgetPredicate(
-        (w) => w is FitText && w.text.contains('إذا عرضتم'));
+      (w) => w is FitText && w.text.contains('إذا عرضتم'),
+    );
     final text = (tester.widget(brace) as FitText).text;
     // Each brace in an LTR isolate so the RTL paragraph does not mirror it
     // (verified visually: `{` prints at the right end, `}` at the left).
     expect(text, startsWith('\u2066{\u2069 " '));
     expect(text, endsWith(' " \u2066}\u2069'));
     final body = find.byWidgetPredicate(
-        (w) => w is FitText && w.text.contains('فالحسين'));
+      (w) => w is FitText && w.text.contains('فالحسين'),
+    );
     final bodyText = (tester.widget(body) as FitText).text;
     expect(bodyText, startsWith('\u2066{\u2069 '));
     expect(bodyText, endsWith(' \u2066}\u2069'));
@@ -216,7 +228,9 @@ void main() {
     for (final e in fits.evaluate()) {
       final box = tester.getRect(find.byWidget(e.widget));
       final rich = find.descendant(
-          of: find.byWidget(e.widget), matching: find.byType(RichText));
+        of: find.byWidget(e.widget),
+        matching: find.byType(RichText),
+      );
       if (rich.evaluate().isEmpty) continue; // empty string
       final para = tester.renderObject<RenderParagraph>(rich);
       expect(para.didExceedMaxLines, isFalse);
@@ -229,8 +243,7 @@ void main() {
     }
   });
 
-  testWidgets('empty notes and null times render empty cells',
-      (tester) async {
+  testWidgets('empty notes and null times render empty cells', (tester) async {
     final seed = seedReferenceMonth();
     final p = seed.copyWith(
       days: [
@@ -253,4 +266,33 @@ void main() {
     expect(() => templateById('does-not-exist'), returnsNormally);
     expect(templateById('does-not-exist').theme, isNotNull);
   });
+}
+
+void tableFontTests() {
+  test('PosterTheme.tableFont defaults to null; minimal sets Amiri', () {
+    expect(testTheme.tableFont, isNull);
+    expect(templateById('navy_gold').theme.tableFont, isNull);
+    expect(templateById('minimal_modern').theme.tableFont, 'Amiri');
+  });
+
+  for (final (id, expected) in [
+    ('minimal_modern', 'Amiri'),
+    ('navy_gold', templateById('navy_gold').theme.bodyFont),
+  ]) {
+    testWidgets('day-row cell font for $id is $expected', (tester) async {
+      await tester.binding.setSurfaceSize(const Size(1000, 2200));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      final poster = seedReferenceMonth().copyWith(templateId: id);
+      await tester.pumpWidget(
+        Directionality(
+          textDirection: TextDirection.rtl,
+          child: PosterPreview(poster: poster, width: 1000),
+        ),
+      );
+      await tester.pumpAndSettle();
+      final weekday = poster.days.first.weekday.ar;
+      final text = tester.widget<Text>(find.text(weekday).first);
+      expect(text.style!.fontFamily, expected);
+    });
+  }
 }

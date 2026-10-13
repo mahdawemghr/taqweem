@@ -1,0 +1,1561 @@
+{
+ "months": [
+  {
+   "month": 7,
+   "monthNameAr": "رجب",
+   "occasions": [
+    {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "مولد الإمام محمد الباقر (ع)",
+     "category": "birth",
+     "figure": "Imam Muhammad al-Baqir",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام الباقر (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الباقر_(ع)",
+       "statesDate": "1 رجب سنة 57 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "1 رجب"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "1 رجب: ذكرى ميلاد الإمام الخامس ... بناءً على رأي الشيوخ الكليني والطوسي والطبرسي سنة 57 هـ"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "1 رجب: ولادة الإمام الباقر (ع)"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "3 صفر أو 1 رجب سنة 57 هـ (القولان)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "WikiShia also records the view 3 Safar 57 AH (different month, see month 2). | Tebyan lists 3 Safar first and 1 Rajab as alternative; Rafed calendar attributes 1 Rajab to Kulayni, Tusi, Tabarsi; Almaaref Rajab list has 1 Rajab. WikiShia fa marks it 'by one account'. 1 Rajab kept as main for the Rajab file; the 3 Safar view belongs to month 2."
+    },
+    {
+     "day": 2,
+     "isNight": false,
+     "titleAr": "مولد الإمام علي الهادي (ع)",
+     "category": "birth",
+     "figure": "Imam Ali al-Hadi",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول (الراجح عند ويكي شيعة: 15 ذي الحجة 212 هـ)",
+     "sources": [
+      {
+       "name": "WikiShia - الإمام الهادي (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الهادي_(ع)",
+       "statesDate": "الثاني أو الخامس من رجب 212 هـ (على قول)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "2 رجب (214 هـ)"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "2 رجب: ولادة الإمام علي الهادي (ع)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "WikiShia main is 15 Dhu al-Hijja 212 AH (Mufid, Kulayni, Tusi) - belongs to month 12 file. Rajab 2 is alternate per WikiShia and the al-Kafeel table. | Imamhussain.org Rajab page and Tebyan give 15 Dhu al-Hijja 212 AH as the well-known date, and note the Rajab 214 AH report; so 2 Rajab stays alternate. Almaaref (Rajab actions list) does list 2 Rajab."
+    },
+    {
+     "day": 3,
+     "isNight": false,
+     "titleAr": "ذكرى استشهاد الإمام علي الهادي (ع)",
+     "category": "martyrdom",
+     "figure": "Imam Ali al-Hadi",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام الهادي (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الهادي_(ع)",
+       "statesDate": "3 رجب سنة 254 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "3 رجب 254 هـ"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "3 رجب سنة 254 هـ ... وقيل 27 جمادى الآخرة"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "3 رجب 254 هـ"
+      },
+      {
+       "name": "موقع العتبة الحسينية imamhussain.org - الأعمال الخاصة بليالي وأيام رجب",
+       "url": "https://imamhussain.org/islamic/6746",
+       "statesDate": "استشهاد الإمام الهادي في رجب على المشهور"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "3 رجب: شهادة الإمام علي الهادي (ع)"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "3 رجب 254 هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": "WikiShia: Iran's official calendar also marks 3 Rajab; alternate 25/26 Jumada II (not Rajab). | Alternates (not Rajab) 25/26/27 Jumada II."
+    },
+    {
+     "day": 10,
+     "isNight": false,
+     "titleAr": "مولد الإمام محمد الجواد (ع)",
+     "category": "birth",
+     "figure": "Imam Muhammad al-Jawad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام الجواد (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الجواد_(ع)",
+       "statesDate": "10 رجب سنة 195 هـ (وبه قال الشيخ الطوسي في مصباح المتهجد)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "10 رجب 195 هـ"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "10 رجب سنة 195 هـ"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - الإمام محمد بن علي الجواد (ع)",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=3653&subcatid=1375&cid=404&supcat=39",
+       "statesDate": "ولد ليلة الجمعة العاشرة من رجب، وقيل 19 رمضان سنة 195 هـ"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "10 رجب: ولادة الإمام الجواد (ع)"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "10 رجب (قول)؛ والمذكور أولاً 19 رمضان ثم 15 رمضان"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "10 رجب 195 هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": "WikiShia says most sources place the birth in Ramadan (15th or 19th) - see unconfirmed under Ramadan. | 10 Rajab is the date in Shia calendars (Rafed, Almaaref); 19 and 15 Ramadan are well-attested alternates (see Ramadan, Tusi quoting Ibn Ayyash, Mufid says Ramadan). Tebyan lists Ramadan first."
+    },
+    {
+     "day": 13,
+     "isNight": false,
+     "titleAr": "مولد أمير المؤمنين الإمام علي (ع) في الكعبة",
+     "category": "birth",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام علي (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_علي_(ع)",
+       "statesDate": "13 رجب سنة 30 عام الفيل"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "13 رجب"
+      },
+      {
+       "name": "WikiShia - أعمال شهر رجب",
+       "url": "https://ar.wikishia.net/view/أعمال_شهر_رجب",
+       "statesDate": "13 رجب (أول الأيام البيض)"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "13 رجب: ذكرى ميلاد مولى الموحدين ... في داخل الكعبة"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "13 رجب سنة 30 عام الفيل داخل الكعبة"
+      },
+      {
+       "name": "موقع العتبة الحسينية imamhussain.org - الأعمال الخاصة بليالي وأيام رجب",
+       "url": "https://imamhussain.org/islamic/6746",
+       "statesDate": "في الثالث عشر من شهر رجب المرجب ولد الإمام علي"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "13 رجب: ولادة الإمام علي (ع)"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "13 رجب سنة 30 عام الفيل"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 15,
+     "isNight": false,
+     "titleAr": "ذكرى وفاة السيدة زينب الكبرى (س)",
+     "category": "martyrdom",
+     "figure": "Lady Zaynab",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - زينب بنت علي (ع)",
+       "url": "https://ar.wikishia.net/view/زينب_بنت_علي_(ع)",
+       "statesDate": "15 رجب سنة 62 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "15 رجب 62 هـ"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "15 رجب سنة 62 هـ توفيت عقيلة الطالبيين"
+      },
+      {
+       "name": "موقع العتبة الحسينية imamhussain.org - الأعمال الخاصة بليالي وأيام رجب",
+       "url": "https://imamhussain.org/islamic/6746",
+       "statesDate": "في الخامس عشر من شهر رجب (وفاة زينب)"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "15 رجب: وفاة السيدة زينب (س)"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "15 رجب 62 هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": "WikiShia mentions an alternate 14 Rajab (single source -> in unconfirmed)."
+    },
+    {
+     "day": 25,
+     "isNight": false,
+     "titleAr": "ذكرى استشهاد الإمام موسى الكاظم (ع)",
+     "category": "martyrdom",
+     "figure": "Imam Musa al-Kadhim",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام الكاظم (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الكاظم_(ع)",
+       "statesDate": "الخامس والعشرون من رجب سنة 183 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "25 رجب 183 هـ"
+      },
+      {
+       "name": "موقع مكارم الشيرازي (makarem.ir) - شهادة الإمام الكاظم (ع)",
+       "url": "https://makarem.ir/maaref/l/0419423",
+       "statesDate": "25 رجب سنة 183 هـ (العنوان)"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "25 رجب سنة 183 هـ"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "25 رجب 183 هـ ببغداد"
+      },
+      {
+       "name": "موقع العتبة الحسينية imamhussain.org - الأعمال الخاصة بليالي وأيام رجب",
+       "url": "https://imamhussain.org/islamic/6746",
+       "statesDate": "وقيل في الخامس والعشرين من رجب وهو المشهور"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "25 رجب: شهادة الإمام موسى الكاظم (ع)"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "25 رجب (بحسب الشيخ الصدوق)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Disputed alternates: 24 Rajab (per Mufid, WikiShia fa), 6 Rajab (see alternate entry), 5 Rajab, 7 Safar (wikifeqh via search)."
+    },
+    {
+     "day": 26,
+     "isNight": false,
+     "titleAr": "ذكرى وفاة أبي طالب (ع) عم النبي (ص)",
+     "category": "martyrdom",
+     "figure": "Abu Talib",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - أبو طالب",
+       "url": "https://ar.wikishia.net/view/أبو_طالب",
+       "statesDate": "26 رجب السنة 10 للبعثة"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "26 رجب"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "26 رجب: من السنة العاشرة للبعثة توفي ... أبو طالب رضوان الله عليه"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "26 رجب سنة 10 للبعثة (على قول)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "WikiShia: historians differ - 26 Rajab (Shia sources), or 1 Dhu al-Qa'da, or mid-Shawwal. al-Kafeel's Ramadan table lists 7 Ramadan (single source, see Ramadan unconfirmed). | Two independent calendars (Rafed, WikiShia) plus Kafeel; historians still differ (Dhu al-Qa'da / Shawwal / 7 Ramadan per Kafeel only)."
+    },
+    {
+     "day": 27,
+     "isNight": false,
+     "titleAr": "المبعث النبوي الشريف (ص)",
+     "category": "event",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - المبعث النبوي",
+       "url": "https://ar.wikishia.net/view/المبعث_النبوي",
+       "statesDate": "27 رجب (رأي مشهور الشيعة)"
+      },
+      {
+       "name": "WikiShia - أعمال شهر رجب",
+       "url": "https://ar.wikishia.net/view/أعمال_شهر_رجب",
+       "statesDate": "27 رجب يوم البعثة (رواية الإمام الصادق ع)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "27 رجب"
+      },
+      {
+       "name": "موقع العتبة الحسينية imamhussain.org - الأعمال الخاصة بليالي وأيام رجب",
+       "url": "https://imamhussain.org/islamic/6746",
+       "statesDate": "السابع والعشرون من شهر رجب هو يوم البعثة المشرفة"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "27 رجب: بعث النبي (ص) بخاتمة الرسالات"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "27 رجب (ليلة ويوم): المبعث النبوي"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "27 رجب: بعثة النبي (ص)"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 27,
+     "isNight": true,
+     "titleAr": "ليلة المبعث النبوي الشريف (ص)",
+     "category": "night",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - أعمال شهر رجب",
+       "url": "https://ar.wikishia.net/view/أعمال_شهر_رجب",
+       "statesDate": "ليلة 27 رجب: ليلة بعثة النبي (وتسمى ليلة المحيا)"
+      },
+      {
+       "name": "WikiShia - المبعث النبوي",
+       "url": "https://ar.wikishia.net/view/المبعث_النبوي",
+       "statesDate": "27 رجب"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - أعمال شهر رجب",
+       "url": "https://almaaref.org/maarefdetails.php?cid=550&id=11923&supcat=42",
+       "statesDate": "27 رجب (ليلة ويوم): المبعث النبوي"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 6,
+     "isNight": false,
+     "titleAr": "ذكرى استشهاد الإمام موسى الكاظم (ع)",
+     "category": "martyrdom",
+     "figure": "Imam Musa al-Kadhim",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول (الكليني والمفيد بحسب تقويم رافد)",
+     "sources": [
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رجب)",
+       "url": "https://rafed.net/calendar/calendar.php?edate=2024-01-18",
+       "statesDate": "ذكرى استشهاد الإمام موسى الكاظم ... بناءً على قول الشيخين الكليني والمفيد (في خانة أحداث اليوم لـ 6 رجب)"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "6 رجب 183 هـ: استشهاد الإمام الكاظم (على قول)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Two Shia sources give 6 Rajab; the attribution to Kulayni/Mufid contradicts WikiShia fa (24 Rajab per Mufid). Weak alternate - user may drop it."
+    },
+    {
+     "day": 16,
+     "isNight": false,
+     "titleAr": "خروج السيدة فاطمة بنت أسد (س) من الكعبة بعد ولادة الإمام علي (ع)",
+     "category": "event",
+     "figure": "Lady Fatima bint Asad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "16 رجب سنة 30 عام الفيل: خروج فاطمة بنت أسد من الكعبة بعد ثلاثة أيام"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "16 رجب"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Second source is a shrine forum table; no marja'/Mafatih source found. Borderline - could be dropped for print."
+    },
+    {
+     "day": 23,
+     "isNight": false,
+     "titleAr": "محاولة اغتيال الإمام الحسن المجتبى (ع) في ساباط المدائن",
+     "category": "event",
+     "figure": "Imam Hasan al-Mujtaba",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "23 رجب سنة 41 هـ: الهجوم على الإمام الحسن في المدائن"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "23 رجب"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Second source is a shrine forum table. Borderline."
+    },
+    {
+     "day": 28,
+     "isNight": false,
+     "titleAr": "خروج الإمام الحسين (ع) من المدينة المنورة إلى مكة المكرمة",
+     "category": "event",
+     "figure": "Imam Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "شبكة رافد - خروج الإمام الحسين (ع) من المدينة إلى مكة",
+       "url": "https://rafed.net/reyhana/article/122483",
+       "statesDate": "في اليوم الثامن والعشرين من شهر رجب الأصب سنة 60 للهجرة"
+      },
+      {
+       "name": "ویکی‌شیعه (فارسی) - وقایع ماه رجب",
+       "url": "https://fa.wikishia.net/view/%D9%88%D9%82%D8%A7%DB%8C%D8%B9_%D9%85%D8%A7%D9%87_%D8%B1%D8%AC%D8%A8_%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A8",
+       "statesDate": "28 رجب 60 هـ: خروج الإمام الحسين من المدينة إلى مكة"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رجب",
+       "url": "https://forums.alkafeel.net/node/964794",
+       "statesDate": "28 رجب"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "A search snippet from an al-Shia article (not opened) gives 27 Rajab; arrival in Mecca 3 Sha'ban (Friday) per the Rafed article."
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "وفاة السيدة زينب (س) - 14 رجب",
+     "claimedDay": 14,
+     "reason": "Only WikiShia Zaynab page states it as alternate."
+    },
+    {
+     "titleAr": "مولد عبد الله الرضيع بن الإمام الحسين (ع)",
+     "claimedDay": 9,
+     "reason": "Only al-Kafeel Rajab table."
+    },
+    {
+     "titleAr": "وفاة إبراهيم ابن النبي (ص)",
+     "claimedDay": 18,
+     "reason": "Only al-Kafeel table."
+    },
+    {
+     "titleAr": "مولد السيدة سكينة بنت الحسين (ع)",
+     "claimedDay": 20,
+     "reason": "Only al-Kafeel table."
+    },
+    {
+     "titleAr": "فتح حصون خيبر على يد الإمام علي (ع)",
+     "claimedDay": 24,
+     "reason": "Only al-Kafeel table in Rajab; Khaybar date elsewhere (Muharram/Safar) conflicts."
+    },
+    {
+     "titleAr": "ليلة الرغائب (ليلة أول جمعة من رجب)",
+     "claimedDay": null,
+     "reason": "Opened Almaaref Rajab list and WikiShia fa: first Thursday night/ first Friday night - a variable weekday, no fixed Hijri day; cannot be placed on a fixed day. User may decide to print it on the first Friday."
+    },
+    {
+     "titleAr": "مولد الإمام علي الهادي (ع) - 5 رجب",
+     "claimedDay": 5,
+     "reason": "Only WikiShia ar Hadi page; Almaaref/Kafeel say 2 Rajab; Tebyan/imamhussain say 15 Dhu al-Hijja."
+    },
+    {
+     "titleAr": "وفاة السيدة زينب (س) - 14 رجب",
+     "claimedDay": 14,
+     "reason": "Only WikiShia ar Zaynab page; fa.wikishia and Almaaref give 15."
+    },
+    {
+     "titleAr": "استشهاد الإمام الكاظم (ع) - 24 رجب",
+     "claimedDay": 24,
+     "reason": "Only WikiShia fa (24 per Mufid, 25 per Saduq); other sources 25."
+    },
+    {
+     "titleAr": "مولد عبد الله الرضيع بن الإمام الحسين (ع) / علي الأصغر",
+     "claimedDay": 9,
+     "reason": "Month confirmed (imamhussain.org Rajab page lists birth of Abdullah al-Radi' in Rajab, no day); day conflicts: 9 Rajab (Kafeel) vs 10 Rajab 60 AH (WikiShia fa, 'by some')."
+    },
+    {
+     "titleAr": "دخول الإمام علي (ع) الكوفة بعد الجمل",
+     "claimedDay": 11,
+     "reason": "Only Kafeel table (11/12 differ within it)."
+    },
+    {
+     "titleAr": "وفاة إبراهيم ابن النبي (ص)",
+     "claimedDay": 18,
+     "reason": "Conflict: WikiShia fa says 18 Rajab 10 AH 'by some' and Kafeel 18; imamhussain.org Rajab page states 10 Rabi' I."
+    },
+    {
+     "titleAr": "مولد السيدة سكينة بنت الحسين (س)",
+     "claimedDay": 20,
+     "reason": "imamhussain.org Rajab page confirms Rajab but gives no day; Kafeel alone gives 20."
+    },
+    {
+     "titleAr": "فتح حصون خيبر على يد الإمام علي (ع)",
+     "claimedDay": 24,
+     "reason": "WikiShia fa 24 Rajab 7 AH + Kafeel, but conflicts with Muharram/Safar dating of Khaybar elsewhere; held back."
+    },
+    {
+     "titleAr": "تحويل القبلة",
+     "claimedDay": 15,
+     "reason": "WikiShia fa lists 15 Rajab 2 AH only; general Prophetic event, not Ahl al-Bayt-specific."
+    }
+   ],
+   "excluded": [
+    {
+     "title": "وفاة يعقوب بن إسحاق ابن السكيت (5 رجب)",
+     "reason": "scholar/companion of Imams, not a 14-Infallibles/Ahl al-Bayt commemoration"
+    },
+    {
+     "title": "ليلة أول رجب / الأيام البيض 13-15 رجب / أعمال أم داود 15 رجب",
+     "reason": "worship practices (Misbah of Tusi, Almaaref, imamhussain.org confirm the nights) - not commemorations; user to decide"
+    },
+    {
+     "title": "وفاة الحسن البصري 1 رجب، المأمون 18 رجب، عمر بن عبد العزيز 20 رجب، أبو حنيفة 30 رجب، الشافعي 30 رجب",
+     "reason": "non-Shia/anti-Ahl-al-Bayt figures and scholars per brief"
+    }
+   ],
+   "coverage": {
+    "Prophet (S)": "birth: not my months (17 Rabi I); death: not my months (28 Safar); Mab'ath 27 Rajab found",
+    "Fatima (S)": "not my months (birth 20 Jumada II, death 3 Jumada II per Tebyan)",
+    "Ali": "birth 13 Rajab found (Rafed, Tebyan, imamhussain, Almaaref, WikiShia); martyrdom -> Ramadan 21",
+    "Hasan": "not in Rajab (birth 15 Ramadan; death 28 Safar)",
+    "Husayn": "not in Rajab (departure to Mecca 28 Rajab added)",
+    "Sajjad": "not in Rajab",
+    "Baqir": "birth 1 Rajab found (alt 3 Safar); death not my months (7 Dhu al-Hijja)",
+    "Sadiq": "not my months (birth 17 Rabi I, death 25 Shawwal)",
+    "Kadhim": "martyrdom 25 Rajab found (alt 6/24); birth not my months (7 Safar)",
+    "Rida": "not my months",
+    "Jawad": "birth 10 Rajab found (alt 19/15 Ramadan); death not my months (late Dhu al-Qa'da)",
+    "Hadi": "martyrdom 3 Rajab found; birth 15 Dhu al-Hijja main (not mine), 2 Rajab alternate",
+    "Askari": "not my months",
+    "Mahdi": "-> Sha'ban 15"
+   }
+  },
+  {
+   "month": 8,
+   "monthNameAr": "شعبان",
+   "occasions": [
+    {
+     "day": 3,
+     "isNight": false,
+     "titleAr": "مولد الإمام الحسين (ع)",
+     "category": "birth",
+     "figure": "Imam Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام الحسين (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الحسين_(ع)",
+       "statesDate": "اليوم الثالث من شعبان سنة 4 هـ (المشهور)"
+      },
+      {
+       "name": "WikiShia - الأعياد الشعبانية",
+       "url": "https://ar.wikishia.net/view/الأعياد_الشعبانية",
+       "statesDate": "3 شعبان"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - مناسبات شهر شعبان",
+       "url": "https://forums.alkafeel.net/node/14546",
+       "statesDate": "3 شعبان"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - شعبان: أبرز الأعمال والمناسبات",
+       "url": "https://forums.alkafeel.net/node/1033014",
+       "statesDate": "3 شعبان (يوم الحارس)"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "3 شعبان سنة 4 هـ (وبديله 5 شعبان)"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر شعبان)",
+       "url": "https://www.rafed.net/calendar/calendar.php?edate=2026-02-03",
+       "statesDate": "3 شعبان سنة 4 هـ: ولادة الإمام الحسين"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - بطاقة شهر شعبان",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=10007&subcatid=1315&cid=294&supcat=6",
+       "statesDate": "3 شعبان: ولادة الإمام الحسين الشهيد (ع)"
+      },
+      {
+       "name": "مكتب السيد السيستاني (عبر imamhussain.org)",
+       "url": "https://imamhussain.org/arabic/32095",
+       "statesDate": "ذكرى ولادة الإمام الحسين واخيه العباس وولده السجاد (شعبان 1442)"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 5,
+     "isNight": false,
+     "titleAr": "مولد الإمام الحسين (ع)",
+     "category": "birth",
+     "figure": "Imam Husayn",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول الشيخ المفيد في الإرشاد",
+     "sources": [
+      {
+       "name": "WikiShia - الإمام الحسين (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الحسين_(ع)",
+       "statesDate": "الخامس من شعبان (الشيخ المفيد في الإرشاد)"
+      },
+      {
+       "name": "WikiShia - الأعياد الشعبانية",
+       "url": "https://ar.wikishia.net/view/الأعياد_الشعبانية",
+       "statesDate": "3 شعبان وفي رواية 5 شعبان"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "3 شعبان ... (بديل: 5 شعبان)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Both sources are WikiShia pages quoting al-Mufid (al-Irshad); no independent site checked. | Now supported by Tebyan (independent of WikiShia) as alternative."
+    },
+    {
+     "day": 4,
+     "isNight": false,
+     "titleAr": "مولد أبي الفضل العباس بن علي (ع)",
+     "category": "birth",
+     "figure": "Abu al-Fadl al-Abbas",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - العباس بن علي (ع)",
+       "url": "https://ar.wikishia.net/view/العباس_بن_علي_(ع)",
+       "statesDate": "4 شعبان سنة 26 هـ"
+      },
+      {
+       "name": "WikiShia - الأعياد الشعبانية",
+       "url": "https://ar.wikishia.net/view/الأعياد_الشعبانية",
+       "statesDate": "4 شعبان"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - مناسبات شهر شعبان",
+       "url": "https://forums.alkafeel.net/node/14546",
+       "statesDate": "4 شعبان 26 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - شعبان: أبرز الأعمال والمناسبات",
+       "url": "https://forums.alkafeel.net/node/1033014",
+       "statesDate": "4 شعبان (يوم الجريح)"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر شعبان)",
+       "url": "https://www.rafed.net/calendar/calendar.php?edate=2026-02-03",
+       "statesDate": "4 شعبان سنة 26 هـ: ولادة أبي الفضل العباس"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - بطاقة شهر شعبان",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=10007&subcatid=1315&cid=294&supcat=6",
+       "statesDate": "4 شعبان: ولادة أبي الفضل العباس (ع)"
+      },
+      {
+       "name": "مكتب السيد السيستاني (عبر imamhussain.org)",
+       "url": "https://imamhussain.org/arabic/32095",
+       "statesDate": "ذكرى ولادة ... أخيه العباس (شعبان 1442)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "WikiShia: early sources have no recorded birth day; 4 Sha'ban comes from Anis al-Shia (13th c. AH). | Birth DAY first appears in late sources (Anis al-Shia) per WikiShia, but all Shia calendars agree on 4 Sha'ban."
+    },
+    {
+     "day": 5,
+     "isNight": false,
+     "titleAr": "مولد الإمام علي بن الحسين زين العابدين (ع)",
+     "category": "birth",
+     "figure": "Imam Zayn al-Abidin",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام السجاد (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_السجاد_(ع)",
+       "statesDate": "5 شعبان سنة 38 هـ"
+      },
+      {
+       "name": "WikiShia - الأعياد الشعبانية",
+       "url": "https://ar.wikishia.net/view/الأعياد_الشعبانية",
+       "statesDate": "5 شعبان"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - مناسبات شهر شعبان",
+       "url": "https://forums.alkafeel.net/node/14546",
+       "statesDate": "5 شعبان 38 هـ"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر شعبان)",
+       "url": "https://www.rafed.net/calendar/calendar.php?edate=2026-02-03",
+       "statesDate": "5 شعبان سنة 38 هـ: ولادة الإمام علي بن الحسين"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - بطاقة شهر شعبان",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=10007&subcatid=1315&cid=294&supcat=6",
+       "statesDate": "5 شعبان: ولادة الإمام زين العابدين (ع)"
+      },
+      {
+       "name": "مكتب السيد السيستاني (عبر imamhussain.org)",
+       "url": "https://imamhussain.org/arabic/32095",
+       "statesDate": "ولده السجاد (شعبان 1442)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Tebyan alone lists 15 Jumada I 38 AH (different month) - not adopted."
+    },
+    {
+     "day": 9,
+     "isNight": false,
+     "titleAr": "مولد الإمام علي بن الحسين زين العابدين (ع)",
+     "category": "birth",
+     "figure": "Imam Zayn al-Abidin",
+     "variant": "alternate",
+     "alternateNoteAr": "على رواية",
+     "sources": [
+      {
+       "name": "WikiShia - الإمام السجاد (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_السجاد_(ع)",
+       "statesDate": "يوم التاسع من شعبان"
+      },
+      {
+       "name": "WikiShia - الأعياد الشعبانية",
+       "url": "https://ar.wikishia.net/view/الأعياد_الشعبانية",
+       "statesDate": "5 شعبان وفي رواية 9 شعبان"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - شعبان: أبرز الأعمال والمناسبات",
+       "url": "https://forums.alkafeel.net/node/1033014",
+       "statesDate": "التاسع من شعبان (رواية أخرى)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": null
+    },
+    {
+     "day": 11,
+     "isNight": false,
+     "titleAr": "مولد علي الأكبر بن الإمام الحسين (ع)",
+     "category": "birth",
+     "figure": "Ali al-Akbar",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الأعياد الشعبانية",
+       "url": "https://ar.wikishia.net/view/الأعياد_الشعبانية",
+       "statesDate": "11 شعبان"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - مناسبات شهر شعبان",
+       "url": "https://forums.alkafeel.net/node/14546",
+       "statesDate": "11 شعبان 33 هـ"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - علي الأكبر ابن الإمام الحسين (ع)",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=3083&subcatid=&cid=166&supcat=33",
+       "statesDate": "ولد في 11 شعبان سنة 35 هـ على الأصح (وقيل 41 هـ)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "WikiShia Eids page itself notes early sources do not record Ali al-Akbar's birth date. Direct Ali al-Akbar WikiShia page URL guess returned 404 so not used. | Year disputed (33/35/41); day 11 Sha'ban is consistent in all."
+    },
+    {
+     "day": 15,
+     "isNight": false,
+     "titleAr": "مولد الإمام المهدي المنتظر (عج)",
+     "category": "birth",
+     "figure": "Imam al-Mahdi",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام المهدي (عج)",
+       "url": "https://ar.wikishia.net/view/الإمام_المهدي_(عج)",
+       "statesDate": "ليلة النصف من شعبان سنة 255 هـ أو 256 هـ"
+      },
+      {
+       "name": "WikiShia - الأعياد الشعبانية",
+       "url": "https://ar.wikishia.net/view/الأعياد_الشعبانية",
+       "statesDate": "15 شعبان"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - مناسبات شهر شعبان",
+       "url": "https://forums.alkafeel.net/node/14546",
+       "statesDate": "15 شعبان 255 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - شعبان: أبرز الأعمال والمناسبات",
+       "url": "https://forums.alkafeel.net/node/1033014",
+       "statesDate": "15 شعبان (يوم المستضعفين)"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "15 شعبان 255 هـ سامراء قبيل الفجر"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر شعبان)",
+       "url": "https://www.rafed.net/calendar/calendar.php?edate=2026-02-03",
+       "statesDate": "15 شعبان سنة 255 هـ: ولادة الإمام المهدي"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - بطاقة شهر شعبان",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=10007&subcatid=1315&cid=294&supcat=6",
+       "statesDate": "15 شعبان: ولادة الإمام المهدي المنتظر (عج)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Year differs (254/255/256) but day agreed."
+    },
+    {
+     "day": 15,
+     "isNight": true,
+     "titleAr": "ليلة النصف من شعبان (ليلة مولد الإمام المهدي عج)",
+     "category": "night",
+     "figure": "Imam al-Mahdi",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ليلة النصف من شعبان",
+       "url": "https://ar.wikishia.net/view/ليلة_النصف_من_شعبان",
+       "statesDate": "مولده ليلة النصف من شعبان (ليلة البراءة)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - شعبان: أبرز الأعمال والمناسبات",
+       "url": "https://forums.alkafeel.net/node/1033014",
+       "statesDate": "ليلة النصف: أفضل الليالي بعد ليلة القدر (الإمام الباقر ع)"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - بطاقة شهر شعبان",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=10007&subcatid=1315&cid=294&supcat=6",
+       "statesDate": "ليلة النصف من شعبان + إحياء الليالي البيض 13-15"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "بدء الغيبة الكبرى - وفاة السفير الرابع السمري",
+     "claimedDay": 15,
+     "reason": "al-Kafeel Sha'ban post says 15 Sha'ban 329 AH; WikiShia Mahdi page gives only year (328/329) and no day. Single source."
+    },
+    {
+     "titleAr": "غزوة بني المصطلق (زواج النبي بجويرية)",
+     "claimedDay": 19,
+     "reason": "Only al-Kafeel; year disputed (5/6 AH)."
+    },
+    {
+     "titleAr": "فرض صوم شهر رمضان",
+     "claimedDay": 2,
+     "reason": "Only al-Kafeel; dated either 2 or last day of Sha'ban; not a core occasion."
+    },
+    {
+     "titleAr": "دخول الإمام الحسين (ع) مكة المكرمة (الجمعة 3 شعبان سنة 60 هـ)",
+     "claimedDay": 3,
+     "reason": "Rafed article (opened) states 'يوم الجمعة لثلاث مضين من شعبان'; Kafeel Sha'ban post per first pass; second source is forum only - kept unconfirmed."
+    }
+   ],
+   "excluded": [
+    {
+     "title": "وفيات علماء ومراجع (الشيخ محمد حسن النجفي 1 شعبان، الشيخ محمد جواد البلاغي 22 شعبان، السيد محمد حسن الشيرازي 24 شعبان، ابن شهرآشوب 22 شعبان ...)",
+     "reason": "scholars/marja' per brief"
+    },
+    {
+     "title": "هلاك العباسي المعتز (2 شعبان)",
+     "reason": "anti-Ahl-al-Bayt ruler, not a religious occasion"
+    },
+    {
+     "title": "سيل مكة 9 شعبان 1039 هـ",
+     "reason": "non-religious historical event"
+    },
+    {
+     "title": "13-15 شعبان إحياء الليالي البيض، آخر جمعة، أسبوع المسجد، صلوات زوال الإمام السجاد",
+     "reason": "worship practices listed in Almaaref's Sha'ban card, not commemorations; user to decide"
+    }
+   ],
+   "coverage": {
+    "Prophet (S)": "not my months",
+    "Fatima (S)": "not my months",
+    "Ali": "not in Sha'ban",
+    "Hasan": "not in Sha'ban",
+    "Husayn": "birth 3 Sha'ban found (alt 5, Mufid); death Ashura not mine",
+    "Sajjad": "birth 5 Sha'ban found (alt 9; Tebyan 15 Jumada I); death not my months (Muharram)",
+    "Baqir/Sadiq/Kadhim/Rida/Jawad/Hadi/Askari": "not in Sha'ban",
+    "Mahdi": "birth 15 Sha'ban found (Tebyan, Rafed, Almaaref, WikiShia, Kafeel); night of 15 found",
+    "Extra": "Abbas birth 4, Ali al-Akbar birth 11"
+   }
+  },
+  {
+   "month": 9,
+   "monthNameAr": "رمضان",
+   "occasions": [
+    {
+     "day": 10,
+     "isNight": false,
+     "titleAr": "ذكرى وفاة السيدة خديجة الكبرى (س)",
+     "category": "martyrdom",
+     "figure": "Lady Khadija",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "10 رمضان، 10 قبل الهجرة (عام الحزن)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "10 رمضان 10 بعد البعثة"
+      },
+      {
+       "name": "موقع مكارم الشيرازي (makarem.ir) - وفاة السيدة خديجة (س)",
+       "url": "https://makarem.ir/maaref/fa/article/index/419512/%D9%88%D9%81%D8%A7%D8%AA-%D8%AD%D8%B6%D8%B1%D8%AA-%D8%AE%D8%AF%DB%8C%D8%AC%D9%87-%D8%B3%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%DB%8C%D9%87%D8%A7%D8%9B-10-%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
+       "statesDate": "10 رمضان قبل الهجرة بثلاث سنوات"
+      },
+      {
+       "name": "حوزة - مجلة (در گذر زمان: مناسبت ها)",
+       "url": "https://hawzah.net/fa/Magazine/View/4693/9393/112517/%D8%AF%D8%B1_%DA%AF%D8%B0%D8%B1_%D8%B2%D9%85%D8%A7%D9%86__%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%AA_%D9%87%D8%A7",
+       "statesDate": "10 رمضان (22 شهريور): وفات حضرت خديجة"
+      }
+     ],
+     "confidence": "high",
+     "notes": "WikiShia Khadija page states only 'Ramadan of year 10 of the Bi'tha' (no day); day 10 comes from the WikiShia events page + al-Kafeel. | Rafed's Ramadan card text I opened does not list it; a search snippet suggested a 9 Ramadan reading in another Rafed listing (not opened, not used)."
+    },
+    {
+     "day": 12,
+     "isNight": false,
+     "titleAr": "يوم المؤاخاة بين المهاجرين والأنصار",
+     "category": "event",
+     "figure": "Prophet Muhammad / Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "12 رمضان 1 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "12 رمضان"
+      },
+      {
+       "name": "مكتبة المعارف الإسلامية - أعمال أشهر النور: شهر رمضان",
+       "url": "https://books.almaaref.org/view.php?id=494",
+       "statesDate": "12 رمضان: يوم المؤاخاة بين المهاجرين والأنصار"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 14,
+     "isNight": false,
+     "titleAr": "ذكرى مقتل المختار الثقفي (رض)",
+     "category": "martyrdom",
+     "figure": "Mukhtar al-Thaqafi",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "14 رمضان 67 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "14 رمضان 67 هـ"
+      }
+     ],
+     "confidence": "medium",
+     "notes": null
+    },
+    {
+     "day": 15,
+     "isNight": false,
+     "titleAr": "مولد الإمام الحسن المجتبى (ع)",
+     "category": "birth",
+     "figure": "Imam Hasan al-Mujtaba",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام الحسن (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الحسن_(ع)",
+       "statesDate": "15 رمضان سنة 3 هـ (على أشهر الروايات)"
+      },
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "15 رمضان 3 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "15 رمضان"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "15 رمضان سنة 3 هـ"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رمضان)",
+       "url": "https://rafed.net/calendar//calendar.php?edate=2024-03-20",
+       "statesDate": "15 رمضان: من السنة الثانية للهجرة ولد السبط الأول"
+      },
+      {
+       "name": "مكتبة المعارف الإسلامية - أعمال أشهر النور: شهر رمضان",
+       "url": "https://books.almaaref.org/view.php?id=494",
+       "statesDate": "15 رمضان: ولادة الإمام الحسن (ع)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Year 2 or 3 AH differs by source; day agreed."
+    },
+    {
+     "day": 15,
+     "isNight": false,
+     "titleAr": "خروج مسلم بن عقيل (ع) إلى الكوفة",
+     "category": "event",
+     "figure": "Muslim ibn Aqil",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "15 رمضان 60 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "15 رمضان 60 هـ"
+      }
+     ],
+     "confidence": "medium",
+     "notes": null
+    },
+    {
+     "day": 17,
+     "isNight": false,
+     "titleAr": "غزوة بدر الكبرى",
+     "category": "battle",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - غزوة بدر",
+       "url": "https://ar.wikishia.net/view/غزوة_بدر",
+       "statesDate": "17 من شهر رمضان سنة 2 هـ"
+      },
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "17 رمضان 2 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "17 رمضان 2 هـ"
+      },
+      {
+       "name": "شبكة المعارف الإسلامية - غزوة بدر الكبرى",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=16493",
+       "statesDate": "غزوة بدر الكبرى (17 / رمضان / السنة 2 هـ)"
+      },
+      {
+       "name": "حوزة - مجلة (در گذر زمان: مناسبت ها)",
+       "url": "https://hawzah.net/fa/Magazine/View/4693/9393/112517/%D8%AF%D8%B1_%DA%AF%D8%B0%D8%B1_%D8%B2%D9%85%D8%A7%D9%86__%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%AA_%D9%87%D8%A7",
+       "statesDate": "17 رمضان (28 شهريور): جنگ بدر"
+      },
+      {
+       "name": "مكتبة المعارف الإسلامية - أعمال أشهر النور: شهر رمضان",
+       "url": "https://books.almaaref.org/view.php?id=494",
+       "statesDate": "17 رمضان السنة 2 هـ: معركة بدر الكبرى"
+      }
+     ],
+     "confidence": "high",
+     "notes": "WikiShia: a minority says 19 Ramadan (single source, not added)."
+    },
+    {
+     "day": 19,
+     "isNight": true,
+     "titleAr": "ليلة ضربة أمير المؤمنين الإمام علي (ع) - ليلة القدر الأولى",
+     "category": "night",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ليلة جرح الإمام علي (ع)",
+       "url": "https://ar.wikishia.net/view/ليلة_جرح_الإمام_علي_(ع)",
+       "statesDate": "ليلة 19 رمضان فجراً"
+      },
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "19 رمضان: ضربة ابن ملجم"
+      },
+      {
+       "name": "WikiShia - ليلة القدر",
+       "url": "https://ar.wikishia.net/view/ليلة_القدر",
+       "statesDate": "ليلة 19 من ليالي القدر"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رمضان)",
+       "url": "https://rafed.net/calendar//calendar.php?edate=2024-03-20",
+       "statesDate": "ليلة 19 (الأولى من الليالي التي يُشك أنها ليلة القدر)"
+      },
+      {
+       "name": "imamhussain.org - بعض أعمال شهر رمضان",
+       "url": "https://imamhussain.org/arabic/6759",
+       "statesDate": "ليالي القدر: التاسعة عشرة والحادية والعشرون والثالثة والعشرون"
+      },
+      {
+       "name": "مكتبة المعارف الإسلامية - أعمال أشهر النور: شهر رمضان",
+       "url": "https://books.almaaref.org/view.php?id=494",
+       "statesDate": "ليلة 19: من ليالي القدر"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Day/night: struck pre-dawn of night 19, 40 AH."
+    },
+    {
+     "day": 20,
+     "isNight": false,
+     "titleAr": "فتح مكة المكرمة",
+     "category": "battle",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "20 رمضان 8 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "20 رمضان 8 هـ"
+      }
+     ],
+     "confidence": "medium",
+     "notes": null
+    },
+    {
+     "day": 21,
+     "isNight": false,
+     "titleAr": "ذكرى استشهاد أمير المؤمنين الإمام علي (ع)",
+     "category": "martyrdom",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - الإمام علي (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_علي_(ع)",
+       "statesDate": "ليلة الجمعة ليلة 21 رمضان سنة 40 هـ"
+      },
+      {
+       "name": "WikiShia - ليلة جرح الإمام علي (ع)",
+       "url": "https://ar.wikishia.net/view/ليلة_جرح_الإمام_علي_(ع)",
+       "statesDate": "21 رمضان"
+      },
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "21 رمضان 40 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "21 رمضان 40 هـ"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "21 رمضان سنة 40 هـ مسجد الكوفة"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رمضان)",
+       "url": "https://rafed.net/calendar//calendar.php?edate=2024-03-20",
+       "statesDate": "21 رمضان: ذكرى استشهاد أول مظلوم بعد رسول الله (ص) سنة 40 هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 21,
+     "isNight": true,
+     "titleAr": "ليلة 21 رمضان - ليلة استشهاد الإمام علي (ع) وإحدى ليالي القدر",
+     "category": "night",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ليلة القدر",
+       "url": "https://ar.wikishia.net/view/ليلة_القدر",
+       "statesDate": "ليلة 21 من ليالي القدر الثلاث"
+      },
+      {
+       "name": "WikiShia - ليلة جرح الإمام علي (ع)",
+       "url": "https://ar.wikishia.net/view/ليلة_جرح_الإمام_علي_(ع)",
+       "statesDate": "ليلة 21 رمضان"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "ليلة 21 احتمال ليلة القدر (يوم 20)"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رمضان)",
+       "url": "https://rafed.net/calendar//calendar.php?edate=2024-03-20",
+       "statesDate": "ليلة 21 (ثانية الليالي المشكوكة)"
+      },
+      {
+       "name": "imamhussain.org - بعض أعمال شهر رمضان",
+       "url": "https://imamhussain.org/arabic/6759",
+       "statesDate": "الحادية والعشرون من ليالي القدر"
+      },
+      {
+       "name": "مكتبة المعارف الإسلامية - أعمال أشهر النور: شهر رمضان",
+       "url": "https://books.almaaref.org/view.php?id=494",
+       "statesDate": "ليلة 21: من ليالي القدر"
+      }
+     ],
+     "confidence": "high",
+     "notes": null
+    },
+    {
+     "day": 23,
+     "isNight": true,
+     "titleAr": "ليلة القدر - الليلة الثالثة والعشرون من رمضان",
+     "category": "night",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia - ليلة القدر",
+       "url": "https://ar.wikishia.net/view/ليلة_القدر",
+       "statesDate": "تؤكد الشيعة على ليلة 23"
+      },
+      {
+       "name": "WikiShia - أحداث شهر رمضان",
+       "url": "https://ar.wikishia.net/view/أحداث_شهر_رمضان",
+       "statesDate": "ليلة 23: نزول القرآن"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية) - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "ليلة 22/23 احتمال ليلة القدر"
+      },
+      {
+       "name": "تقويم شبكة رافد الإسلامي (شهر رمضان)",
+       "url": "https://rafed.net/calendar//calendar.php?edate=2024-03-20",
+       "statesDate": "ليلة 23 (الثالثة من الليالي المشكوكة)"
+      },
+      {
+       "name": "imamhussain.org - بعض أعمال شهر رمضان",
+       "url": "https://imamhussain.org/arabic/6759",
+       "statesDate": "الثالثة والعشرون من ليالي القدر"
+      },
+      {
+       "name": "مكتبة المعارف الإسلامية - أعمال أشهر النور: شهر رمضان",
+       "url": "https://books.almaaref.org/view.php?id=494",
+       "statesDate": "ليلة 23: من ليالي القدر"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Shia candidate nights are 19, 21 and 23; 23 is the most emphasised (Majlisi quoted by WikiShia)."
+    },
+    {
+     "day": 19,
+     "isNight": false,
+     "titleAr": "مولد الإمام محمد الجواد (ع)",
+     "category": "birth",
+     "figure": "Imam Muhammad al-Jawad",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول (الطوسي عن ابن عياش، وفي رواية: ليلة الجمعة 19 رمضان)",
+     "sources": [
+      {
+       "name": "شبكة المعارف الإسلامية - الإمام محمد بن علي الجواد (ع)",
+       "url": "https://www.almaaref.org/maarefdetails.php?id=3653&subcatid=1375&cid=404&supcat=39",
+       "statesDate": "ولد ... العاشرة من رجب، وقيل التاسع عشرة من شهر رمضان المبارك سنة 195 هـ"
+      },
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "19 أو 15 رمضان سنة 195 هـ (البديل: 10 رجب)"
+      },
+      {
+       "name": "WikiShia - الإمام الجواد (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الجواد_(ع)",
+       "statesDate": "10 رجب؛ وأكثر المصادر رمضان (15 أو 19)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Main is 10 Rajab (see Rajab). Mufid says Ramadan 195; Tusi 19 (or mid) Ramadan."
+    },
+    {
+     "day": 15,
+     "isNight": false,
+     "titleAr": "مولد الإمام محمد الجواد (ع)",
+     "category": "birth",
+     "figure": "Imam Muhammad al-Jawad",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول (للنصف من رمضان)",
+     "sources": [
+      {
+       "name": "تبيان - تاريخ تولد و شهادت امامان و چهارده معصوم",
+       "url": "https://www.tebyan.net/news/412125/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85%D8%A7%D9%86-%D9%88-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87-%D9%85%D8%B9%D8%B5%D9%88%D9%85",
+       "statesDate": "19 أو 15 رمضان سنة 195 هـ"
+      },
+      {
+       "name": "WikiShia - الإمام الجواد (ع)",
+       "url": "https://ar.wikishia.net/view/الإمام_الجواد_(ع)",
+       "statesDate": "15 رمضان"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Weaker alternate to 19 Ramadan alternate; same day as Imam Hasan's birth."
+    },
+    {
+     "day": 6,
+     "isNight": false,
+     "titleAr": "تولية الإمام الرضا (ع) ولاية العهد (سنة 201 هـ)",
+     "category": "event",
+     "figure": "Imam Ali al-Rida",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "مكتبة المعارف الإسلامية - أعمال أشهر النور: شهر رمضان",
+       "url": "https://books.almaaref.org/view.php?id=494",
+       "statesDate": "6 رمضان سنة 201 هـ: البيعة للإمام الرضا (ع)"
+      },
+      {
+       "name": "منتدى الكفيل - جدول مناسبات شهر رمضان",
+       "url": "https://forums.alkafeel.net/node/43371",
+       "statesDate": "6 رمضان (وفي موضع آخر 2 رمضان)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "WikiShia ar events page says 7 Ramadan 201 AH (single source for 7, kept in unconfirmed). Borderline occasion."
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "وفاة أبي طالب (ع) - 7 رمضان",
+     "claimedDay": 7,
+     "reason": "Only al-Kafeel Ramadan table; conflicts with 26 Rajab."
+    },
+    {
+     "titleAr": "معراج النبي (ص) / أولى الكتب",
+     "claimedDay": 17,
+     "reason": "Only WikiShia events page, as 'per some narrations'."
+    },
+    {
+     "titleAr": "وصول الكتب الأولى من الكوفة للإمام الحسين (ع)",
+     "claimedDay": 10,
+     "reason": "Only WikiShia events page (14 and 12 also listed)."
+    },
+    {
+     "titleAr": "وصول محمد بن أبي بكر والياً على مصر",
+     "claimedDay": 16,
+     "reason": "Only WikiShia events page (+ search snippet from an unopened page)."
+    },
+    {
+     "titleAr": "البيعة للإمام الحسن (ع)",
+     "claimedDay": 21,
+     "reason": "Only WikiShia events page."
+    },
+    {
+     "titleAr": "استشهاد محمد النفس الزكية",
+     "claimedDay": 15,
+     "reason": "Only WikiShia events page."
+    },
+    {
+     "titleAr": "وفاة السيدة نفيسة (س)",
+     "claimedDay": 1,
+     "reason": "Only WikiShia events page."
+    },
+    {
+     "titleAr": "وفاة أحمد بن عيسى",
+     "claimedDay": 23,
+     "reason": "Only WikiShia events page."
+    },
+    {
+     "titleAr": "ولادة السيد المسيح (ع)",
+     "claimedDay": 29,
+     "reason": "Only al-Kafeel table."
+    },
+    {
+     "titleAr": "ليلة 18 رمضان (بداية ليالي القدر)",
+     "claimedDay": 18,
+     "reason": "Only al-Kafeel table mentions; same as night 19."
+    },
+    {
+     "titleAr": "ولاية العهد للإمام الرضا (ع) - 7 رمضان",
+     "claimedDay": 7,
+     "reason": "Only WikiShia ar events page; Almaaref books and Kafeel say 6."
+    },
+    {
+     "titleAr": "وفاة أبي طالب (ع) - 7 رمضان",
+     "claimedDay": 7,
+     "reason": "Only Kafeel Ramadan table; rafed/WikiShia/Almaaref calendars give 26 Rajab."
+    }
+   ],
+   "excluded": [
+    {
+     "title": "نزول التوراة 6 رمضان / الإنجيل (3 أو 8 رمضان) / الزبور 18 رمضان / صحف إبراهيم 3 رمضان",
+     "reason": "prior scriptures (Torah 6, Gospel 12 per Mufid in Almaaref books / 3 or 8 per Kafeel, Zabur 18): borderline, conflicts between sources; user to decide"
+    },
+    {
+     "title": "وفاة أبي جهل 17، أبي لهب 24، مروان بن الحكم، الحجاج 13، عائشة 17 رمضان، إعدام ابن ملجم 21",
+     "reason": "anti-Ahl-al-Bayt figures/Sunni-linked, per brief"
+    },
+    {
+     "title": "وفاة علماء (الشيخ المفيد 3، المجلسي 27، الحر العاملي 21، الخوئي 9 رمضان ...)",
+     "reason": "scholars/marja' per brief"
+    },
+    {
+     "title": "يوم القدس العالمي (آخر جمعة)",
+     "reason": "political, variable day"
+    },
+    {
+     "title": "معركة عين جالوت 25 رمضان",
+     "reason": "non-religious historical event"
+    },
+    {
+     "title": "وفاة السيدة خديجة 7 رمضان وأبي طالب 6 رمضان (قائمة شبكة المعارف id=10081)",
+     "reason": "that Almaaref list's day numbers looked shifted (e.g. Hasan 12, Badr 15); not relied on"
+    }
+   ],
+   "coverage": {
+    "Prophet (S)": "not my months; Badr 17, Fath Makka 20, mu'akhat 12 found",
+    "Fatima (S)": "not my months (Khadija death 10 Ramadan added)",
+    "Ali": "strike night 19 / martyrdom 21 Ramadan found (Tebyan, Rafed, WikiShia, Kafeel); birth Rajab 13",
+    "Hasan": "birth 15 Ramadan found (Tebyan, Rafed, Almaaref); death not my months (28 Safar)",
+    "Husayn/Sajjad/Baqir/Sadiq/Kadhim/Rida/Hadi/Askari": "not in Ramadan (Rida wilayat al-ahd 6 Ramadan 201 added)",
+    "Jawad": "birth alt 19/15 Ramadan (main 10 Rajab)",
+    "Mahdi": "not in Ramadan",
+    "Qadr": "nights 19, 21, 23 found (imamhussain, Rafed, Almaaref)"
+   }
+  }
+ ]
+}

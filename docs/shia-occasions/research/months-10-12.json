@@ -1,0 +1,911 @@
+{
+ "months": [
+  {
+   "month": 10,
+   "monthNameAr": "شوال",
+   "coverage": {
+    "Imam al-Sadiq": "martyrdom 25 Shawwal (birth 17 Rabi I, not my months)",
+    "Imam al-Kazim": "arrest 19 Shawwal (unconfirmed, not a birth/death)",
+    "Other Infallibles": "not in Shawwal"
+   },
+   "occasions": [
+    {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "عيد الفطر المبارك",
+     "category": "eid",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Shaaer bulletin via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1038762",
+       "statesDate": "1 شوّال: عيد الفطر المبارك"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1007629",
+       "statesDate": "اليوم الأول من شهر شوال: عيد الفطر"
+      },
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_شوال",
+       "statesDate": "Eid al-Fitr 1 Shawwal"
+      },
+      {
+       "name": "Arabic WikiShia (month page, no day number)",
+       "url": "https://ar.wikishia.net/view/شوال",
+       "statesDate": "عيد الفطر"
+      }
+     ],
+     "confidence": "high",
+     "notes": ""
+    },
+    {
+     "day": 25,
+     "isNight": false,
+     "titleAr": "ذكرى استشهاد الإمام جعفر الصادق (ع)",
+     "category": "martyrdom",
+     "figure": "Imam Ja'far al-Sadiq",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Arabic WikiShia Imam al-Sadiq",
+       "url": "https://ar.wikishia.net/view/الإمام_الصادق_(ع)",
+       "statesDate": "25 شوال 148 هـ"
+      },
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_شوال",
+       "statesDate": "25 Shawwal 148 AH"
+      },
+      {
+       "name": "Shaaer bulletin via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1038762",
+       "statesDate": "25 شوّال 148 هـ"
+      },
+      {
+       "name": "Imam Hussain library via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1007629",
+       "statesDate": "اليوم الخامس والعشرين من شهر شوال (على رواية)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "ar.wikishia also records a minority view of mid-Rajab (single source, not entered); al-Mufid says only 'Shawwal'; year 148 (some say 146)."
+    },
+    {
+     "day": 8,
+     "isNight": false,
+     "titleAr": "يوم الهدم: هدم أضرحة أئمة البقيع (ع) عام 1344 هـ",
+     "category": "event",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Shaaer bulletin via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1038762",
+       "statesDate": "8 شوّال 1344 هـ"
+      },
+      {
+       "name": "Imam Hussain library via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1007629",
+       "statesDate": "اليوم الثامن من شهر شوال 1344"
+      },
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_شوال",
+       "statesDate": "8 Shawwal 1344 (یوم الهدم)"
+      },
+      {
+       "name": "Arabic WikiShia (month page, no day)",
+       "url": "https://ar.wikishia.net/view/شوال",
+       "statesDate": "هدم قبور البقيع"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Modern event but a standard Shia commemoration (Yawm al-Hadm); controller may decide to keep."
+    },
+    {
+     "day": 7,
+     "isNight": false,
+     "titleAr": "غزوة أحد واستشهاد حمزة سيد الشهداء (رض)",
+     "category": "battle",
+     "figure": "Hamza ibn Abd al-Muttalib",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Arabic WikiShia Uhud",
+       "url": "https://ar.wikishia.net/view/معركة_أحد",
+       "statesDate": "7 شوال 3 هـ (السبت)"
+      },
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_شوال",
+       "statesDate": "7 Shawwal 3 AH"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Both sources WikiShia; second independent source gave 15 Shawwal."
+    },
+    {
+     "day": 15,
+     "isNight": false,
+     "titleAr": "غزوة أحد واستشهاد حمزة سيد الشهداء (رض)",
+     "category": "battle",
+     "figure": "Hamza ibn Abd al-Muttalib",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول (مناسبات شوال: شعائر / مكتبة العتبة الحسينية)",
+     "sources": [
+      {
+       "name": "Shaaer bulletin via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1038762",
+       "statesDate": "15 شوّال 3 هـ"
+      },
+      {
+       "name": "Imam Hussain library via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1007629",
+       "statesDate": "اليوم الخامس عشر من شهر شوال"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "ar.wikishia also notes a view of 11 Shawwal."
+    },
+    {
+     "day": 4,
+     "isNight": false,
+     "titleAr": "غزوة حنين",
+     "category": "battle",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Shaaer bulletin via Alkafeel forum",
+       "url": "https://forums.alkafeel.net/node/1038762",
+       "statesDate": "4 شوّال 8 هـ"
+      },
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_شوال",
+       "statesDate": "4 Shawwal 8 AH"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Imam Hussain library gives 3 Shawwal; Persian Wikifeqh gives departure 6 and arrival 10 Shawwal (fighting ~11)."
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "خروج أمير المؤمنين (ع) إلى صفين سنة 36 هـ",
+     "claimedDay": 5,
+     "reason": "Only the two Alkafeel-forum reproductions (Shaaer/Imam Hussain library), not independent; no WikiShia/Mafatih day found"
+    },
+    {
+     "titleAr": "دخول مسلم بن عقيل (ع) الكوفة سنة 60 هـ",
+     "claimedDay": 5,
+     "reason": "Same two non-independent sources; tried WikiShia month pages (no day)"
+    },
+    {
+     "titleAr": "ردّ الشمس لأمير المؤمنين (ع) سنة 7 هـ",
+     "claimedDay": 15,
+     "reason": "Only Shaaer / Imam Hussain library reproductions"
+    },
+    {
+     "titleAr": "غزوة الأحزاب (الخندق)",
+     "claimedDay": 15,
+     "reason": "Sources conflict: 15 or 17 Shawwal (Alkafeel posts); WikiShia/Wikifeqh say month disputed Shawwal vs Dhu al-Qa'da (departure 10 Shawwal, end 1 Dhu al-Qa'da)"
+    },
+    {
+     "titleAr": "اعتقال الإمام الكاظم (ع) في المدينة سنة 169 هـ",
+     "claimedDay": 19,
+     "reason": "Only Shaaer bulletin; no second Shia source"
+    },
+    {
+     "titleAr": "وفاة إبراهيم ابن رسول الله (ص) سنة 10 هـ",
+     "claimedDay": 20,
+     "reason": "Only Shaaer bulletin"
+    },
+    {
+     "titleAr": "وفاة السيد عبد العظيم الحسني (ع)",
+     "claimedDay": 15,
+     "reason": "WikiShia 15 Shawwal 252; Alkafeel posts give 16 and 25 Shawwal; conflicting"
+    },
+    {
+     "titleAr": "غزوة حمراء الأسد / غزوة الطائف",
+     "claimedDay": null,
+     "reason": "Listed in Wikifeqh Shawwal category without day"
+    },
+    {
+     "titleAr": "غزوة حنين",
+     "claimedDay": 3,
+     "reason": "alternate with a single source"
+    }
+   ],
+   "excluded": [
+    {
+     "title": "Death of Ayatollah Borujerdi 12 Shawwal; Imam Khomeini 28 Shawwal",
+     "reason": "marja'/modern figures"
+    },
+    {
+     "title": "Death of Amr ibn al-As 1 Shawwal; Bukhari; al-Mutawakkil 3 Shawwal; Abd al-Malik ibn Marwan 14 Shawwal",
+     "reason": "Sunni/anti-Ahl-al-Bayt figures, listed on Alkafeel pages"
+    }
+   ]
+  },
+  {
+   "month": 11,
+   "monthNameAr": "ذو القعدة",
+   "coverage": {
+    "Lady Fatima al-Ma'suma": "birth 1 Dhu al-Qa'da (disputed)",
+    "Imam al-Rida": "birth 11 Dhu al-Qa'da; martyrdom 23 Dhu al-Qa'da only as alternate (main is end of Safar, not my months)",
+    "Imam al-Jawad": "martyrdom last day of Dhu al-Qa'da (220 AH)",
+    "Others": "not in my months"
+   },
+   "occasions": [
+    {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "مولد السيدة فاطمة المعصومة (س)",
+     "category": "birth",
+     "figure": "Fatima al-Ma'suma",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_ذی‌قعده",
+       "statesDate": "1 ذی‌قعده 173"
+      },
+      {
+       "name": "Shaaer via Alkafeel forum 'أبرز مناسبات شهر ذي القعدة'",
+       "url": "https://forums.alkafeel.net/node/976095",
+       "statesDate": "اليوم الأول 173 هـ"
+      },
+      {
+       "name": "Alkafeel forum post (Ibn Tawus/Mufid quoted)",
+       "url": "https://forums.alkafeel.net/node/1011095",
+       "statesDate": "يبدأ الشهر بولادة السيدة المعصومة"
+      },
+      {
+       "name": "Arabic WikiShia (Ushrat al-Karama)",
+       "url": "https://ar.wikishia.net/view/عشرة_الكرامة",
+       "statesDate": "1 ذي القعدة 173 هـ (Nur al-Afaq)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "ar.wikishia: some Shia scholars consider the date fabricated; Ostadi says no earlier Shia book gives a birth date. Widely commemorated nonetheless (Iran Day of Daughters)."
+    },
+    {
+     "day": 11,
+     "isNight": false,
+     "titleAr": "مولد الإمام علي بن موسى الرضا (ع)",
+     "category": "birth",
+     "figure": "Imam Ali al-Rida",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_ذی‌قعده",
+       "statesDate": "11 ذی‌قعده 148"
+      },
+      {
+       "name": "Shaaer via Alkafeel forum 'أبرز مناسبات شهر ذي القعدة'",
+       "url": "https://forums.alkafeel.net/node/976095",
+       "statesDate": "11 ذي القعدة 148 هـ"
+      },
+      {
+       "name": "Alkafeel forum post (Ibn Tawus/Mufid quoted)",
+       "url": "https://forums.alkafeel.net/node/1011095",
+       "statesDate": "الحادي عشر منه"
+      },
+      {
+       "name": "Arabic WikiShia (Ushrat al-Karama) citing Abbas Qummi",
+       "url": "https://ar.wikishia.net/view/عشرة_الكرامة",
+       "statesDate": "المشهور 11 ذي القعدة 148 هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": "ar.wikishia mentions another view of 11 Dhu al-Hijja 153 AH (single source)."
+    },
+    {
+     "day": 25,
+     "isNight": false,
+     "titleAr": "يوم دحو الأرض",
+     "category": "event",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_ذی‌قعده",
+       "statesDate": "روز دحوالارض 25"
+      },
+      {
+       "name": "Shaaer via Alkafeel forum 'أبرز مناسبات شهر ذي القعدة'",
+       "url": "https://forums.alkafeel.net/node/976095",
+       "statesDate": "25 ذي القعدة: دحو الأرض ونزول الحجر الأسود (الكافي)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Hadith from al-Kafi (Imam al-Baqir)."
+    },
+    {
+     "day": 30,
+     "isNight": false,
+     "titleAr": "ذكرى استشهاد الإمام محمد الجواد (ع) (آخر الشهر)",
+     "category": "martyrdom",
+     "figure": "Imam Muhammad al-Jawad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia",
+       "url": "https://fa.wikishia.net/view/ماه_ذی‌قعده",
+       "statesDate": "آخر ذی‌قعده 220"
+      },
+      {
+       "name": "Shaaer via Alkafeel forum 'أبرز مناسبات شهر ذي القعدة'",
+       "url": "https://forums.alkafeel.net/node/976095",
+       "statesDate": "اليوم الأخير 220 هـ"
+      },
+      {
+       "name": "Alkafeel forum post (Ibn Tawus/Mufid quoted)",
+       "url": "https://forums.alkafeel.net/node/1011095",
+       "statesDate": "في آخر الشهر"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Last day of month: show on day 29 in 29-day months. Some Iranian calendars print 29/30; not verified."
+    },
+    {
+     "day": 23,
+     "isNight": false,
+     "titleAr": "استشهاد الإمام الرضا (ع)",
+     "category": "martyrdom",
+     "figure": "Imam Ali al-Rida",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول الشيخ المفيد (الإرشاد)؛ والمشهور آخر صفر",
+     "sources": [
+      {
+       "name": "Shaaer via Alkafeel forum 'أبرز مناسبات شهر ذي القعدة'",
+       "url": "https://forums.alkafeel.net/node/976095",
+       "statesDate": "23 ذي القعدة 203 هـ (على رواية)"
+      },
+      {
+       "name": "Alkafeel forum post (Ibn Tawus/Mufid quoted)",
+       "url": "https://forums.alkafeel.net/node/1011095",
+       "statesDate": "الثالث والعشرين 203 هـ على بعض الأقوال (المفيد: الإرشاد)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Main date is 29/30 Safar (month 2, other agent)."
+    },
+    {
+     "day": 23,
+     "isNight": false,
+     "titleAr": "يوم زيارة الإمام الرضا (ع) الخاصة",
+     "category": "other",
+     "figure": "Imam Ali al-Rida",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (23rd special visitation day)",
+       "url": "https://fa.wikishia.net/view/ماه_ذی‌قعده",
+       "statesDate": "روز ۲۳ زیارت ویژه امام رضا"
+      },
+      {
+       "name": "Alkafeel forum post (Ibn Tawus/Mufid quoted)",
+       "url": "https://forums.alkafeel.net/node/1011095",
+       "statesDate": "يوم الـ23 زيارة خاصة (ابن طاووس)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Recommended ziyara per Ibn Tawus; a printed calendar may combine with martyrdom alternate."
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "يوم أحمد بن موسى شاهچراغ (ع)",
+     "claimedDay": 6,
+     "reason": "Only Persian WikiShia (6 Dhu al-Qa'da); second source not found"
+    },
+    {
+     "titleAr": "حصار بني قريظة سنة 5 هـ",
+     "claimedDay": 12,
+     "reason": "Only Shaaer/Alkafeel post"
+    },
+    {
+     "titleAr": "خروج النبي (ص) إلى حجة الوداع",
+     "claimedDay": 25,
+     "reason": "Only Alkafeel/Shaaer; post itself gives 25 or 'five or six nights left'"
+    },
+    {
+     "titleAr": "صلح الحديبية سنة 6 هـ",
+     "claimedDay": null,
+     "reason": "month only, no day"
+    },
+    {
+     "titleAr": "بدء رحلة الإمام الرضا (ع) من المدينة إلى خراسان",
+     "claimedDay": null,
+     "reason": "month only, no day"
+    },
+    {
+     "titleAr": "غزوة الخندق (على قول في ذي القعدة)",
+     "claimedDay": 1,
+     "reason": "Month disputed (Shawwal vs Dhu al-Qa'da); ended 1 Dhu al-Qa'da per WikiShia narration"
+    }
+   ],
+   "excluded": [
+    {
+     "title": "Death of Shaykh Abd al-Karim Ha'eri 17 Dhu al-Qa'da 1355",
+     "reason": "Scholar/modern figure"
+    }
+   ]
+  },
+  {
+   "month": 12,
+   "monthNameAr": "ذو الحجة",
+   "coverage": {
+    "Imam al-Baqir": "martyrdom 7 Dhu al-Hijja (birth 1 Rajab/3 Safar, not my months)",
+    "Imam al-Hadi": "birth 15 Dhu al-Hijja main (alternate 2/5 Rajab, month 7); martyrdom 3 Rajab not mine",
+    "Imam Ali & Lady Fatima": "marriage 1 Dhu al-Hijja (alt 6)",
+    "Imam al-Jawad": "martyrdom end of Dhu al-Qa'da (month 11); fa.wikishia dhu al-hijja page lists a 6 Dhu al-Hijja item in one place - see unconfirmed",
+    "Imam Husayn": "departure from Mecca 8 Dhu al-Hijja",
+    "Prophet (S)": "Ghadir 18; Mubahala 24; Hajj al-Wada not dated",
+    "Others": "not in my months"
+   },
+   "occasions": [
+    {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "زواج أمير المؤمنين علي (ع) من السيدة فاطمة الزهراء (س)",
+     "category": "event",
+     "figure": "Imam Ali & Fatima al-Zahra",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "1 ذی‌حجه سال 2"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم الأول 2 هـ"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 1066936)",
+       "url": "https://forums.alkafeel.net/node/1066936",
+       "statesDate": "1 ذي الحجة 2 هـ"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "1 ذي الحجة 2 هـ (على رواية)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Shaaer marks 1st as 'on one narration'."
+    },
+    {
+     "day": 6,
+     "isNight": false,
+     "titleAr": "زفاف السيدة فاطمة الزهراء (س) إلى أمير المؤمنين (ع)",
+     "category": "event",
+     "figure": "Fatima al-Zahra",
+     "variant": "alternate",
+     "alternateNoteAr": "على رواية",
+     "sources": [
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم السادس: زفاف فاطمة (على رواية)"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 1066936)",
+       "url": "https://forums.alkafeel.net/node/1066936",
+       "statesDate": "6 ذي الحجة: زفاف السيدة فاطمة الزهراء"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Libraries present 6th as wedding procession."
+    },
+    {
+     "day": 7,
+     "isNight": false,
+     "titleAr": "ذكرى استشهاد الإمام محمد الباقر (ع)",
+     "category": "martyrdom",
+     "figure": "Imam Muhammad al-Baqir",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "7 ذی‌حجه 114"
+      },
+      {
+       "name": "Arabic WikiShia Imam al-Baqir",
+       "url": "https://ar.wikishia.net/view/الإمام_الباقر_(ع)",
+       "statesDate": "7 ذي الحجة 114 هـ"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم السابع 114-117 هـ"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "7 ذي الحجة 114 هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Year disputed 114-118 AH; day agreed."
+    },
+    {
+     "day": 8,
+     "isNight": false,
+     "titleAr": "يوم التروية",
+     "category": "event",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "روز ترویه 8 ذی‌حجه"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "8 ذي الحجة: يوم التروية"
+      }
+     ],
+     "confidence": "high",
+     "notes": ""
+    },
+    {
+     "day": 8,
+     "isNight": false,
+     "titleAr": "خروج الإمام الحسين (ع) من مكة إلى العراق سنة 60 هـ",
+     "category": "event",
+     "figure": "Imam Husayn",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "8 ذی‌حجه 60 آغاز حرکت امام حسین"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "8 ذي الحجة 60 هـ: خروج الإمام الحسين من مكة"
+      }
+     ],
+     "confidence": "high",
+     "notes": ""
+    },
+    {
+     "day": 9,
+     "isNight": false,
+     "titleAr": "يوم عرفة (دعاء الإمام الحسين (ع) وزيارته)",
+     "category": "event",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "روز عرفه 9 ذی‌حجه"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم التاسع: يوم عرفة"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 1066936)",
+       "url": "https://forums.alkafeel.net/node/1066936",
+       "statesDate": "9 ذي الحجة: يوم عرفة، زيارة الحسين ودعاؤه"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "9 ذي الحجة: يوم عرفة"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Day 9 night (ليلة عرفة) is a night of worship per fa.wikishia."
+    },
+    {
+     "day": 9,
+     "isNight": false,
+     "titleAr": "استشهاد مسلم بن عقيل وهانئ بن عروة (رض) سنة 60 هـ",
+     "category": "martyrdom",
+     "figure": "Muslim ibn Aqil",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Arabic WikiShia Muslim ibn Aqil",
+       "url": "https://ar.wikishia.net/view/مسلم_بن_عقيل",
+       "statesDate": "9 ذي الحجة 60 هـ (الإرشاد)"
+      },
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "9 ذی‌حجه 60"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم التاسع 60 هـ"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "9 ذي الحجة 60 هـ: شهادة مسلم بن عقيل وهانئ بن عروة"
+      }
+     ],
+     "confidence": "high",
+     "notes": "ar.wikishia gives no separate date for Hani."
+    },
+    {
+     "day": 10,
+     "isNight": false,
+     "titleAr": "عيد الأضحى المبارك",
+     "category": "eid",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "عید قربان 10 ذی‌حجه"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم العاشر: عيد الأضحى"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "10 ذي الحجة: عيد الأضحى المبارك"
+      }
+     ],
+     "confidence": "high",
+     "notes": ""
+    },
+    {
+     "day": 15,
+     "isNight": false,
+     "titleAr": "مولد الإمام علي بن محمد الهادي (ع)",
+     "category": "birth",
+     "figure": "Imam Ali al-Hadi",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Arabic WikiShia Imam al-Hadi",
+       "url": "https://ar.wikishia.net/view/الإمام_الهادي_(ع)",
+       "statesDate": "15 ذي الحجة 212 هـ (الكليني والمفيد والطوسي)"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "15 ذي الحجة 212 هـ على الأصح"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 1066936)",
+       "url": "https://forums.alkafeel.net/node/1066936",
+       "statesDate": "15 ذي الحجة 212 هـ"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Alternate 2 or 5 Rajab 212 belongs to month 7 (other agent); ar.wikishia lists it."
+    },
+    {
+     "day": 18,
+     "isNight": false,
+     "titleAr": "عيد الغدير الأغر (إعلان ولاية أمير المؤمنين (ع)) سنة 10 هـ",
+     "category": "eid",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "واقعه غدیر 18 ذی‌حجه 10"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم الثامن عشر: عيد الغدير"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 1066936)",
+       "url": "https://forums.alkafeel.net/node/1066936",
+       "statesDate": "18 ذي الحجة: يوم الغدير"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "18 ذي الحجة 10 هـ: عيد الغدير الأغر"
+      }
+     ],
+     "confidence": "high",
+     "notes": ""
+    },
+    {
+     "day": 24,
+     "isNight": false,
+     "titleAr": "يوم المباهلة (المباهلة مع نصارى نجران)",
+     "category": "event",
+     "figure": "Prophet Muhammad",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "24 ذی‌حجه مباهله"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "24 ذي الحجة: يوم المباهلة ونزول آية المباهلة"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Imam Hussain library puts it on 23."
+    },
+    {
+     "day": 23,
+     "isNight": false,
+     "titleAr": "يوم المباهلة (المباهلة مع نصارى نجران)",
+     "category": "event",
+     "figure": "Prophet Muhammad",
+     "variant": "alternate",
+     "alternateNoteAr": "على رواية (مكتبة العتبة الحسينية)",
+     "sources": [
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم الثالث والعشرون: يوم المباهلة"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 1066936)",
+       "url": "https://forums.alkafeel.net/node/1066936",
+       "statesDate": "23 ذي الحجة: يوم المباهلة"
+      }
+     ],
+     "confidence": "medium",
+     "notes": ""
+    },
+    {
+     "day": 24,
+     "isNight": false,
+     "titleAr": "تصدق أمير المؤمنين (ع) بخاتمه ونزول آية الولاية",
+     "category": "event",
+     "figure": "Imam Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "24 ذی‌حجه خاتم‌بخشی"
+      },
+      {
+       "name": "Shaaer bulletin (saraer.org) Dhu al-Hijja occasions",
+       "url": "https://saraer.org/uploaded/shaaer/shaaer_55/parts/ayam_allah.pdf",
+       "statesDate": "24 ذي الحجة: تصدق أمير المؤمنين بالخاتم في ركوعه (المائدة 55)"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Libraries put it on 23."
+    },
+    {
+     "day": 25,
+     "isNight": false,
+     "titleAr": "نزول سورة هل أتى في أهل البيت (ع)",
+     "category": "event",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "Persian WikiShia (Dhu al-Hijja page)",
+       "url": "https://fa.wikishia.net/view/ذی‌الحجه",
+       "statesDate": "25 ذی‌حجه نزول هل اتی"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 977927)",
+       "url": "https://forums.alkafeel.net/node/977927",
+       "statesDate": "اليوم الخامس والعشرون: نزول سورة هل أتى"
+      },
+      {
+       "name": "Imam Hussain Shrine library via Alkafeel forum (node 1066936)",
+       "url": "https://forums.alkafeel.net/node/1066936",
+       "statesDate": "25 ذي الحجة: نزول سورة هل أتى"
+      }
+     ],
+     "confidence": "high",
+     "notes": ""
+    }
+   ],
+   "unconfirmed": [
+    {
+     "titleAr": "ظهور مسلم بن عقيل (رض) في الكوفة",
+     "claimedDay": 8,
+     "reason": "Only the two Imam Hussain library reposts (same text)"
+    },
+    {
+     "titleAr": "إيصال الإمام الكاظم (ع) إلى البصرة سنة 179 هـ",
+     "claimedDay": 7,
+     "reason": "Only the library posts"
+    },
+    {
+     "titleAr": "البيعة لأمير المؤمنين (ع) بعد قتل عثمان سنة 35 هـ",
+     "claimedDay": 18,
+     "reason": "Only library posts"
+    },
+    {
+     "titleAr": "نزول سورة براءة / إرسال علي (ع) بها سنة 9 هـ",
+     "claimedDay": 1,
+     "reason": "Library says 1 or 3; single source"
+    },
+    {
+     "titleAr": "شق القمر بمكة",
+     "claimedDay": 14,
+     "reason": "Only library posts"
+    },
+    {
+     "titleAr": "معركة الحرة سنة 63 هـ",
+     "claimedDay": 28,
+     "reason": "Only library (citing Abbas Qummi), no second source"
+    },
+    {
+     "titleAr": "استشهاد الإمام الجواد (ع) (قول 6 ذي الحجة)",
+     "claimedDay": 6,
+     "reason": "Appeared only in a Persian WikiShia page summary; main date is end of Dhu al-Qa'da (month 11); needs verification"
+    },
+    {
+     "titleAr": "الإحياء ليلة العاشر / ليلة عرفة (أعمال)",
+     "claimedDay": null,
+     "reason": "Observances, not historical occasions; fa.wikishia only"
+    }
+   ],
+   "excluded": [
+    {
+     "title": "Umar ibn al-Khattab stabbing 26 / death 29; death of al-Mansur 6 Dhu al-Hijja 158; Uthman siege 15; Qaramita 14; Abu Lu'lu'a",
+     "reason": "Non-Ahl al-Bayt/anti-Ahl al-Bayt figures; listed on Alkafeel library posts"
+    },
+    {
+     "title": "Deaths of al-Muhaqqiq al-Tusi (18), al-Karaki (18), al-Tabarsi (10), Ibn Abi al-Hadid birth (1)",
+     "reason": "Scholars"
+    },
+    {
+     "title": "Earlier prophets events: Ibrahim birth/fire, Musa, Isa, Adam, Dawud, Sulayman successors, Day of Zeenah",
+     "reason": "Not in scope (14 Infallibles/Ahl al-Bayt/Shia history); user may decide"
+    }
+   ]
+  }
+ ]
+}

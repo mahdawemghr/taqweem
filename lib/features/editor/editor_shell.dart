@@ -7,8 +7,10 @@ import '../../domain/models.dart';
 import '../../state/editor_controller.dart';
 import '../preview/poster_preview.dart';
 import 'invalid_times.dart';
+import 'step_export.dart';
 import 'step_grid.dart';
 import 'step_setup.dart';
+import 'step_texts.dart';
 
 /// Labels of the four editor steps, in order.
 const editorStepLabels = ['الشهر', 'الأيام', 'النصوص', 'التصدير'];
@@ -57,6 +59,12 @@ class _EditorShellState extends ConsumerState<EditorShell> {
 
   void _onEditorChanged(EditorState? prev, EditorState next) {
     if (prev == null || !_isMine(next)) return;
+    // Rows removed (e.g. undo of an extension): drop their invalid entries.
+    if (_isMine(prev) && next.poster.days.length < prev.poster.days.length) {
+      ref
+          .read(invalidTimesProvider.notifier)
+          .pruneFrom(next.poster.days.length);
+    }
     var pending = _pending, everSaved = _everSaved;
     if (_isMine(prev) && !identical(prev.poster, next.poster)) pending = true;
     if (!prev.saving && next.saving) _savingPoster = next.poster;
@@ -130,13 +138,12 @@ class _EditorShellState extends ConsumerState<EditorShell> {
   late final StepGrid _grid = StepGrid(onGoToStep: _goTo);
 
   /// Builders of the steps, in [editorStepLabels] order. Only the current
-  /// step is built. Steps 3–4 are placeholders until Tasks 15–16 replace
-  /// them.
+  /// step is built.
   late final List<Widget Function(MonthPoster)> _steps = [
     (p) => StepSetup(poster: p, session: _session),
     (_) => _grid,
-    (_) => StepPlaceholder(title: editorStepLabels[2]),
-    (_) => StepPlaceholder(title: editorStepLabels[3]),
+    (_) => const StepTexts(),
+    (p) => StepExport(poster: p, onGoToStep: _goTo),
   ];
 
   @override
@@ -227,57 +234,6 @@ class _EditorShellState extends ConsumerState<EditorShell> {
           onNext: () => unawaited(_goTo(_step + 1)),
           onFinish: () => Navigator.of(context).maybePop(),
           onRetry: () => unawaited(ctl.flush()),
-        ),
-      ),
-    );
-  }
-}
-
-/// Stand-in for a step that is not built yet.
-class StepPlaceholder extends StatelessWidget {
-  const StepPlaceholder({required this.title, super.key});
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-    return Center(
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: cs.surfaceContainerLowest,
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.6)),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 32),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  Icons.hourglass_empty_rounded,
-                  size: 40,
-                  color: cs.primary,
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: theme.textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  'قريباً',
-                  style: theme.textTheme.bodyLarge?.copyWith(
-                    color: cs.onSurfaceVariant,
-                  ),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );

@@ -5,6 +5,80 @@
    "monthNameAr": "ربيع الثاني",
    "occasions": [
     {
+     "day": 1,
+     "isNight": false,
+     "titleAr": "خروج التوابين بقيادة سليمان بن صرد الخزاعي",
+     "category": "event",
+     "figure": "Sulayman ibn Surad / Tawwabin",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia (Arabic)",
+       "url": "https://ar.wikishia.net/view/%D8%A3%D8%AD%D8%AF%D8%A7%D8%AB_%D8%B4%D9%87%D8%B1_%D8%B1%D8%A8%D9%8A%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
+       "statesDate": "1 ربيع الثاني 65 هـ ثورة التوابين"
+      },
+      {
+       "name": "ويكي فقه (Wikifeqh, Persian Shia encyclopedia)",
+       "url": "https://fa.wikifeqh.ir/%D8%B1%D8%A8%DB%8C%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%DB%8C",
+       "statesDate": "١ ربيع الثاني ٦٥ هـ قيام التوابين"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/871804",
+       "statesDate": "1 ربيع الثاني: خروج التوابين يقودهم سليمان بن صرد الخزاعي وشخوصهم للطلب بدم الحسين (ع) سنة 65 هـ (عن صدى المهدي)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Promoted from unconfirmed: 3 independent lists agree on day 1. Shaaer 83/107 give day 5 (see alternate)."
+    },
+    {
+     "day": 4,
+     "isNight": false,
+     "titleAr": "ولادة السيد عبد العظيم الحسني (ع)",
+     "category": "birth",
+     "figure": "Abd al-Azim al-Hasani",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia (Arabic)",
+       "url": "https://ar.wikishia.net/view/%D8%B1%D8%A8%D9%8A%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
+       "statesDate": "4 ربيع الثاني 173 هـ ولادة عبد العظيم الحسني"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/9538",
+       "statesDate": "4 ربيع الثاني 173هـ، المدينة المنوّرة (مع هوامش من أمالي الصدوق وكامل الزيارات وثواب الأعمال)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Promoted from unconfirmed on two Shia sources (WikiShia + Alkafeel post), both single-day statements; no marja'/Mafatih/Iran calendar source reached for the birth date. Medium confidence; borderline (descendant of Imam al-Hasan, shrine in Rey)."
+    },
+    {
+     "day": 5,
+     "isNight": false,
+     "titleAr": "خروج التوابين من الكوفة بقيادة سليمان بن صرد (على قول)",
+     "category": "event",
+     "figure": "Sulayman ibn Surad / Tawwabin",
+     "variant": "alternate",
+     "alternateNoteAr": "على قول (مجلة شعائر)",
+     "sources": [
+      {
+       "name": "مجلة شعائر – قبسات من أيام الله (issue 83)",
+       "url": "https://www.saraer.org/uploaded/shaaer/shaaer_83/parts/ayam_allah.pdf",
+       "statesDate": "5 ربيع الآخر/65 هـ خروج التوابين"
+      },
+      {
+       "name": "مجلة شعائر – قبسات من أيام الله (issue 107)",
+       "url": "https://www.saraer.org/uploaded/shaaer/shaaer_107/parts/ayam_allah.pdf",
+       "statesDate": "5 ربيع الآخر/65 هـ خروج التوابين"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Alternate day, one source family (Shaaer, two issues). Borderline: Tawwabin movement; controller may drop."
+    },
+    {
      "day": 8,
      "isNight": false,
      "titleAr": "ولادة الإمام الحسن العسكري (ع)",
@@ -32,38 +106,25 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 107)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_107/parts/ayam_allah.pdf",
        "statesDate": "8 ربيع الآخر/232 هـ مولد الإمام أبي محمد الحسن بن علي العسكري عليه السلام (وقيل في اليوم العاشر)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/67669",
+       "statesDate": "8 ربيع الثاني: ولادة الإمام الحسن العسكري سنة 232 هـ (نقلاً عن السيد ابن طاووس والشيخ المفيد)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/871804",
+       "statesDate": "8 ربيع الثاني: ولادة الإمام الحسن العسكري (ع) بالمدينة المنورة سنة 232 هـ (عن صحيفة صدى المهدي)"
+      },
+      {
+       "name": "ويكي فقه (Wikifeqh, Persian Shia encyclopedia)",
+       "url": "https://fa.wikifeqh.ir/%D8%B1%D8%A8%DB%8C%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%DB%8C",
+       "statesDate": "ذكر ٨ ربيع الثاني قولاً آخر في مفاتيح الجنان (ص385) غير العاشر"
       }
      ],
      "confidence": "high",
-     "notes": "WikiShia AR/EN count as one source family; Shaaer is the independent second source. Shaaer issue 83 instead puts 10 Rabi II first with 'وقيل في اليوم الثامن'."
-    },
-    {
-     "day": 10,
-     "isNight": false,
-     "titleAr": "ولادة الإمام الحسن العسكري (ع) على رواية",
-     "category": "birth",
-     "figure": "Imam Hasan al-Askari",
-     "variant": "alternate",
-     "alternateNoteAr": "على رواية",
-     "sources": [
-      {
-       "name": "WikiShia (Arabic)",
-       "url": "https://ar.wikishia.net/view/%D8%A3%D8%AD%D8%AF%D8%A7%D8%AB_%D8%B4%D9%87%D8%B1_%D8%B1%D8%A8%D9%8A%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
-       "statesDate": "العاشر: 232 هـ. ولادة الإمام حسن العسكري ... (علی رواية)"
-      },
-      {
-       "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 83)",
-       "url": "https://www.saraer.org/uploaded/shaaer/shaaer_83/parts/ayam_allah.pdf",
-       "statesDate": "10 ربيع الآخر/232 هـ مولد الإمام أبي محمد الحسن بن علي العسكري عليه السلام (وقيل في اليوم الثامن)"
-      },
-      {
-       "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 107)",
-       "url": "https://www.saraer.org/uploaded/shaaer/shaaer_107/parts/ayam_allah.pdf",
-       "statesDate": "(وقيل في اليوم العاشر)"
-      }
-     ],
-     "confidence": "medium",
-     "notes": "Alternate to 8 Rabi II."
+     "notes": "WikiShia AR/EN count as one source family; Shaaer is the independent second source. Shaaer issue 83 instead puts 10 Rabi II first with 'وقيل في اليوم الثامن'. UPGRADE: Wikifeqh (Persian Shia encyclopedia) says Mafatih al-Jinan p.385 gives 10 Rabi II first and mentions 8 as the other account (and cites Majlisi's Zad al-Ma'ad p.276 for 10); WikiShia calls 8 the well-known view among Shia historians and Alkafeel/Sada al-Mahdi list 8. 8 kept as main (calendar usage); 10 is a strong alternate - controller may show both. Mafatih original text not directly opened (only via Wikifeqh)."
     },
     {
      "day": 8,
@@ -93,10 +154,15 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 85)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_85/parts/ayam_allah.pdf",
        "statesDate": "الأولى: بعد شهادة سيد النبيين بأربعين يوماً (8 ربيع الثاني)"
+      },
+      {
+       "name": "منشور ينقل موسوعة الشيخ الزنجاني (عالم شيعي) - مقال",
+       "url": "https://forums.alkafeel.net/node/38127",
+       "statesDate": "أقوال شهادة الزهراء: 8 ربيع الثاني (40 يوماً، 54 مصدراً) / 13 جمادى الأولى (75 يوماً، 108 مصادر) / 3 جمادى الآخرة (95 يوماً، 72 مصدراً) - عن موسوعة الشيخ إسماعيل الأنصاري الزنجاني الكبرى عن فاطمة الزهراء (ع) ج15 ص33"
       }
      ],
      "confidence": "high",
-     "notes": "Main Shia date is 3 Jumada II (see month 6). Commemorated mainly in Iraq per WikiShia."
+     "notes": "Main Shia date is 3 Jumada II (see month 6). Commemorated mainly in Iraq per WikiShia. UPGRADE: Zanjani's encyclopedia (via Alkafeel post) counts 54 sources for the 40-day view; it is one of the three widely known views."
     },
     {
      "day": 10,
@@ -126,10 +192,86 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 107)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_107/parts/ayam_allah.pdf",
        "statesDate": "10 ربيع الآخر/201 هـ وفاة السيدة فاطمة المعصومة ... (وقيل في اليوم الثاني عشر)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/67669",
+       "statesDate": "10 ربيع الثاني: وفاة السيدة فاطمة المعصومة بنت الإمام موسى الكاظم سنة 201 هـ في قم"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/871804",
+       "statesDate": "10 ربيع الثاني: وفاة السيدة فاطمة المعصومة (ع) (عن صحيفة صدى المهدي)"
       }
      ],
      "confidence": "high",
      "notes": "Death (وفاة). Shaaer 107 mentions a minority view of 12 Rabi II (single source, not added)."
+    },
+    {
+     "day": 10,
+     "isNight": false,
+     "titleAr": "ولادة الإمام الحسن العسكري (ع) على رواية",
+     "category": "birth",
+     "figure": "Imam Hasan al-Askari",
+     "variant": "alternate",
+     "alternateNoteAr": "على رواية (مفاتيح الجنان والمجلسي في زاد المعاد)",
+     "sources": [
+      {
+       "name": "WikiShia (Arabic)",
+       "url": "https://ar.wikishia.net/view/%D8%A3%D8%AD%D8%AF%D8%A7%D8%AB_%D8%B4%D9%87%D8%B1_%D8%B1%D8%A8%D9%8A%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
+       "statesDate": "العاشر: 232 هـ. ولادة الإمام حسن العسكري ... (علی رواية)"
+      },
+      {
+       "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 83)",
+       "url": "https://www.saraer.org/uploaded/shaaer/shaaer_83/parts/ayam_allah.pdf",
+       "statesDate": "10 ربيع الآخر/232 هـ مولد الإمام أبي محمد الحسن بن علي العسكري عليه السلام (وقيل في اليوم الثامن)"
+      },
+      {
+       "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 107)",
+       "url": "https://www.saraer.org/uploaded/shaaer/shaaer_107/parts/ayam_allah.pdf",
+       "statesDate": "(وقيل في اليوم العاشر)"
+      },
+      {
+       "name": "ويكي فقه (Wikifeqh, Persian Shia encyclopedia)",
+       "url": "https://fa.wikifeqh.ir/%D8%B1%D8%A8%DB%8C%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%DB%8C",
+       "statesDate": "١٠ ربيع الثاني ٢٣٢ هـ ولادة الإمام العسكري؛ مفاتيح الجنان ص385 (القمي) وزاد المعاد للمجلسي ص276"
+      }
+     ],
+     "confidence": "high",
+     "notes": "Alternate to 8 Rabi II; Mafatih (Qummi) and Majlisi's Zad al-Ma'ad cited via Wikifeqh."
+    },
+    {
+     "day": 12,
+     "isNight": false,
+     "titleAr": "فرض صلاة الحضر والسفر وزيادة ركعات الصلاة (السنة الأولى للهجرة)",
+     "category": "event",
+     "figure": null,
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia (Arabic)",
+       "url": "https://ar.wikishia.net/view/%D8%A3%D8%AD%D8%AF%D8%A7%D8%AB_%D8%B4%D9%87%D8%B1_%D8%B1%D8%A8%D9%8A%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
+       "statesDate": "12 ربيع الثاني 1 هـ زيادة عدد ركعات الصلاة"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/871804",
+       "statesDate": "12 ربيع الثاني: فرض صلاة الحضر والسفر في أول سنة من الهجرة (عن صدى المهدي)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/67669",
+       "statesDate": "12 ربيع الثاني: زيادة ركعات الصلاة بعد شهر من الهجرة"
+      },
+      {
+       "name": "ويكي فقه (Wikifeqh, Persian Shia encyclopedia)",
+       "url": "https://fa.wikifeqh.ir/%D8%B1%D8%A8%DB%8C%D8%B9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%DB%8C",
+       "statesDate": "وجوب الصلاة (مصباح المتهجد للطوسي ص792) - بلا ذكر اليوم"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Promoted from unconfirmed (WikiShia + two Alkafeel lists on day 12; Wikifeqh/Tusi's Misbah cites the event without day). Low importance; controller may drop."
     },
     {
      "day": 14,
@@ -154,10 +296,15 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 107)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_107/parts/ayam_allah.pdf",
        "statesDate": "14 ربيع الآخر/66 هـ خروج المختار بن أبي عبيد الثقفي"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/871804",
+       "statesDate": "15 ربيع الثاني: خروج المختار الثقفي بالكوفة للطلب بدم الإمام الحسين (ع) سنة 66 هـ (يوم مختلف: 15)"
       }
      ],
      "confidence": "medium",
-     "notes": "Arabic WikiShia events page does not list it under day 14; English WikiShia (from Farsi WikiShia) does. Title wording 'طالباً بثأر' is descriptive; controller may shorten to «خروج المختار الثقفي»."
+     "notes": "Arabic WikiShia events page does not list it under day 14; English WikiShia (from Farsi WikiShia) does. Title wording 'طالباً بثأر' is descriptive; controller may shorten to «خروج المختار الثقفي». Day conflict among Shia lists: Alkafeel thread 67669 puts it on 12 and thread 871804 (Sada al-Mahdi) on 15 Rabi II; 14 kept (WikiShia + Shaaer x2)."
     },
     {
      "day": 22,
@@ -190,59 +337,44 @@
       }
      ],
      "confidence": "medium",
-     "notes": "Son of an Imam buried in Qom; included as Ahl al-Bayt family member (category B). Controller may decide if minor."
+     "notes": "Son of an Imam buried in Qom; included as Ahl al-Bayt family member (category B). Controller may decide if minor. Sada al-Mahdi list (Alkafeel 871804) gives 23 Rabi II instead (single, not added)."
     }
    ],
    "unconfirmed": [
     {
      "titleAr": "استشهاد الإمام محمد الباقر (ع) على رواية",
      "claimedDay": 1,
-     "reason": "Only WikiShia (AR month + events page, EN) lists 1 Rabi II 'على رواية'; no second independent Shia source found. Main date (7 Dhu al-Hijja) belongs to another agent's month."
+     "reason": "Only WikiShia (AR month + events page, EN) lists 1 Rabi II 'على رواية'; no second independent Shia source found. Main date (7 Dhu al-Hijja) belongs to another agent's month. [UPGRADE: also checked Alkafeel forum lists, Wikifeqh month page, imam-us.org (404 for Rabi II), Iran calendar search - no second Shia source.] Wikifeqh Rabi II page and Alkafeel lists do not list it either."
     },
     {
      "titleAr": "ولادة الإمام الحسن العسكري (ع) على رواية",
      "claimedDay": 4,
-     "reason": "Only WikiShia events page ('232 هـ. ولادة الإمام الحسن العسكري (على رواية)' under day 4)."
-    },
-    {
-     "titleAr": "ولادة السيد عبد العظيم الحسني (ع)",
-     "claimedDay": 4,
-     "reason": "WikiShia AR (month page + events page) and EN list 4 Rabi II 173 AH, but these are one source family; Shaaer's Rabi II list does not include it; second-source search was cut off by the tool session limit and the WikiShia article timed out (504)."
+     "reason": "Only WikiShia events page ('232 هـ. ولادة الإمام الحسن العسكري (على رواية)' under day 4). [UPGRADE: also checked Alkafeel forum lists, Wikifeqh month page, imam-us.org (404 for Rabi II), Iran calendar search - no second Shia source.]"
     },
     {
      "titleAr": "ذكرى استشهاد السيدة فاطمة الزهراء (س) على رواية",
      "claimedDay": 13,
-     "reason": "Only WikiShia events page lists '11 هـ. استشهاد السيدة الزهراء (على رواية)' under 13 Rabi II; not in other sources."
-    },
-    {
-     "titleAr": "خروج التوابين بقيادة سليمان بن صرد الخزاعي",
-     "claimedDay": 5,
-     "reason": "Conflict: Shaaer (83,107) says 5 Rabi II 65 AH (departure from Kufa); WikiShia events page says 1 Rabi II 65 AH (ثورة التوابين)."
+     "reason": "Only WikiShia events page lists '11 هـ. استشهاد السيدة الزهراء (على رواية)' under 13 Rabi II; not in other sources. [UPGRADE: also checked Alkafeel forum lists, Wikifeqh month page, imam-us.org (404 for Rabi II), Iran calendar search - no second Shia source.]"
     },
     {
      "titleAr": "وفاة الصحابي بلال الحبشي مؤذن النبي (ص)",
      "claimedDay": 2,
-     "reason": "Only Shaaer (2 Rabi II 20 AH); not in WikiShia lists."
+     "reason": "Only Shaaer (2 Rabi II 20 AH); not in WikiShia lists. [UPGRADE: also checked Alkafeel forum lists, Wikifeqh month page, imam-us.org (404 for Rabi II), Iran calendar search - no second Shia source.]"
     },
     {
      "titleAr": "رجوع النبي (ص) من دومة الجندل",
      "claimedDay": 20,
-     "reason": "Only Shaaer (20 Rabi II 5 AH)."
+     "reason": "Only Shaaer (20 Rabi II 5 AH). [UPGRADE: also checked Alkafeel forum lists, Wikifeqh month page, imam-us.org (404 for Rabi II), Iran calendar search - no second Shia source.]"
     },
     {
      "titleAr": "حضور الإمام الحسن العسكري (ع) في جرجان إعجازاً",
      "claimedDay": 3,
-     "reason": "Only WikiShia events page (على رواية الخرائج والجرائح)."
-    },
-    {
-     "titleAr": "زيادة عدد ركعات الصلاة إلى سبع عشرة ركعة",
-     "claimedDay": 12,
-     "reason": "Only WikiShia events page (1 هـ)."
+     "reason": "WikiShia events page (على رواية الخرائج) and Alkafeel/Sada al-Mahdi newsletter list day 3 (miracle of Jurjan); both are calendar listings without a scholarly/Mafatih source; not a standard commemoration, so left unconfirmed."
     },
     {
      "titleAr": "وفاة السيدة فاطمة المعصومة (س) على قول",
      "claimedDay": 12,
-     "reason": "Only Shaaer 107 ('وقيل في اليوم الثاني عشر')."
+     "reason": "Only Shaaer 107 ('وقيل في اليوم الثاني عشر'). [UPGRADE: also checked Alkafeel forum lists, Wikifeqh month page, imam-us.org (404 for Rabi II), Iran calendar search - no second Shia source.]"
     }
    ],
    "excluded": [
@@ -261,8 +393,32 @@
     {
      "title": "Death of Mu'izz al-Dawla al-Daylami (17), death of Ibn Hisham (13)",
      "reason": "Rulers/authors, not religious occasions."
+    },
+    {
+     "title": "Construction of Baghdad by al-Mansur (6 Rabi II, 146 AH); shooting of devils with meteors (7)",
+     "reason": "Listed only on Alkafeel/Sada al-Mahdi list; not Ahl al-Bayt commemorations."
+    },
+    {
+     "title": "Death of the poet Di'bil al-Khuza'i (9 Rabi II)",
+     "reason": "Poet of Ahl al-Bayt (Alkafeel list only); poets/scholars excluded by brief; user may decide."
     }
-   ]
+   ],
+   "coverage": {
+    "Prophet": "birth 17 Rabi I / death 28 Safar: not in my months",
+    "Fatima al-Zahra": "birth 20 Jumada II (month 6); martyrdom alternate 8 Rabi II (40 days) here",
+    "Imam Ali": "not in my months",
+    "Imam Hasan": "not in my months",
+    "Imam Husayn": "not in my months",
+    "Imam Sajjad": "birth alt 15 Jumada I (month 5)",
+    "Imam Baqir": "martyrdom alt 1 Rabi II found only on WikiShia -> unconfirmed",
+    "Imam Sadiq": "not in my months",
+    "Imam Kazim": "not in my months",
+    "Imam Rida": "not in my months",
+    "Imam Jawad": "not in my months",
+    "Imam Hadi": "martyrdom alt 26/27 Jumada II unconfirmed (month 6)",
+    "Imam Askari": "birth 8 Rabi II (main) / 10 Rabi II (alt, Mafatih via Wikifeqh); death 8 Rabi I not in my months",
+    "Imam Mahdi": "not in my months"
+   }
   },
   {
    "month": 5,
@@ -301,6 +457,11 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 96)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_96/parts/ayam_allah.pdf",
        "statesDate": "5 جمادى الأولى/5 هـ ولادة السيدة زينب بنت أمير المؤمنين عليهما السلام"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/52170",
+       "statesDate": "5 جمادى الأولى: ولدت (ع) في 5 جمادى الأُولى 5ه بالمدينة المنوّرة (عن مكتبة الإمام الحسين imamhussain-lib)"
       }
      ],
      "confidence": "high",
@@ -334,10 +495,15 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 96)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_96/parts/ayam_allah.pdf",
        "statesDate": "10 جمادى الأولى/36 هـ حرب الجمل بين أمير المؤمنين عليه السلام والناكثين"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/52170",
+       "statesDate": "10 جمادى الأولى: وفي مثل هذا اليوم من سنة 36 للهجرة وقعت حرب الجمل"
       }
      ],
      "confidence": "medium",
-     "notes": "WikiShia's Battle of Jamal article records three views: 15 Jumada II, 10 Jumada II, 10 Jumada I. 10 Jumada I chosen as main because both calendars list it; 15 Jumada II is in unconfirmed (month 6)."
+     "notes": "WikiShia's Battle of Jamal article records three views: 15 Jumada II, 10 Jumada II, 10 Jumada I. 10 Jumada I chosen as main because both calendars list it; 15 Jumada II is in unconfirmed (month 6). UPGRADE: Alkafeel list also gives 10 Jumada I."
     },
     {
      "day": 13,
@@ -346,7 +512,7 @@
      "category": "martyrdom",
      "figure": "Fatima al-Zahra",
      "variant": "alternate",
-     "alternateNoteAr": "على رواية أنها عاشت بعد النبي (ص) خمسة وسبعين يوماً",
+     "alternateNoteAr": "على رواية 75 يوماً بعد وفاة النبي (ص) (مشهورة كذلك؛ يحييها الشيعة في العراق)",
      "sources": [
       {
        "name": "WikiShia (Arabic)",
@@ -372,10 +538,53 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 85)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_85/parts/ayam_allah.pdf",
        "statesDate": "الثانية: بعد شهادته بخمسة وسبعين يوماً (13 جمادى الأولى)"
+      },
+      {
+       "name": "منشور ينقل موسوعة الشيخ الزنجاني (عالم شيعي) - مقال",
+       "url": "https://forums.alkafeel.net/node/38127",
+       "statesDate": "أقوال شهادة الزهراء: 8 ربيع الثاني (40 يوماً، 54 مصدراً) / 13 جمادى الأولى (75 يوماً، 108 مصادر) / 3 جمادى الآخرة (95 يوماً، 72 مصدراً) - عن موسوعة الشيخ إسماعيل الأنصاري الزنجاني الكبرى عن فاطمة الزهراء (ع) ج15 ص33"
+      },
+      {
+       "name": "ويكي فقه (Wikifeqh, Persian Shia encyclopedia)",
+       "url": "https://fa.wikifeqh.ir/%D8%A7%DB%8C%D8%A7%D9%85_%D9%81%D8%A7%D8%B7%D9%85%DB%8C%D9%87",
+       "statesDate": "الفاطمية الأولى 13-15 جمادى الأولى (رواية 75 يوماً)؛ بنا بر نظر مشهور علمای شیعه الأقوال 13-15 جمادى الأولى و3-5 جمادى الآخرة؛ الشيخ عباس القمي أوصى بإحياء الأيام"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/52170",
+       "statesDate": "13-15 جمادى الأولى: شهادة الصديقة الشهيدة فاطمة الزهراء سنة 11 هـ (أصول الكافي 1/241)"
       }
      ],
      "confidence": "high",
-     "notes": "The first Fatimiyya. WikiShia (فاطمة الزهراء article) and Shaaer 85 treat 3 Jumada II as the best-known / most relied-upon view, so this is marked alternate. I.M.A.M. calls it 'the second narration' without ranking it. Controller may wish to show both prominently, since it is widely commemorated."
+     "notes": "The first Fatimiyya. WikiShia (فاطمة الزهراء article) and Shaaer 85 treat 3 Jumada II as the best-known / most relied-upon view, so this is marked alternate. I.M.A.M. calls it 'the second narration' without ranking it. Controller may wish to show both prominently, since it is widely commemorated. UPGRADE: Zanjani's encyclopedia counts 108 sources for 13 Jumada I (the largest), and Wikifeqh says Shia scholars' widely held views are 13-15 Jumada I and 3-5 Jumada II and that Sheikh Abbas Qummi (Mafatih) advised observing both. 3 Jumada II is kept as 'main' (official in Iran, WikiShia: 'most famous'); in Iraq 13 Jumada I is widely observed - controller should show BOTH."
+    },
+    {
+     "day": 15,
+     "isNight": false,
+     "titleAr": "دخول أمير المؤمنين (ع) البصرة بعد انتصاره في حرب الجمل",
+     "category": "battle",
+     "figure": "Battle of the Camel",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "مجلة شعائر (issue 96)",
+       "url": "https://www.saraer.org/uploaded/shaaer/shaaer_96/parts/ayam_allah.pdf",
+       "statesDate": "15 جمادى الأولى/36 هـ هزيمة الناكثين ودخول أمير المؤمنين البصرة"
+      },
+      {
+       "name": "مجلة شعائر (issue 108)",
+       "url": "https://www.saraer.org/uploaded/shaaer/shaaer_108/parts/ayam_allah.pdf",
+       "statesDate": "15 جمادى الأولى/36 هـ"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/52170",
+       "statesDate": "15 جمادى الأولى: في مثل هذا اليوم من سنة 36 للهجرة كان فتح البصرة"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Promoted: Shaaer + Alkafeel/imamhussain-lib list. Low importance; controller may drop or merge with Jamal."
     },
     {
      "day": 15,
@@ -405,6 +614,11 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 96)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_96/parts/ayam_allah.pdf",
        "statesDate": "15 جمادى الأولى/36 هـ ولادة الإمام علي بن الحسين زين العابدين عليهما السلام (برواية الشيخ المفيد)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/52170",
+       "statesDate": "15 جمادى الأولى: في هذا اليوم من سنة 38 هـ كان مولد الإمام علي بن الحسين زين العابدين"
       }
      ],
      "confidence": "medium",
@@ -471,27 +685,32 @@
     {
      "titleAr": "غزوة مؤتة واستشهاد جعفر الطيار (ع)",
      "claimedDay": 2,
-     "reason": "Day conflict: Shaaer 96/108 say 2 Jumada I 8 AH; Arabic WikiShia events page lists it under day 5; English WikiShia under day 6; Shaaer 73 puts it at 10 Jumada II; WikiShia article only says 'جمادى الأولى من السنة الثامنة'."
-    },
-    {
-     "titleAr": "هزيمة الناكثين في حرب الجمل ودخول أمير المؤمنين (ع) البصرة",
-     "claimedDay": 15,
-     "reason": "Only Shaaer (96,108)."
+     "reason": "Day conflict: Shaaer 96/108 say 2 Jumada I 8 AH; Arabic WikiShia events page lists it under day 5; English WikiShia under day 6; Shaaer 73 puts it at 10 Jumada II; WikiShia article only says 'جمادى الأولى من السنة الثامنة'. [UPGRADE: also checked Alkafeel list 52170 - no confirmation unless stated; Mafatih/Haqibat/marja' calendars not reachable.]"
     },
     {
      "titleAr": "وفاة عبد الله بن عبد المطلب والد النبي (ص)",
      "claimedDay": 12,
-     "reason": "Only English WikiShia (no year)."
+     "reason": "Only English WikiShia (no year). [UPGRADE: also checked Alkafeel list 52170 - no confirmation unless stated; Mafatih/Haqibat/marja' calendars not reachable.]"
     },
     {
      "titleAr": "ولادة ذي القرنين",
      "claimedDay": 18,
-     "reason": "Only English WikiShia; also not an Ahl al-Bayt occasion."
+     "reason": "Only English WikiShia; also not an Ahl al-Bayt occasion. [UPGRADE: also checked Alkafeel list 52170 - no confirmation unless stated; Mafatih/Haqibat/marja' calendars not reachable.]"
     },
     {
      "titleAr": "مقتل إبراهيم بن مالك الأشتر",
      "claimedDay": 13,
-     "reason": "Conflict: Arabic WikiShia events page 13 Jumada I 71 AH vs English WikiShia 30 Jumada II."
+     "reason": "Conflict: Arabic WikiShia events page 13 Jumada I 71 AH vs English WikiShia 30 Jumada II. [UPGRADE: also checked Alkafeel list 52170 - no confirmation unless stated; Mafatih/Haqibat/marja' calendars not reachable.]"
+    },
+    {
+     "titleAr": "استشهاد محمد بن أبي بكر (رض) بمصر",
+     "claimedDay": 15,
+     "reason": "Only Alkafeel list 52170 (38 هـ, citing Nahj al-Balagha letter 35); no second source."
+    },
+    {
+     "titleAr": "استشهاد زيد بن صوحان (رض) في حرب الجمل",
+     "claimedDay": 19,
+     "reason": "Only Alkafeel list 52170 (36 هـ)."
     }
    ],
    "excluded": [
@@ -506,8 +725,19 @@
     {
      "title": "Deaths of poets/scholars (Ibn al-Rumi 28, al-Kisa'i al-Marwazi 2, Shahid al-Awwal 9, etc.)",
      "reason": "Scholars/poets excluded by brief."
+    },
+    {
+     "title": "Martyrdom of the First Martyr Muhammad b. Makki al-Amili (9/10 Jumada I, 786 AH)",
+     "reason": "Scholar; excluded by brief (Alkafeel says 9, other lists say 10)."
     }
-   ]
+   ],
+   "coverage": {
+    "Prophet": "not in my months (grandfather Abd al-Muttalib d.27 Jumada I included)",
+    "Fatima al-Zahra": "martyrdom alt 13 Jumada I (75 days) found; main 3 Jumada II",
+    "Imam Sajjad": "birth alt 15 Jumada I (Mufid) found; main 5 Shaban not in my months",
+    "Imam Mahdi": "2nd deputy d. 29 Jumada I found",
+    "others": "not in my months"
+   }
   },
   {
    "month": 6,
@@ -546,10 +776,30 @@
        "name": "I.M.A.M. (imam-us.org)",
        "url": "https://imam-us.org/the-crescent-moon-of-the-month-of-jumada-al-akhira-1445-a-h",
        "statesDate": "3 Jumada al-Akhira: Martyrdom Anniversary of Sayyida Fatimah al-Zahra (p), 11 A.H. (according to the third narration)"
+      },
+      {
+       "name": "منشور ينقل موسوعة الشيخ الزنجاني (عالم شيعي) - مقال",
+       "url": "https://forums.alkafeel.net/node/38127",
+       "statesDate": "أقوال شهادة الزهراء: 8 ربيع الثاني (40 يوماً، 54 مصدراً) / 13 جمادى الأولى (75 يوماً، 108 مصادر) / 3 جمادى الآخرة (95 يوماً، 72 مصدراً) - عن موسوعة الشيخ إسماعيل الأنصاري الزنجاني الكبرى عن فاطمة الزهراء (ع) ج15 ص33"
+      },
+      {
+       "name": "ويكي فقه (Wikifeqh, Persian Shia encyclopedia)",
+       "url": "https://fa.wikifeqh.ir/%D8%A7%DB%8C%D8%A7%D9%85_%D9%81%D8%A7%D8%B7%D9%85%DB%8C%D9%87",
+       "statesDate": "الفاطمية الثانية 3-5 جمادى الآخرة (رواية 95 يوماً)؛ مشهور علماء الشيعة؛ القمي أوصى بالتعزية في التاريخين"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/933038",
+       "statesDate": "3 جمادى الآخرة: ذكرى شهادة الصدِّيقة فاطمة الزهراء (ع)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/126725",
+       "statesDate": "3 جمادى الآخر: شهادة الصديقة الطاهرة فاطمة الزهراء سنة 11 هجرية"
       }
      ],
      "confidence": "high",
-     "notes": "MAIN. WikiShia and Shaaer both call 3 Jumada II the best-known / most relied-upon view (95 days after the Prophet, narration of Abu Basir from al-Sadiq). Official mourning day in Iran. I.M.A.M. labels it 'third narration' without ranking. Alternates: 13 Jumada I (75 days) and 8 Rabi II (40 days). Mafatih al-Jinan's own wording could not be checked (al-islam.org returned 403)."
+     "notes": "MAIN. WikiShia and Shaaer both call 3 Jumada II the best-known / most relied-upon view (95 days after the Prophet, narration of Abu Basir from al-Sadiq). Official mourning day in Iran. I.M.A.M. labels it 'third narration' without ranking. Alternates: 13 Jumada I (75 days) and 8 Rabi II (40 days). Mafatih al-Jinan's own wording could not be checked (al-islam.org returned 403). UPGRADE: Wikifeqh (Persian Shia encyclopedia) lists 3-5 Jumada II with 13-15 Jumada I as the two widely held scholarly views; Zanjani counts 72 sources for 3 Jumada II vs 108 for 13 Jumada I. First official holiday in Iran for 3 Jumada II was in 1379 SH (per fa.wikishia search snippet). Both dates kept; 3 Jumada II main."
     },
     {
      "day": 13,
@@ -584,10 +834,48 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 73)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_73/parts/ayam_allah.pdf",
        "statesDate": "13 جمادى الآخرة/64 هـ وفاة السيدة أم البنين، والدة أبي الفضل العباس عليه السلام"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/933038",
+       "statesDate": "13 جمادى الآخرة: ذكرى وفاة السيدة أُمّ البنين فاطمة بنت حزام"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/126725",
+       "statesDate": "13: وفاة السيدة أم البنين (ع) سنة 64 هجرية"
       }
      ],
      "confidence": "high",
      "notes": "WikiShia biography also mentions a report of 18 Jumada II (single, not added)."
+    },
+    {
+     "day": 19,
+     "isNight": false,
+     "titleAr": "زواج عبد الله بن عبد المطلب من آمنة بنت وهب (والدي النبي ص)",
+     "category": "event",
+     "figure": "Abd Allah & Amina",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia (Arabic) first pass",
+       "url": "https://ar.wikishia.net/view/%D8%A3%D8%AD%D8%AF%D8%A7%D8%AB_%D8%B4%D9%87%D8%B1_%D8%AC%D9%85%D8%A7%D8%AF%D9%89_%D8%A7%D9%84%D8%A2%D8%AE%D8%B1%D8%A9",
+       "statesDate": "19 جمادى الآخرة (EN WikiShia says 18)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/933038",
+       "statesDate": "19 جمادى الآخرة: زواج عبد الله وآمنة والدي النبي"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/126725",
+       "statesDate": "19: زواج والدي رسول الله محمد (ص)"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Promoted from unconfirmed: 19 agrees across WikiShia AR and two Alkafeel lists. English WikiShia says 18. Low priority."
     },
     {
      "day": 20,
@@ -622,82 +910,143 @@
        "name": "مجلة شعائر – قبسات من أيام الله (Shaaer magazine, issue 73)",
        "url": "https://www.saraer.org/uploaded/shaaer/shaaer_73/parts/ayam_allah.pdf",
        "statesDate": "20 جمادى الآخرة/5 بعد البعثة ولادة مولاتنا الصديقة الكبرى فاطمة الزهراء عليها السلام في مكة المكرمة"
+      },
+      {
+       "name": "همشهري أونلاين (Iranian press, Mother's Day article)",
+       "url": "https://www.hamshahrionline.ir/news/903167",
+       "statesDate": "20 جمادی‌الثانی روز مادر و ولادت حضرت فاطمه زهرا (س) (الیوم الرسمي في تقويم إيران)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/933038",
+       "statesDate": "20 جمادى الآخرة: ذكرى ولادة الصدِّيقة فاطمة الزهراء (ع)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/126725",
+       "statesDate": "20: ولادة البضعة الطاهرة فاطمة الزهراء (ع)"
       }
      ],
      "confidence": "high",
-     "notes": null
+     "notes": "UPGRADE: Iranian calendar usage (Mother's Day/Women's Day) states 20 Jumada II; Wikifeqh 'Fatimiyya' page confirms the day as Women's/Mother's Day (without date)."
+    },
+    {
+     "day": 21,
+     "isNight": false,
+     "titleAr": "ذكرى وفاة السيدة أم كلثوم بنت الإمام علي (ع)",
+     "category": "martyrdom",
+     "figure": "Umm Kulthum bint Ali",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia (Arabic) - Jumada II events list (first pass)",
+       "url": "https://ar.wikishia.net/view/%D8%A3%D8%AD%D8%AF%D8%A7%D8%AB_%D8%B4%D9%87%D8%B1_%D8%AC%D9%85%D8%A7%D8%AF%D9%89_%D8%A7%D9%84%D8%A2%D8%AE%D8%B1%D8%A9",
+       "statesDate": "وفاة أم كلثوم بنت الإمام علي (ع) (على رواية)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/933038",
+       "statesDate": "21 جمادى الآخرة: توفيت السيدة أُمّ كلثوم بنت الإمام علي"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/126725",
+       "statesDate": "21: وفاة السيدة أم كلثوم بنت الإمام علي سنة 61 هجرية"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Promoted from unconfirmed (WikiShia + two Alkafeel lists). Year/identity differs among reports (61 AH in Alkafeel). Medium; controller may drop."
+    },
+    {
+     "day": 29,
+     "isNight": false,
+     "titleAr": "ذكرى وفاة السيد محمد بن الإمام الهادي (ع) (سبع الدجيل)",
+     "category": "martyrdom",
+     "figure": "Muhammad b. Ali al-Hadi",
+     "variant": "main",
+     "alternateNoteAr": null,
+     "sources": [
+      {
+       "name": "WikiShia (Arabic) - Jumada II events",
+       "url": "https://ar.wikishia.net/view/%D8%A3%D8%AD%D8%AF%D8%A7%D8%AB_%D8%B4%D9%87%D8%B1_%D8%AC%D9%85%D8%A7%D8%AF%D9%89_%D8%A7%D9%84%D8%A2%D8%AE%D8%B1%D8%A9",
+       "statesDate": "29 جمادى الآخرة 252 هـ (وفي المقال: 28 أو 29)"
+      },
+      {
+       "name": "منتدى الكفيل (العتبة العباسية)",
+       "url": "https://forums.alkafeel.net/node/126725",
+       "statesDate": "29: وفاة السيد محمد بن الإمام علي الهادي في بلد سنة 252 هجرية"
+      },
+      {
+       "name": "منتدى العتبة العلوية (via search snippet, thread not opened)",
+       "url": "https://forums.alkafeel.net/node/12294",
+       "statesDate": "(29 /جمادى الآخرة) وفاة السيد محمّد بن الإمام الهادي - عنوان الموضوع فقط"
+      }
+     ],
+     "confidence": "medium",
+     "notes": "Promoted from unconfirmed: WikiShia + Alkafeel list; WikiShia article says 28 or 29. Third entry is a thread title seen in search only (not opened) so it is not counted."
     }
    ],
    "unconfirmed": [
     {
      "titleAr": "نزول آية التطهير في أصحاب الكساء (ع)",
      "claimedDay": 9,
-     "reason": "Only Shaaer (issues 73, 97, 109, same magazine): 9 Jumada II 10 AH. Not on the WikiShia lists; second-source search was blocked by the tool session limit."
+     "reason": "Only Shaaer (issues 73, 97, 109, same magazine): 9 Jumada II 10 AH. Not on the WikiShia lists; second-source search was blocked by the tool session limit. [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "غزوة ذات السلاسل ونزول سورة العاديات",
      "claimedDay": 24,
-     "reason": "Only Shaaer (24 Jumada II; year 7 in issue 73, 8 in issues 97/109)."
+     "reason": "Only Shaaer (24 Jumada II; year 7 in issue 73, 8 in issues 97/109). [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "استشهاد الإمام علي الهادي (ع) على رواية",
      "claimedDay": 26,
-     "reason": "Conflict between alternates: WikiShia events page says 26 Jumada II (على رواية); WikiShia Hadi article says 25 or 26; Shaaer says 27 Jumada II (على رواية). Main date (3 Rajab) belongs to another agent's month."
+     "reason": "Conflict between alternates: WikiShia events page says 26 Jumada II (على رواية); WikiShia Hadi article says 25 or 26; Shaaer says 27 Jumada II (على رواية). Main date (3 Rajab) belongs to another agent's month. [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "وقعة الجمل (على قول)",
      "claimedDay": 15,
-     "reason": "Only WikiShia (events page: 'وقوع معركة الجمل' 15 Jumada II 36 AH; Jamal article gives 15 Jumada II, 10 Jumada II or 10 Jumada I). Main entry kept at 10 Jumada I."
+     "reason": "Only WikiShia (events page: 'وقوع معركة الجمل' 15 Jumada II 36 AH; Jamal article gives 15 Jumada II, 10 Jumada II or 10 Jumada I). Main entry kept at 10 Jumada I. [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "ولادة الإمام زين العابدين (ع) على رواية",
      "claimedDay": 15,
-     "reason": "WikiShia events page lists 15 Jumada II; WikiShia Sajjad article says 26 Jumada II, so the alternates conflict and there is no second source."
-    },
-    {
-     "titleAr": "وفاة السيدة أم كلثوم بنت الإمام علي (ع)",
-     "claimedDay": 21,
-     "reason": "Only WikiShia (على رواية; year uncertain)."
-    },
-    {
-     "titleAr": "وفاة السيد محمد بن الإمام الهادي (ع) (سبع الدجيل)",
-     "claimedDay": 29,
-     "reason": "WikiShia lists 29 Jumada II 252 AH, but its article says 28 or 29; the only other confirmation was a user forum (al-Kafeel forums), which is not a reliable second source."
+     "reason": "WikiShia events page lists 15 Jumada II; WikiShia Sajjad article says 26 Jumada II, so the alternates conflict and there is no second source. [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "استشهاد علي بن محمد الباقر (ع) في مشهد أردهال",
      "claimedDay": 27,
-     "reason": "Only WikiShia (year 114 on AR, 116 on EN)."
+     "reason": "Only WikiShia (year 114 on AR, 116 on EN). [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "وصول الإمام الرضا (ع) إلى مرو",
      "claimedDay": 29,
-     "reason": "Only WikiShia AR events page."
+     "reason": "Only WikiShia AR events page. [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "عهد الإمام علي (ع) لأهل نجران",
      "claimedDay": 10,
-     "reason": "Only WikiShia AR events page."
-    },
-    {
-     "titleAr": "زواج عبد الله بن عبد المطلب من آمنة بنت وهب",
-     "claimedDay": 18,
-     "reason": "Conflict within WikiShia: EN says 18, AR says 19; no second source."
+     "reason": "Only WikiShia AR events page. [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "تحرك جيش المسلمين نحو خيبر",
      "claimedDay": 12,
-     "reason": "Only English WikiShia."
+     "reason": "Only English WikiShia. [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "إيداع النبي (ص) عند حليمة السعدية",
      "claimedDay": 28,
-     "reason": "Only English WikiShia."
+     "reason": "Only English WikiShia. [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
     },
     {
      "titleAr": "معركة مؤتة واستشهاد جعفر بن أبي طالب (ع)",
      "claimedDay": 10,
-     "reason": "Shaaer 73 only; conflicts with Jumada I dates (see month 5)."
+     "reason": "Shaaer 73 only; conflicts with Jumada I dates (see month 5). [UPGRADE: also checked Alkafeel lists 933038/126725, Wikifeqh, Hamshahri; no second source unless stated.]"
+    },
+    {
+     "titleAr": "رجوع الإمام علي (ع) من حرب الجمل",
+     "claimedDay": 21,
+     "reason": "Only Alkafeel list 126725 (36 هـ)."
     }
    ],
    "excluded": [
@@ -716,8 +1065,18 @@
     {
      "title": "Buyid conquest of Baghdad (11), death of al-Nu'man al-Maghribi (29), poet Ibn al-Hajjaj (27)",
      "reason": "Political/Isma'ili/poet entries; not religious occasions."
+    },
+    {
+     "title": "Deaths of Sharaf al-Din (8) and Sheikh Murtada al-Ansari (18); destruction of the Kaaba by Ibn al-Zubayr (15)",
+     "reason": "Scholars / ruler-related; excluded by brief (Alkafeel list 126725)."
     }
-   ]
+   ],
+   "coverage": {
+    "Fatima al-Zahra": "birth 20 Jumada II; martyrdom main 3 Jumada II (alts 13 Jumada I, 8 Rabi II)",
+    "Imam Hadi": "martyrdom main 3 Rajab not in my months; alts 26/27 Jumada II unconfirmed",
+    "Imam Sajjad": "alt birth 15/26 Jumada II unconfirmed (conflicting)",
+    "others": "not in my months"
+   }
   }
  ]
 }

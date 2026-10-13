@@ -27,6 +27,16 @@ class InvalidTimes extends Notifier<Map<(int, PrayerSlot), String>> {
     state = next;
   }
 
+  /// Drops the entries of rows with index >= [n] (rows that were removed).
+  void pruneFrom(int n) {
+    if (!ref.mounted) return;
+    if (!state.keys.any((k) => k.$1 >= n)) return;
+    state = {
+      for (final e in state.entries)
+        if (e.key.$1 < n) e.key: e.value,
+    };
+  }
+
   /// Forgets every entry (a new editor session).
   void clear() {
     if (state.isNotEmpty) state = const {};

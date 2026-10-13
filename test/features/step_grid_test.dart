@@ -9,6 +9,7 @@ import 'package:taqweem/domain/models.dart';
 import 'package:taqweem/domain/time_format.dart';
 import 'package:taqweem/domain/weekday.dart';
 import 'package:taqweem/features/editor/editor_shell.dart';
+import 'package:taqweem/features/editor/invalid_times.dart';
 import 'package:taqweem/features/editor/step_grid.dart';
 import 'package:taqweem/features/editor/time_cell.dart';
 import 'package:taqweem/state/editor_controller.dart';
@@ -620,7 +621,7 @@ void main() {
     expect(saved.last.days[0].times.fajr, 258);
   });
 
-  testWidgets('I3 keyboard accessory: التالي advances, تم commits', (
+  testWidgets('I3 keyboard accessory: الحقل التالي advances, تم commits', (
     tester,
   ) async {
     final c = await pumpGrid(tester, generated());
@@ -647,6 +648,36 @@ void main() {
     await tester.pumpAndSettle();
     expect(bar, findsNothing);
     expect(find.byKey(const ValueKey('honorific-bar')), findsOneWidget);
+  });
+
+  testWidgets('N1 an outside value change resolves a recorded invalid entry', (
+    tester,
+  ) async {
+    final c = await pumpGrid(tester, seedReferenceMonth());
+    await tester.enterText(cell(0, PrayerSlot.fajr), '4:75');
+    await blur(tester);
+    expect(find.text('وقت غير صالح'), findsOneWidget);
+    await tester.tap(cell(0, PrayerSlot.fajr));
+    await tester.pump();
+    await tester.enterText(cell(0, PrayerSlot.fajr), '4:3');
+    await tester.pump();
+    c
+        .read(editorProvider.notifier)
+        .update(
+          (p) => withDays(
+            p,
+            (i, d) => i == 0
+                ? d.copyWith(times: d.times.withSlot(PrayerSlot.fajr, 300))
+                : d,
+          ),
+        );
+    await tester.pumpAndSettle();
+    expect(fieldIn(tester, cell(0, PrayerSlot.fajr)).controller!.text, '5:00');
+    expect(find.text('وقت غير صالح'), findsNothing);
+    expect(c.read(invalidTimesProvider), isEmpty);
+    await blur(tester);
+    expect(find.text('وقت غير صالح'), findsNothing);
+    expect(c.read(invalidTimesProvider), isEmpty);
   });
 
   testWidgets('I3 tapping outside a time cell commits it', (tester) async {
