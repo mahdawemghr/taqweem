@@ -20,7 +20,7 @@ void main() {
     expect(tpl.nameAr, 'عصري بسيط');
     final ids = allTemplates.map((e) => e.id).toList();
     expect(ids.first, 'navy_gold');
-    expect(ids.indexOf('minimal_modern'), ids.indexOf('cream_gold') + 1);
+    expect(ids.indexOf('minimal_modern'), ids.indexOf('ivory_medallion') + 1);
     expect(templateById('minimal_modern'), isA<MinimalModernTemplate>());
   });
 

@@ -24,6 +24,11 @@ SCANS = os.path.join(ROOT, "docs", "shia-occasions", "user-calendar-scans.json")
 
 DENYLIST = ["معاوية", "الحرب العالمية", "الخميني", "السيستاني", "الخوئي",
             "مطهري", "بهجت", "الصدر"]
+# «معاوية» is denied (the death/commemoration of Mu'awiya is not a Shia
+# occasion) EXCEPT when the title also contains «صلح»: Imam al-Hasan's (ع)
+# peace treaty with Mu'awiya is a historic event of the Imam, not a
+# commemoration of Mu'awiya. Every other denylisted word has no exception.
+DENY_ALLOWLIST = {"معاوية": ["صلح"]}
 USER_CAL = "user-calendar"
 USER_CAL_NAME = "تقويم أهل البيت (المرجع)"
 # shaaer.ir and saraer.org are the same magazine -> one family.
@@ -78,8 +83,8 @@ def dart_str(s):
     return "'" + s + "'"
 
 
-def load():
-    files = sorted(glob.glob(os.path.join(RESEARCH, "months-*.json")))
+def load(research=None):
+    files = sorted(glob.glob(os.path.join(research or RESEARCH, "months-*.json")))
     if len(files) != 4:
         err("expected 4 research JSON files, found %d" % len(files))
     entries = []
@@ -246,6 +251,18 @@ def load_convention(path, scans):
     return c
 
 
+def denied_words(title):
+    """Denylisted words found in [title], honouring DENY_ALLOWLIST."""
+    out = []
+    for w in DENYLIST:
+        if w not in title:
+            continue
+        if any(a in title for a in DENY_ALLOWLIST.get(w, [])):
+            continue
+        out.append(w)
+    return out
+
+
 def find_one(entries, m, d, contains, where):
     hits = [e for e in entries if e["month"] == m and e["day"] == d and contains in e["title"]]
     if len(hits) != 1:
@@ -262,6 +279,21 @@ def label(e):
 
 def apply_convention(entries, c):
     """Mutates [entries]; returns (swap log, scan-only log, extra duplicates)."""
+    scan_log = []
+    for o in c["scanOnly"]:
+        if denied_words(o["titleAr"]):
+            err("scanOnly %s/%s: title contains a denylisted word: %s" % (o["month"], o["day"], o["titleAr"]))
+            continue
+        entries.append({
+            "month": o["month"], "day": o["day"], "isNight": bool(o.get("isNight")),
+            "title": o["titleAr"].strip(), "category": o["category"],
+            "alt": o["variant"] == "alternate",
+            "note": (o.get("alternateNoteAr") or "").strip() or None,
+            "confidence": o["confidence"],
+            "urls": [x["url"] for x in o["sources"]],
+        })
+        scan_log.append(label(entries[-1]))
+
     for f in c["titleFixes"]:
         hits = [e for e in entries if e["month"] == f["month"] and e["day"] == f["day"]
                 and f["from"] in e["title"]]
@@ -276,21 +308,6 @@ def apply_convention(entries, c):
             err("noteFix %s/%s: %r found in %d notes" % (f["month"], f["day"], f["from"], len(hits)))
             continue
         hits[0]["note"] = hits[0]["note"].replace(f["from"], f["to"])
-
-    scan_log = []
-    for o in c["scanOnly"]:
-        if any(w in o["titleAr"] for w in DENYLIST):
-            err("scanOnly %s/%s: title contains a denylisted word: %s" % (o["month"], o["day"], o["titleAr"]))
-            continue
-        entries.append({
-            "month": o["month"], "day": o["day"], "isNight": bool(o.get("isNight")),
-            "title": o["titleAr"].strip(), "category": o["category"],
-            "alt": o["variant"] == "alternate",
-            "note": (o.get("alternateNoteAr") or "").strip() or None,
-            "confidence": o["confidence"],
-            "urls": [x["url"] for x in o["sources"]],
-        })
-        scan_log.append(label(entries[-1]))
 
     swap_log = []
     for i, w in enumerate(c["swaps"]):
@@ -343,6 +360,7 @@ def parse_args():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=None, help="directory for shia_occasions.dart and DATA-SUMMARY.md")
     ap.add_argument("--convention", default=CONVENTION)
+    ap.add_argument("--research", default=None, help="directory with months-*.json (default: docs/shia-occasions/research)")
     return ap.parse_args()
 
 
@@ -353,7 +371,7 @@ def main():
         os.makedirs(args.out, exist_ok=True)
         out_dart = os.path.join(args.out, "shia_occasions.dart")
         out_md = os.path.join(args.out, "DATA-SUMMARY.md")
-    entries = load()
+    entries = load(args.research)
     scans = load_scans()
     conv = load_convention(args.convention, scans)
     if errors:
@@ -363,7 +381,7 @@ def main():
     dropped = []
     kept = []
     for e in entries:
-        hit = [w for w in DENYLIST if w in e["title"]]
+        hit = denied_words(e["title"])
         if hit:
             dropped.append(e)
         else:

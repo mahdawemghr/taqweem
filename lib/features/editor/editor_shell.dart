@@ -414,7 +414,7 @@ class _BottomBar extends StatelessWidget {
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          'تعذّر الحفظ: $err',
+                          'تعذّر الحفظ — تحقق من المساحة المتاحة ثم أعد المحاولة',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: theme.textTheme.bodyMedium?.copyWith(

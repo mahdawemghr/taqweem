@@ -2,21 +2,32 @@ import 'package:flutter/widgets.dart';
 
 import 'cream_gold.dart';
 import 'deep_green.dart';
+import 'emerald_garden.dart';
+import 'emerald_mihrab.dart';
+import 'ivory_medallion.dart';
+import 'midnight_dome.dart';
 import 'minimal_modern.dart';
 import 'mosque_blue.dart';
 import 'navy_calligraphy.dart';
 import 'navy_gold.dart';
 import 'poster_template.dart';
 
-/// Every shipped template, in picker order. Navy & Gold is FIRST, so it is
-/// the default for unknown ids.
+/// Every shipped template, in picker order, grouped by colour family:
+/// navy (navy_gold, navy_calligraphy, midnight_dome), blue (mosque_blue),
+/// green (deep_green, emerald_mihrab, emerald_garden), light (cream_gold,
+/// ivory_medallion, minimal_modern). Navy & Gold is FIRST, so it is the
+/// default for unknown ids.
 List<PosterTemplate> get allTemplates => const <PosterTemplate>[
   NavyGoldTemplate(),
-  CreamGoldTemplate(),
-  MinimalModernTemplate(),
-  DeepGreenTemplate(),
-  MosqueBlueTemplate(),
   NavyCalligraphyTemplate(),
+  MidnightDomeTemplate(),
+  MosqueBlueTemplate(),
+  DeepGreenTemplate(),
+  EmeraldMihrabTemplate(),
+  EmeraldGardenTemplate(),
+  CreamGoldTemplate(),
+  IvoryMedallionTemplate(),
+  MinimalModernTemplate(),
 ];
 
 /// The template with [id]; unknown ids resolve to the first registered

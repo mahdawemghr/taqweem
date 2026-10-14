@@ -686,4 +686,164 @@ void main() {
     }
     expect(tester.takeException(), isNull);
   });
+
+  // ---- picker usability with many templates --------------------------------
+  final ten = [
+    for (var i = 1; i <= 10; i++) _FakeTemplate('t$i', 'قالب رقم $i'),
+  ];
+
+  testWidgets('counter shows n / N next to the name chip', (tester) async {
+    final fake = FakeExporter();
+    final c = await pumpExport(
+      tester,
+      fake,
+      templates: three,
+      poster: seedReferenceMonth().copyWith(templateId: 't1'),
+    );
+    final counter = find.byKey(const ValueKey('template-counter'));
+    expect(tester.widget<Text>(counter).data, '1 / 3');
+    await tester.tap(find.byTooltip('القالب التالي'));
+    await tester.pumpAndSettle();
+    expect(tester.widget<Text>(counter).data, '2 / 3');
+    expect(c.read(editorProvider).poster.templateId, 't2');
+  });
+
+  testWidgets('chip strip: shown for 10 templates (no dots), not for <= 6', (
+    tester,
+  ) async {
+    final fake = FakeExporter();
+    await pumpExport(
+      tester,
+      fake,
+      templates: ten,
+      poster: seedReferenceMonth().copyWith(templateId: 't1'),
+    );
+    expect(find.byKey(const ValueKey('template-chips')), findsOneWidget);
+    expect(find.byKey(const ValueKey('template-dots')), findsNothing);
+    expect(find.byTooltip('القالب التالي'), findsOneWidget);
+    for (final i in [0, 1]) {
+      final s = tester.getSize(find.byKey(ValueKey('template-chip-$i')));
+      expect(s.height, greaterThanOrEqualTo(48));
+    }
+  });
+
+  testWidgets('chip strip absent with 6 templates (dots kept)', (tester) async {
+    final fake = FakeExporter();
+    await pumpExport(
+      tester,
+      fake,
+      templates: ten.sublist(0, 6),
+      poster: seedReferenceMonth().copyWith(templateId: 't1'),
+    );
+    expect(find.byKey(const ValueKey('template-chips')), findsNothing);
+    expect(find.byKey(const ValueKey('template-dots')), findsOneWidget);
+  });
+
+  testWidgets(
+    'tapping a chip selects it: one undo entry, file suffix matches',
+    (tester) async {
+      final fake = FakeExporter();
+      final c = await pumpExport(
+        tester,
+        fake,
+        templates: ten,
+        poster: seedReferenceMonth().copyWith(templateId: 't1'),
+      );
+      final before = undoCount(c);
+      final chip = find.byKey(const ValueKey('template-chip-2'));
+      await tester.ensureVisible(chip);
+      await tester.tap(chip);
+      await tester.pumpAndSettle();
+      expect(c.read(editorProvider).poster.templateId, 't3');
+      expect(find.text('3 / 10'), findsOneWidget);
+      expect(undoCount(c), before + 1);
+      await tapKey(tester, 'export-png');
+      expect(fake.names.single, endsWith('-t3.png'));
+    },
+  );
+
+  testWidgets('chips are inert while an export is pending', (tester) async {
+    final fake = FakeExporter()..gate = Completer<void>();
+    final c = await pumpExport(
+      tester,
+      fake,
+      templates: ten,
+      poster: seedReferenceMonth().copyWith(templateId: 't1'),
+    );
+    await tester.ensureVisible(find.byKey(const ValueKey('export-png')));
+    await tester.tap(find.byKey(const ValueKey('export-png')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 50));
+    final chip = find.byKey(const ValueKey('template-chip-4'));
+    await tester.ensureVisible(chip);
+    await tester.tap(chip, warnIfMissed: false);
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(c.read(editorProvider).poster.templateId, 't1');
+    fake.gate!.complete();
+    await tester.pumpAndSettle();
+    expect(fake.names.single, endsWith('-t1.png'));
+  });
+
+  testWidgets('selected chip scrolls into view (small surface)', (
+    tester,
+  ) async {
+    final fake = FakeExporter();
+    await pumpExport(
+      tester,
+      fake,
+      templates: ten,
+      size: const Size(320, 700),
+      poster: seedReferenceMonth().copyWith(templateId: 't1'),
+    );
+    final strip = find.byKey(const ValueKey('template-chips'));
+    final stripRect = tester.getRect(strip);
+    Rect chipRect(int i) =>
+        tester.getRect(find.byKey(ValueKey('template-chip-$i')));
+    // The last chip starts outside the strip (not built or off screen).
+    final lastBefore = find.byKey(const ValueKey('template-chip-9'));
+    expect(
+      lastBefore.evaluate().isEmpty ||
+          !stripRect.contains(tester.getCenter(lastBefore)),
+      isTrue,
+    );
+    for (var i = 0; i < 9; i++) {
+      await tester.tap(find.byTooltip('القالب التالي'));
+      await tester.pumpAndSettle();
+    }
+    expect(find.text('10 / 10'), findsOneWidget);
+    final r = chipRect(9);
+    expect(r.left, greaterThanOrEqualTo(stripRect.left - 0.5));
+    expect(r.right, lessThanOrEqualTo(stripRect.right + 0.5));
+  });
+
+  testWidgets('10 templates at text scale 1.3 on 390x844: no overflow', (
+    tester,
+  ) async {
+    final fake = FakeExporter();
+    await pumpExport(tester, fake, textScale: 1.3, templates: ten);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('chip semantics: label, selected state', (tester) async {
+    final fake = FakeExporter();
+    await pumpExport(
+      tester,
+      fake,
+      templates: ten,
+      poster: seedReferenceMonth().copyWith(templateId: 't2'),
+    );
+    final handle = tester.ensureSemantics();
+    expect(find.bySemanticsLabel('القالب 2 من 10'), findsWidgets);
+    expect(
+      tester.getSemantics(find.byKey(const ValueKey('template-chip-1'))),
+      matchesSemantics(
+        label: 'قالب رقم 2',
+        isButton: true,
+        isSelected: true,
+        hasSelectedState: true,
+        hasTapAction: true,
+      ),
+    );
+    handle.dispose();
+  });
 }

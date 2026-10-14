@@ -664,6 +664,20 @@
      "url": "user-calendar://user-calendar-scans.json#5-1448-d28"
     }
    ]
+  },
+  {
+   "month": 3,
+   "day": 26,
+   "titleAr": "صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ",
+   "category": "event",
+   "variant": "main",
+   "confidence": "medium",
+   "sources": [
+    {
+     "name": "تقويم أهل البيت (المرجع)",
+     "url": "user-calendar://user-calendar-scans.json#3-1448-d26"
+    }
+   ]
   }
  ],
  "titleFixes": [
@@ -678,6 +692,12 @@
    "day": 15,
    "from": "(ليلة مولد الإمام المهدي عج)",
    "to": "(ليلة مولد الإمام المهدي (عج))"
+  },
+  {
+   "month": 3,
+   "day": 16,
+   "from": " برواية ابن طاووس",
+   "to": ""
   }
  ],
  "noteFixes": [
@@ -726,12 +746,6 @@
    "reason": "relative-day wording («وغداً»): the event date is 29 Safar or 28 Safar - ambiguous, user decides"
   },
   {
-   "month": 3,
-   "day": 26,
-   "titleAr": "صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ",
-   "reason": "verbatim title contains the denylisted name «معاوية»; user decides on a cleaned title"
-  },
-  {
    "month": null,
    "day": null,
    "titleAr": "Section D of SCANS-VS-DB.md (68 items)",
@@ -768,12 +782,6 @@
    "day": 28,
    "titleAr": "وغداً إسقاط الزهراء(ع) لمحسن",
    "reason": "not added (highlighted in the scan)"
-  },
-  {
-   "month": 3,
-   "day": 26,
-   "titleAr": "صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ",
-   "reason": "not added (denylisted word)"
   }
  ]
 }

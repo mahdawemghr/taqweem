@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show listEquals, mapEquals;
 import 'package:flutter/widgets.dart';
 
 import 'table.dart';
@@ -129,4 +130,19 @@ class KitMetrics implements LayoutMetricsLike {
   Rect rowRect(int i) => table.rowRect(i);
   @override
   Rect? section(String id) => sections[id];
+
+  /// Whether [other] describes the same layout (size, content rect, every
+  /// section rect and the table's rect / panels / rows). Painters that
+  /// capture a [KitMetrics] use it in `shouldRepaint`.
+  bool sameLayout(KitMetrics other) =>
+      identical(this, other) ||
+      (size == other.size &&
+          contentRect == other.contentRect &&
+          mapEquals(sections, other.sections) &&
+          table.rect == other.table.rect &&
+          listEquals(table.panels, other.table.panels) &&
+          table.headerBottom == other.table.headerBottom &&
+          table.rowTop == other.table.rowTop &&
+          table.rowHeight == other.table.rowHeight &&
+          table.rowCount == other.table.rowCount);
 }

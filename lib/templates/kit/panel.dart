@@ -357,12 +357,34 @@ class PanelFillPainter extends CustomPainter {
       final path = style.shape
           .pathFor(rect.inflate(sh.spreadRadius))
           .shift(sh.offset);
+      // `BlurStyle.outer`: the shadow is painted only OUTSIDE the panel
+      // outline (for translucent fills, which a shadow underneath would
+      // darken). Every other style paints the usual full shadow.
+      final outside = sh.blurStyle == BlurStyle.outer;
+      if (outside) {
+        canvas.save();
+        canvas.clipPath(
+          Path.combine(
+            PathOperation.difference,
+            Path()..addRect(
+              rect.inflate(
+                sh.blurRadius * 2 +
+                    sh.offset.distance +
+                    sh.spreadRadius.abs() +
+                    4,
+              ),
+            ),
+            style.shape.pathFor(rect),
+          ),
+        );
+      }
       canvas.drawPath(
         path,
         Paint()
           ..color = sh.color
           ..maskFilter = MaskFilter.blur(BlurStyle.normal, sh.blurSigma),
       );
+      if (outside) canvas.restore();
     }
     final g = style.gradient;
     final c = style.color;

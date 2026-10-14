@@ -20,7 +20,10 @@ enum PosterSide { right, left }
 /// Text titles go through [FitText] (one line by default, shrinks, never
 /// clips). Image titles are scaled with [fit] inside the given box and may be
 /// recoloured with [tint] (`BlendMode.srcIn`, so a one-colour logo takes the
-/// template's gold).
+/// template's gold). Image logos are sampled with [FilterQuality.high] and
+/// anti-aliasing so up/down-scaled rasters stay as smooth as possible. When
+/// the asset fails to load, [fallbackText] (if any) is set via [FitText] in
+/// [style] (inside [fallbackPadding]) instead, so the title never vanishes.
 class TitleBlock extends StatelessWidget {
   const TitleBlock.text(
     String this.text, {
@@ -31,7 +34,9 @@ class TitleBlock extends StatelessWidget {
   }) : image = null,
        fit = BoxFit.contain,
        tint = null,
-       semanticLabel = null;
+       semanticLabel = null,
+       fallbackText = null,
+       fallbackPadding = EdgeInsets.zero;
 
   const TitleBlock.image(
     ImageProvider this.image, {
@@ -39,10 +44,12 @@ class TitleBlock extends StatelessWidget {
     this.fit = BoxFit.contain,
     this.tint,
     this.semanticLabel,
-  }) : text = null,
-       style = const TextStyle(),
-       maxSize = KitDefaults.titleMax,
-       maxLines = 1;
+    this.fallbackText,
+    this.style = const TextStyle(fontWeight: FontWeight.w700),
+    this.maxSize = KitDefaults.titleMax,
+    this.maxLines = 1,
+    this.fallbackPadding = EdgeInsets.zero,
+  }) : text = null;
 
   final String? text;
   final TextStyle style;
@@ -52,6 +59,16 @@ class TitleBlock extends StatelessWidget {
   final BoxFit fit;
   final Color? tint;
   final String? semanticLabel;
+
+  /// Image titles only: text shown (in [style], [maxSize], [maxLines]) when
+  /// the image cannot be loaded. Null or empty: nothing is shown.
+  final String? fallbackText;
+
+  /// Padding around [fallbackText] (e.g. to keep it inside a painted disc).
+  final EdgeInsetsGeometry fallbackPadding;
+
+  /// The quality every kit / template logo is drawn with.
+  static const imageQuality = FilterQuality.high;
 
   @override
   Widget build(BuildContext context) {
@@ -63,12 +80,23 @@ class TitleBlock extends StatelessWidget {
         color: tint,
         colorBlendMode: tint == null ? null : BlendMode.srcIn,
         semanticLabel: semanticLabel,
-        filterQuality: FilterQuality.medium,
-        // A missing logo must never break a poster.
-        errorBuilder: (_, _, _) => const SizedBox.shrink(),
+        filterQuality: imageQuality,
+        isAntiAlias: true,
+        // A missing logo must never break a poster: show the title as text.
+        errorBuilder: (_, _, _) => _fallback(),
       );
     }
     return FitText(text!, style: style, maxSize: maxSize, maxLines: maxLines);
+  }
+
+  Widget _fallback() {
+    final f = fallbackText;
+    if (f == null || f.trim().isEmpty) return const SizedBox.shrink();
+    return Padding(
+      key: const ValueKey('title-fallback'),
+      padding: fallbackPadding,
+      child: FitText(f, style: style, maxSize: maxSize, maxLines: maxLines),
+    );
   }
 }
 

@@ -97,11 +97,11 @@ KitMetrics _m([int rows = 30]) => navyCalligraphyMetrics(kPosterSize, rows);
 void main() {
   setUpAll(loadAppFonts);
 
-  test('id, Arabic name, registered after mosque_blue', () {
+  test('id, Arabic name, registered after navy_gold', () {
     expect(_t.id, 'navy_calligraphy');
     expect(_t.nameAr, 'كحلي بالخط العربي');
     final ids = allTemplates.map((t) => t.id).toList();
-    expect(ids.indexOf('navy_calligraphy'), ids.indexOf('mosque_blue') + 1);
+    expect(ids.indexOf('navy_calligraphy'), ids.indexOf('navy_gold') + 1);
     expect(templateById('navy_calligraphy'), isA<NavyCalligraphyTemplate>());
   });
 
@@ -284,6 +284,11 @@ void main() {
   testWidgets('control: without precache the capture has no logo', (
     tester,
   ) async {
+    // The global ImageCache keeps logos decoded by earlier tests; empty it so
+    // the control really starts cold.
+    PaintingBinding.instance.imageCache
+      ..clear()
+      ..clearLiveImages();
     await _pump(tester, seedReferenceMonth(), precache: false);
     final shot = await _capture(tester);
     final m = _m();

@@ -59,6 +59,8 @@ void main() {
   test('no denylisted word in titles', () {
     for (final o in shiaOccasions) {
       for (final w in denylist) {
+        // Allowlist: «معاوية» is fine in a «صلح …» (peace-treaty) title.
+        if (w == 'معاوية' && o.titleAr.contains('صلح')) continue;
         expect(o.titleAr.contains(w), isFalse, reason: '${o.titleAr} / $w');
       }
     }
@@ -83,12 +85,19 @@ void main() {
 
   test('scan-only entries cite the user calendar and are single-family', () {
     final c = convention();
+    final fixes = (c['titleFixes'] as List).cast<Map<String, dynamic>>();
     for (final e in (c['scanOnly'] as List).cast<Map<String, dynamic>>()) {
+      var title = e['titleAr'] as String;
+      for (final f in fixes) {
+        if (f['month'] == e['month'] && f['day'] == e['day']) {
+          title = title.replaceFirst(f['from'] as String, f['to'] as String);
+        }
+      }
       final matches = shiaOccasions.where(
         (o) =>
             o.month == e['month'] &&
             o.day == e['day'] &&
-            o.titleAr == e['titleAr'] &&
+            o.titleAr == title &&
             o.isAlternate == (e['variant'] == 'alternate'),
       );
       expect(matches, hasLength(1), reason: '${e['titleAr']}');
@@ -185,6 +194,32 @@ void main() {
       (o) => o.month == 7 && o.day == 6 && o.isAlternate,
     );
     expect(k.alternateNoteAr, 'على قول');
+  });
+
+  test("Imam al-Hasan's peace treaty is present (denylist allowlist)", () {
+    final t = shiaOccasions.singleWhere(
+      (o) => o.month == 3 && o.day == 26 && o.titleAr.contains('صلح'),
+    );
+    expect(t.titleAr, 'صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ');
+    expect(t.isAlternate, isFalse);
+    expect(t.sourceNames, ['تقويم أهل البيت (المرجع)']);
+    expect(t.verified, isFalse);
+    expect(t.confidence, OccasionConfidence.medium);
+  });
+
+  test('Mi\'raj alternate prints clean, attribution only in the tooltip', () {
+    final m = shiaOccasions.singleWhere(
+      (o) => o.month == 3 && o.day == 16 && o.isAlternate,
+    );
+    expect(m.noteText, 'عروج النبي(ص)الى السماء على رواية');
+    expect(m.noteText, isNot(contains('برواية')));
+    expect(m.fullNoteAr, 'على رواية ابن طاووس');
+  });
+
+  test('entry counts (generated: 140 / 111 verified / 29 unverified)', () {
+    expect(shiaOccasions, hasLength(140));
+    expect(shiaOccasions.where((o) => o.verified), hasLength(111));
+    expect(shiaOccasions.where((o) => !o.verified), hasLength(29));
   });
 
   test('excluded self-contradicting scan items are absent', () {

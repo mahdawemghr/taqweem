@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:taqweem/core/app_theme.dart';
+import 'package:taqweem/templates/registry.dart';
 import 'package:taqweem/data/new_poster.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -190,13 +191,15 @@ void main() {
       );
       await settleIO(tester);
 
-      // Step 4: swipe to the 5th template.
+      // Step 4: pick Mosque Blue from the template chip strip (by registry
+      // index, so reordering the registry cannot break this flow).
       await tester.tap(find.byKey(const ValueKey('step-3')));
       await settleIO(tester);
-      for (var i = 0; i < 4; i++) {
-        await tester.drag(find.byType(PageView), const Offset(300, 0));
-        await settleIO(tester);
-      }
+      final mosqueIndex = allTemplates.indexWhere((t) => t.id == 'mosque_blue');
+      expect(mosqueIndex, isNonNegative);
+      await tester.ensureVisible(find.byKey(ValueKey('template-chip-$mosqueIndex')));
+      await tester.tap(find.byKey(ValueKey('template-chip-$mosqueIndex')));
+      await settleIO(tester);
       await tapVisible(tester, find.byKey(const ValueKey('export-png')));
       await settleIO(tester);
       expect(find.text('تصدير'), findsOneWidget); // validation dialog
@@ -285,6 +288,13 @@ void main() {
       await tester.pump(const Duration(seconds: 1));
       await tester.pump();
       expect(find.textContaining('تعذّر الحفظ'), findsOneWidget);
+      // Arabic-only: a fixed reason, never the raw exception text.
+      expect(find.textContaining('disk full'), findsNothing);
+      expect(find.textContaining('StateError'), findsNothing);
+      expect(
+        find.text('تعذّر الحفظ — تحقق من المساحة المتاحة ثم أعد المحاولة'),
+        findsOneWidget,
+      );
       fail = false;
       await tester.tap(find.text('إعادة المحاولة'));
       await tester.pump();

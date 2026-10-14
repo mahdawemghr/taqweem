@@ -52,6 +52,11 @@ class _StepExportState extends ConsumerState<StepExport> {
   PdfPageSize _pdfSize = PdfPageSize.a4;
   bool _busy = false;
 
+  /// Set while a chip-initiated page animation runs: the template is already
+  /// updated (one undo entry), so the intermediate pages it sweeps over must
+  /// not each update the poster.
+  int? _target;
+
   List<PosterTemplate> get _templates => ref.read(templatesProvider);
 
   @override
@@ -92,7 +97,7 @@ class _StepExportState extends ConsumerState<StepExport> {
 
   void _onPageChanged(int i) {
     final t = _templates;
-    if (i < 0 || i >= t.length) return;
+    if (i < 0 || i >= t.length || _target != null) return;
     setState(() => _page = i);
     final id = t[i].id;
     final ctl = ref.read(editorProvider.notifier);
@@ -119,6 +124,31 @@ class _StepExportState extends ConsumerState<StepExport> {
         duration: const Duration(milliseconds: 280),
         curve: Curves.easeOutCubic,
       ),
+    );
+  }
+
+  /// Chip tap: select template [i] now (one editor update), animate the pages.
+  void _select(int i) {
+    final t = _templates;
+    if (_busy || i < 0 || i >= t.length || i == _page) return;
+    _target = i;
+    setState(() => _page = i);
+    final id = t[i].id;
+    if (ref.read(editorProvider).poster.templateId != id) {
+      ref
+          .read(editorProvider.notifier)
+          .update((p) => p.copyWith(templateId: id));
+    }
+    unawaited(
+      _pages
+          .animateToPage(
+            i,
+            duration: const Duration(milliseconds: 320),
+            curve: Curves.easeOutCubic,
+          )
+          .whenComplete(() {
+            if (_target == i) _target = null;
+          }),
     );
   }
 
@@ -314,6 +344,7 @@ class _StepExportState extends ConsumerState<StepExport> {
                     keyFor: _keyFor,
                     onChanged: _onPageChanged,
                     onStep: _step,
+                    onSelect: _select,
                     onZoom: _zoom,
                     busy: _busy,
                   ),
@@ -352,6 +383,133 @@ String _shortPath(String path) {
 // Picker
 // ---------------------------------------------------------------------------
 
+/// Up to this many templates the picker shows dots; beyond it, a chip strip.
+const _kMaxDots = 6;
+
+/// Horizontally scrollable tappable chips, one per template; keeps the
+/// selected chip visible.
+class _ChipStrip extends StatefulWidget {
+  const _ChipStrip({
+    required this.templates,
+    required this.page,
+    required this.onSelect,
+  });
+
+  final List<PosterTemplate> templates;
+  final int page;
+  final ValueChanged<int> onSelect;
+
+  @override
+  State<_ChipStrip> createState() => _ChipStripState();
+}
+
+class _ChipStripState extends State<_ChipStrip> {
+  final _keys = <GlobalKey>[];
+
+  @override
+  void initState() {
+    super.initState();
+    _scheduleReveal(animate: false);
+  }
+
+  @override
+  void didUpdateWidget(_ChipStrip old) {
+    super.didUpdateWidget(old);
+    if (old.page != widget.page) _scheduleReveal(animate: true);
+  }
+
+  void _scheduleReveal({required bool animate}) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || widget.page >= _keys.length) return;
+      final ctx = _keys[widget.page].currentContext;
+      if (ctx == null) return;
+      unawaited(
+        Scrollable.ensureVisible(
+          ctx,
+          alignment: 0.5,
+          duration: animate ? const Duration(milliseconds: 250) : Duration.zero,
+          curve: Curves.easeOutCubic,
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final n = widget.templates.length;
+    while (_keys.length < n) {
+      _keys.add(GlobalKey());
+    }
+    return SizedBox(
+      key: const ValueKey('template-chips'),
+      height: 52,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+        child: Row(
+          children: [
+            for (var i = 0; i < n; i++)
+              Padding(
+                key: _keys[i],
+                padding: const EdgeInsetsDirectional.only(end: 8),
+                child: Semantics(
+                  button: true,
+                  selected: i == widget.page,
+                  label: widget.templates[i].nameAr,
+                  onTap: () => widget.onSelect(i),
+                  excludeSemantics: true,
+                  child: Material(
+                    key: ValueKey('template-chip-$i'),
+                    color: i == widget.page
+                        ? cs.primaryContainer
+                        : cs.surfaceContainerHighest,
+                    shape: StadiumBorder(
+                      side: BorderSide(
+                        color: i == widget.page
+                            ? cs.primary
+                            : cs.outlineVariant,
+                        width: i == widget.page ? 2 : 1,
+                      ),
+                    ),
+                    child: InkWell(
+                      customBorder: const StadiumBorder(),
+                      onTap: () => widget.onSelect(i),
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          minHeight: 48,
+                          minWidth: 48,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Center(
+                            widthFactor: 1,
+                            child: Text(
+                              widget.templates[i].nameAr,
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontWeight: i == widget.page
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
+                                color: i == widget.page
+                                    ? cs.onPrimaryContainer
+                                    : cs.onSurface,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _Picker extends StatelessWidget {
   const _Picker({
     required this.controller,
@@ -362,6 +520,7 @@ class _Picker extends StatelessWidget {
     required this.keyFor,
     required this.onChanged,
     required this.onStep,
+    required this.onSelect,
     required this.onZoom,
     required this.busy,
   });
@@ -375,6 +534,7 @@ class _Picker extends StatelessWidget {
   final GlobalKey Function(String id) keyFor;
   final ValueChanged<int> onChanged;
   final ValueChanged<int> onStep;
+  final ValueChanged<int> onSelect;
   final VoidCallback onZoom;
 
   @override
@@ -384,6 +544,7 @@ class _Picker extends StatelessWidget {
     final n = templates.length;
     final height = width * kPosterSize.height / kPosterSize.width;
     final many = n > 1;
+    final useChips = n > _kMaxDots;
     final name = n == 0 ? '' : templates[page].nameAr;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -404,42 +565,62 @@ class _Picker extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Chip(
-                    key: const ValueKey('template-name'),
-                    label: Text(
-                      name,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w700,
-                        color: cs.onPrimaryContainer,
-                      ),
-                    ),
-                    backgroundColor: cs.primaryContainer,
-                    side: BorderSide.none,
-                  ),
-                  if (many) ...[
-                    const SizedBox(height: 6),
-                    Semantics(
-                      container: true,
-                      label: 'القالب ${page + 1} من $n',
-                      excludeSemantics: true,
-                      child: Row(
-                        key: const ValueKey('template-dots'),
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          for (var i = 0; i < n; i++)
-                            Container(
-                              width: i == page ? 18 : 8,
-                              height: 8,
-                              margin: const EdgeInsets.symmetric(horizontal: 3),
-                              decoration: BoxDecoration(
-                                color: i == page ? cs.primary : cs.outline,
-                                borderRadius: BorderRadius.circular(4),
-                              ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: Chip(
+                          key: const ValueKey('template-name'),
+                          label: Text(
+                            name,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: cs.onPrimaryContainer,
                             ),
-                        ],
+                          ),
+                          backgroundColor: cs.primaryContainer,
+                          side: BorderSide.none,
+                        ),
                       ),
+                      if (many) ...[
+                        const SizedBox(width: 8),
+                        Semantics(
+                          container: true,
+                          label: 'القالب ${page + 1} من $n',
+                          excludeSemantics: true,
+                          child: Text(
+                            '${page + 1} / $n',
+                            key: const ValueKey('template-counter'),
+                            style: theme.textTheme.labelLarge?.copyWith(
+                              color: cs.onSurfaceVariant,
+                              fontFeatures: const [
+                                FontFeature.tabularFigures(),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                  if (many && !useChips) ...[
+                    const SizedBox(height: 6),
+                    Row(
+                      key: const ValueKey('template-dots'),
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        for (var i = 0; i < n; i++)
+                          Container(
+                            width: i == page ? 18 : 8,
+                            height: 8,
+                            margin: const EdgeInsets.symmetric(horizontal: 3),
+                            decoration: BoxDecoration(
+                              color: i == page ? cs.primary : cs.outline,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                          ),
+                      ],
                     ),
                   ],
                 ],
@@ -457,6 +638,17 @@ class _Picker extends StatelessWidget {
               const SizedBox(width: 48),
           ],
         ),
+        if (useChips) ...[
+          const SizedBox(height: 4),
+          IgnorePointer(
+            ignoring: busy,
+            child: _ChipStrip(
+              templates: templates,
+              page: page,
+              onSelect: onSelect,
+            ),
+          ),
+        ],
         const SizedBox(height: 4),
         Center(
           child: TextButton.icon(

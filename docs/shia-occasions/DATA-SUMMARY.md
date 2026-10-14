@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|
 | 1 | محرم | 12 | 0 | 8 | 4 |
 | 2 | صفر | 18 | 2 | 14 | 4 |
-| 3 | ربيع الأول | 20 | 3 | 10 | 10 |
+| 3 | ربيع الأول | 21 | 3 | 10 | 11 |
 | 4 | ربيع الثاني | 10 | 3 | 9 | 1 |
 | 5 | جمادى الأول | 11 | 3 | 7 | 4 |
 | 6 | جمادى الثانية | 6 | 1 | 6 | 0 |
@@ -14,12 +14,12 @@
 | 10 | شوال | 6 | 1 | 4 | 2 |
 | 11 | ذو القعدة | 6 | 1 | 5 | 1 |
 | 12 | ذو الحجة | 14 | 2 | 12 | 2 |
-| | Total | 139 | 22 | 111 | 28 |
+| | Total | 140 | 22 | 111 | 29 |
 
 Verified = >= 2 distinct source families AND at least one family that is not the weak family alkafeel.net (R25). The user's calendar «تقويم أهل البيت (المرجع)» is its own strong family; shaaer.ir and saraer.org count as one family.
 Duplicates merged: 0. Dropped by denylist: 0.
 
-## Unverified entries (28)
+## Unverified entries (29)
 
 - 1/3 وصول عمر بن سعد وجيشة لأرض كربلاء (تقويم أهل البيت (المرجع))
 - 1/4 فتوى شريح القاضي بقتل الامام الحسين(ع) (تقويم أهل البيت (المرجع))
@@ -35,9 +35,10 @@ Duplicates merged: 0. Dropped by denylist: 0.
 - 3/10 وفاة عبدالمطلب بن هاشم جد الرسول(ص) (تقويم أهل البيت (المرجع))
 - 3/12 (بديل) مولد النبي الأكرم محمد (ص) (تقويم أهل البيت (المرجع))
 - 3/15 بناء أول مسجد في الإسلام (مسجد قباء) 1هـ (تقويم أهل البيت (المرجع))
-- 3/16 (بديل) عروج النبي(ص)الى السماء برواية ابن طاووس (تقويم أهل البيت (المرجع))
+- 3/16 (بديل) عروج النبي(ص)الى السماء (تقويم أهل البيت (المرجع))
 - 3/18 بناء المسجدالنبوي (تقويم أهل البيت (المرجع))
 - 3/22 غزوة بني النضير4هـ وافراج اليهود من المدينة واعفاء فدك الزهراء(س) (تقويم أهل البيت (المرجع))
+- 3/26 صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ (تقويم أهل البيت (المرجع))
 - 3/27 معراج الرسول(ص) (تقويم أهل البيت (المرجع))
 - 4/5 (بديل) خروج التوابين من الكوفة بقيادة سليمان بن صرد (على قول) (مجلة شعائر)
 - 5/6 غزوة مؤته8هـ (تقويم أهل البيت (المرجع))
@@ -68,7 +69,7 @@ Duplicates merged: 0. Dropped by denylist: 0.
   - before: main: 3/10 وفاة عبدالمطلب بن هاشم جد الرسول(ص) | alt: 5/27 ذكرى وفاة عبد المطلب جد النبي (ص)
   - after: main: 3/10 وفاة عبدالمطلب بن هاشم جد الرسول(ص) | alt: 5/27 ذكرى وفاة عبد المطلب جد النبي (ص) [على قول]
 
-## Scan-only additions (22)
+## Scan-only additions (23)
 
 - 1/3 وصول عمر بن سعد وجيشة لأرض كربلاء
 - 1/4 فتوى شريح القاضي بقتل الامام الحسين(ع)
@@ -92,6 +93,7 @@ Duplicates merged: 0. Dropped by denylist: 0.
 - 5/12 وفاة عبدا... بن عبدالمطلب والد الرسول الأكرم(ص)
 - 5/22 وفاة القاسم ابن الامام موسى الكاظم(ع)192هـ
 - 5/28 وفاة السفير الثاني محمد بن عثمان304هـ
+- 3/26 صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ
 
 ## Exclusions (not added)
 
@@ -101,7 +103,6 @@ Duplicates merged: 0. Dropped by denylist: 0.
 - 2/3 احراق مسلم بن عقبة الكعبة بأمر من يزيد64هـ — self-contradicting: 3 Safar vs 3 Rabi' I (3/3)
 - 5/19 مقتل زيد بن صوحان36هـ — self-contradicting: the scans print it on both 19 and 21 Jumada I (5/21 استشهاد الصحابي الجليل زيد بن صوحان)
 - 2/28 وغداً إسقاط الزهراء(ع) لمحسن — relative-day wording («وغداً»): the event date is 29 Safar or 28 Safar - ambiguous, user decides
-- 3/26 صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ — verbatim title contains the denylisted name «معاوية»; user decides on a cleaned title
 - -/- Section D of SCANS-VS-DB.md (68 items) — scholars/marja'/modern martyrs, Sunni figures and rulers, modern/unrelated history
 - -/- Section E of SCANS-VS-DB.md (other borderline items) — earlier prophets' events, Zayd b. Ali, Nafisa, Unity Week, modern attacks on shrines, unclear wording
 
@@ -111,4 +112,3 @@ Duplicates merged: 0. Dropped by denylist: 0.
 - 5/2 بدأ نزول الوحي على النبي محمد(ص) vs المبعث 27 رجب — B8: no change; user decides
 - 1/1 وفاة محمد بن الحنفية — borderline; not added
 - 2/28 وغداً إسقاط الزهراء(ع) لمحسن — not added (highlighted in the scan)
-- 3/26 صلح الإمام الحسن(ع)مع معاوية بن أبي سفيان41هـ — not added (denylisted word)

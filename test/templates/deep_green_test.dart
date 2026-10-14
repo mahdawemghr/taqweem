@@ -15,7 +15,7 @@ void main() {
     expect(tpl.nameAr, 'أخضر إسلامي');
     final ids = allTemplates.map((e) => e.id).toList();
     expect(ids.first, 'navy_gold');
-    expect(ids.indexOf('deep_green'), ids.indexOf('minimal_modern') + 1);
+    expect(ids.indexOf('deep_green'), ids.indexOf('mosque_blue') + 1);
     expect(templateById('deep_green'), isA<DeepGreenTemplate>());
   });
 

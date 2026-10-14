@@ -15,7 +15,7 @@ void main() {
     expect(tpl.nameAr, 'كريمي وذهبي');
     final ids = allTemplates.map((e) => e.id).toList();
     expect(ids.first, 'navy_gold');
-    expect(ids.indexOf('cream_gold'), 1);
+    expect(ids.indexOf('cream_gold'), ids.indexOf('emerald_garden') + 1);
     expect(templateById('cream_gold'), isA<CreamGoldTemplate>());
   });
 

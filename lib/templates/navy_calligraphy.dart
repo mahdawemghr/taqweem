@@ -592,21 +592,27 @@ class NavyCalligraphyPage extends StatelessWidget {
       return const TitleBlock.image(
         titleWhiteAsset,
         key: ValueKey('nc-title-image'),
+        fallbackText: defaultTitle,
+        style: _titleTextStyle,
+        maxSize: 110,
+        maxLines: 2,
       );
     }
     return TitleBlock.text(
       s,
       key: const ValueKey('nc-title-text'),
-      style: const TextStyle(
-        fontFamily: 'ArefRuqaa',
-        fontWeight: FontWeight.w700,
-        color: ncWhite,
-        shadows: [Shadow(color: Color(0x66000000), blurRadius: 6)],
-      ),
+      style: _titleTextStyle,
       maxSize: 110,
       maxLines: 2,
     );
   }
+
+  static const _titleTextStyle = TextStyle(
+    fontFamily: 'ArefRuqaa',
+    fontWeight: FontWeight.w700,
+    color: ncWhite,
+    shadows: [Shadow(color: Color(0x66000000), blurRadius: 6)],
+  );
 }
 
 /// A lobed navy header-quote panel; nothing at all for an empty quote.
@@ -910,7 +916,8 @@ class NavyCalligraphyBackgroundPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(NavyCalligraphyBackgroundPainter old) => false;
+  bool shouldRepaint(NavyCalligraphyBackgroundPainter old) =>
+      old.hasBrace != hasBrace || !old.m.sameLayout(m);
 }
 
 /// Above the content: gold interlace knots at the ribbon ends and on the
@@ -969,7 +976,8 @@ class NavyCalligraphyKnotPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(NavyCalligraphyKnotPainter old) => false;
+  bool shouldRepaint(NavyCalligraphyKnotPainter old) =>
+      old.hasBrace != hasBrace || !old.m.sameLayout(m);
 }
 
 // ---------------------------------------------------------------------------

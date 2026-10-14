@@ -398,13 +398,17 @@ void main() {
     expect(find.text('جارٍ الحفظ…'), findsOneWidget);
     await tester.pump(const Duration(milliseconds: 700));
     await tester.pump();
-    expect(find.textContaining('القرص ممتلئ'), findsOneWidget);
+    expect(
+      find.textContaining('تعذّر الحفظ — تحقق من المساحة'),
+      findsOneWidget,
+    );
+    expect(find.textContaining('القرص ممتلئ'), findsNothing);
     fail = false;
     await tester.tap(find.text('إعادة المحاولة'));
     await tester.pumpAndSettle();
     expect(saved.last.hijriYear, 1449);
     expect(find.text('تم الحفظ ✓'), findsOneWidget);
-    expect(find.textContaining('القرص ممتلئ'), findsNothing);
+    expect(find.textContaining('تعذّر الحفظ'), findsNothing);
   });
 
   testWidgets('prefills the form from existing rows', (tester) async {

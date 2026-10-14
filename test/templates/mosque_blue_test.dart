@@ -42,7 +42,7 @@ void main() {
     expect(tpl.nameAr, 'أزرق ليلي ومسجد');
     final ids = allTemplates.map((e) => e.id).toList();
     expect(ids.first, 'navy_gold');
-    expect(ids.indexOf('mosque_blue'), ids.indexOf('deep_green') + 1);
+    expect(ids.indexOf('mosque_blue'), ids.indexOf('midnight_dome') + 1);
     expect(templateById('mosque_blue'), isA<MosqueBlueTemplate>());
   });
 

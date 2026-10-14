@@ -10,6 +10,7 @@
 library;
 
 export '../shared/fit_text.dart' show FitText, kFitTextFloor;
+export 'bounded_cache.dart';
 export 'constants.dart';
 export 'metrics.dart';
 export 'page.dart';

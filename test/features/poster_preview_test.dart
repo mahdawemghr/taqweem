@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:taqweem/data/seed_reference.dart';
 import 'package:taqweem/features/preview/poster_preview.dart';
+import 'package:taqweem/templates/emerald_garden.dart';
+import 'package:taqweem/templates/ivory_medallion.dart';
+import 'package:taqweem/templates/emerald_mihrab.dart';
+import 'package:taqweem/templates/midnight_dome.dart';
 import 'package:taqweem/templates/navy_calligraphy.dart';
 import 'package:taqweem/templates/navy_gold.dart';
 import 'package:taqweem/templates/poster_template.dart';
@@ -31,11 +35,21 @@ void main() {
   setUpAll(loadAppFonts);
 
   test('vector templates declare no images (precache is a no-op)', () {
-    for (final t in allTemplates) {
-      if (t.id == 'navy_calligraphy') continue;
+    const vector = {
+      'navy_gold',
+      'cream_gold',
+      'minimal_modern',
+      'deep_green',
+      'mosque_blue',
+    };
+    for (final t in allTemplates.where((t) => vector.contains(t.id))) {
       expect(t.images, isEmpty, reason: t.id);
     }
     expect(const NavyCalligraphyTemplate().images, hasLength(2));
+    expect(const EmeraldMihrabTemplate().images, hasLength(1));
+    expect(const EmeraldGardenTemplate().images, hasLength(1));
+    expect(const IvoryMedallionTemplate().images, hasLength(1));
+    expect(const MidnightDomeTemplate().images, hasLength(2));
   });
 
   testWidgets('default precache completes immediately without images', (

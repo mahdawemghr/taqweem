@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/models.dart';
@@ -169,6 +170,7 @@ class EditorController extends Notifier<EditorState> {
       await ref.read(posterSaverProvider)(p);
     } catch (e) {
       error = e.toString();
+      debugPrint('autosave failed: $e');
     }
     // Poster was switched (or provider disposed) meanwhile: drop the result.
     if (_disposed || epoch != _epoch) return;

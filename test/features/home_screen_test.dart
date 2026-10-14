@@ -298,6 +298,41 @@ void main() {
     expect(fake.reloads, 1);
   });
 
+  testWidgets('retry survives a repository that keeps failing', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(390, 844));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await tester.pumpWidget(
+      ProviderScope(
+        retry: (_, _) => null,
+        overrides: [
+          repositoryProvider.overrideWith(
+            (ref) async => throw const FileSystemException('no documents dir'),
+          ),
+        ],
+        child: MaterialApp(
+          theme: buildAppTheme(),
+          locale: const Locale('ar'),
+          supportedLocales: const [Locale('ar')],
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          home: const HomeScreen(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('تعذّر تحميل التقاويم'), findsOneWidget);
+    await tester.tap(find.text('إعادة المحاولة'));
+    await tester.pumpAndSettle();
+    // No unhandled exception, still in the error state, Arabic message shown.
+    expect(tester.takeException(), isNull);
+    expect(find.byKey(const ValueKey('error')), findsOneWidget);
+    expect(find.text('تعذّر تحميل التقاويم، حاول مرة أخرى'), findsOneWidget);
+    expect(find.textContaining('no documents'), findsNothing);
+  });
+
   testWidgets('loading shows skeletons and the FAB', (tester) async {
     await pumpHome(tester, const [], hang: true);
     expect(find.byType(DraftCard), findsNothing);

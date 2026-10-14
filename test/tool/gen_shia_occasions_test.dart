@@ -3,18 +3,20 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
-Future<ProcessResult> gen(String out, {String? convention}) => Process.run(
-  'python3',
-  [
-    '-I',
-    'tool/gen_shia_occasions.py',
-    '--out',
-    out,
-    if (convention != null) ...['--convention', convention],
-  ],
-  stdoutEncoding: utf8,
-  stderrEncoding: utf8,
-);
+Future<ProcessResult> gen(String out, {String? convention, String? research}) =>
+    Process.run(
+      'python3',
+      [
+        '-I',
+        'tool/gen_shia_occasions.py',
+        '--out',
+        out,
+        if (convention != null) ...['--convention', convention],
+        if (research != null) ...['--research', research],
+      ],
+      stdoutEncoding: utf8,
+      stderrEncoding: utf8,
+    );
 
 void main() {
   late Directory tmp;
@@ -113,5 +115,58 @@ void main() {
     final f = File('${tmp.path}/bad.json')..writeAsStringSync('{"swaps": 3}');
     final r = await gen('${tmp.path}/outbad', convention: f.path);
     expect(r.exitCode, isNot(0));
+  });
+
+  test(
+    'denylist drops «موت معاوية» but the allowlist keeps «صلح … معاوية»',
+    () async {
+      // Corrupt a copy of the research data with one entry of each kind.
+      final dir = Directory('${tmp.path}/research')..createSync();
+      for (final f in Directory('docs/shia-occasions/research').listSync()) {
+        if (f is File && f.path.endsWith('.json')) {
+          f.copySync('${dir.path}/${f.uri.pathSegments.last}');
+        }
+      }
+      final target = File('${dir.path}/months-01-03.json');
+      final data =
+          jsonDecode(target.readAsStringSync()) as Map<String, dynamic>;
+      final month = (data['months'] as List).first as Map<String, dynamic>;
+      Map<String, dynamic> occ(int day, String title) => {
+        'day': day,
+        'isNight': false,
+        'titleAr': title,
+        'category': 'event',
+        'variant': 'main',
+        'confidence': 'medium',
+        'sources': [
+          {'name': 'a', 'url': 'https://ar.wikishia.net/x'},
+          {'name': 'b', 'url': 'https://example.org/y'},
+        ],
+      };
+      (month['occasions'] as List)
+        ..add(occ(21, 'موت معاوية'))
+        ..add(occ(22, 'صلح الإمام الحسن مع معاوية'));
+      target.writeAsStringSync(jsonEncode(data));
+      final r = await gen('${tmp.path}/out', research: dir.path);
+      expect(r.exitCode, 0, reason: '${r.stderr}');
+      final dart = File('${tmp.path}/out/shia_occasions.dart')
+          .readAsStringSync();
+      expect(dart, isNot(contains('موت معاوية')));
+      expect(dart, contains("titleAr: 'صلح الإمام الحسن مع معاوية'"));
+      final md = File('${tmp.path}/out/DATA-SUMMARY.md').readAsStringSync();
+      expect(md, contains('Dropped by denylist: 1.'));
+    },
+  );
+
+  test('denylist words other than «معاوية» have no «صلح» exception', () async {
+    final c = readConv();
+    (c['scanOnly'] as List).add({
+      ...(c['scanOnly'] as List).first as Map<String, dynamic>,
+      'titleAr': 'صلح الخميني',
+      'titleSource': 'db',
+    });
+    final r = await genWith(c, 'khomeini');
+    expect(r.exitCode, isNot(0));
+    expect('${r.stderr}', contains('denylisted'));
   });
 }

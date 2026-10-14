@@ -6,6 +6,7 @@ import 'package:taqweem/features/preview/poster_preview.dart';
 import 'package:taqweem/templates/registry.dart';
 import 'package:taqweem/templates/shared/fit_text.dart';
 
+import '../test_helpers/fit_assertions.dart';
 import '../test_helpers/load_fonts.dart';
 
 /// [n] characters of Arabic text with word breaks.
@@ -80,6 +81,7 @@ void main() {
       await _pump(tester, _extreme().copyWith(templateId: t.id));
       expect(tester.takeException(), isNull);
       expect(find.byType(FitText), findsWidgets);
+      expect(expectFitTextsContained(tester), greaterThan(0));
     });
 
     testWidgets('${t.id}: empty poster (no rows, null times) renders',

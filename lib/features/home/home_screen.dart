@@ -60,6 +60,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     }
   }
 
+  /// Reloads the list; if the repository itself is unavailable the error
+  /// state stays and an Arabic message is shown (never an unhandled throw).
+  Future<void> _retryLoad() async {
+    try {
+      await ref.read(postersProvider.notifier).reload();
+    } catch (e) {
+      debugPrint('reload failed: $e');
+      _snack('تعذّر تحميل التقاويم، حاول مرة أخرى');
+    }
+  }
+
   Future<void> _newPoster() => _guard(() => _open(newBlankPoster()));
 
   Future<void> _trySample() => _guard(() async {
@@ -140,7 +151,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       loading: () => const _SkeletonGrid(key: ValueKey('loading')),
       error: (_, _) => _ErrorState(
         key: const ValueKey('error'),
-        onRetry: () => ref.read(postersProvider.notifier).reload(),
+        onRetry: _retryLoad,
       ),
     );
 
