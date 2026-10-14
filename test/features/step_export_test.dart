@@ -20,6 +20,7 @@ import 'package:taqweem/state/providers.dart';
 import 'package:taqweem/templates/navy_gold.dart';
 import 'package:taqweem/templates/poster_template.dart';
 
+import '../test_helpers/instant_thumbnails.dart';
 import '../test_helpers/load_fonts.dart';
 
 class _FakeTemplate extends PosterTemplate {
@@ -108,6 +109,7 @@ class FakeExporter implements PosterExporterApi {
 
 void main() {
   setUpAll(loadAppFonts);
+  useInstantThumbnails();
 
   Future<ProviderContainer> pumpExport(
     WidgetTester tester,
@@ -706,6 +708,30 @@ void main() {
     await tester.pumpAndSettle();
     expect(tester.widget<Text>(counter).data, '2 / 3');
     expect(c.read(editorProvider).poster.templateId, 't2');
+  });
+
+  testWidgets('template arrows point the right way in RTL', (tester) async {
+    final fake = FakeExporter();
+    await pumpExport(
+      tester,
+      fake,
+      templates: three,
+      poster: seedReferenceMonth().copyWith(templateId: 't2'),
+    );
+    final prev = find.byTooltip('القالب السابق');
+    final next = find.byTooltip('القالب التالي');
+    // Previous sits on the right (reading start), next on the left.
+    expect(tester.getCenter(prev).dx, greaterThan(tester.getCenter(next).dx));
+    // Chevron icons are mirrored in RTL: "left" glyph shows pointing right.
+    IconData glyph(Finder f) => tester
+        .widget<Icon>(find.descendant(of: f, matching: find.byType(Icon)))
+        .icon!;
+    expect(glyph(prev), Icons.chevron_left_rounded);
+    expect(glyph(next), Icons.chevron_right_rounded);
+    expect(
+      Directionality.of(tester.element(prev)),
+      TextDirection.rtl,
+    );
   });
 
   testWidgets('chip strip: shown for 10 templates (no dots), not for <= 6', (

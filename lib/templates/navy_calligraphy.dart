@@ -11,6 +11,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
 
+import '../brand/brand_logo.dart';
 import '../domain/models.dart';
 import '../domain/time_format.dart';
 import 'kit/kit.dart';
@@ -447,7 +448,6 @@ CellStyle? _occasionDayCell(CellRef ref) =>
 // Template
 // ---------------------------------------------------------------------------
 
-const titleWhiteAsset = AssetImage('assets/logos/title_white.png');
 const finialGoldAsset = AssetImage('assets/logos/finial_gold.png');
 
 class NavyCalligraphyTemplate extends PosterTemplate {
@@ -463,7 +463,7 @@ class NavyCalligraphyTemplate extends PosterTemplate {
   PosterTheme get theme => navyCalligraphyTheme;
 
   @override
-  List<ImageProvider> get images => const [titleWhiteAsset, finialGoldAsset];
+  List<ImageProvider> get images => const [finialGoldAsset];
 
   @override
   Widget build(MonthPoster p) => NavyCalligraphyPage(poster: p);
@@ -583,20 +583,14 @@ class NavyCalligraphyPage extends StatelessWidget {
     );
   }
 
-  /// The raster calligraphy for the default title; any other (edited) title
-  /// is set as text in the same box so the poster always shows the real data.
+  /// The vector calligraphy (white letters, gold accents) for the default
+  /// title; any other (edited) title is set as text in the same box so the
+  /// poster always shows the real data.
   Widget _title(String title) {
     final s = title.trim();
     if (s.isEmpty) return const SizedBox.shrink();
     if (s == defaultTitle) {
-      return const TitleBlock.image(
-        titleWhiteAsset,
-        key: ValueKey('nc-title-image'),
-        fallbackText: defaultTitle,
-        style: _titleTextStyle,
-        maxSize: 110,
-        maxLines: 2,
-      );
+      return const BrandTitle(key: ValueKey('nc-title-image'));
     }
     return TitleBlock.text(
       s,

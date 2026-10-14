@@ -1,8 +1,11 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show ScrollDirection;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/motion.dart';
+import '../../core/motion_widgets.dart';
 import '../../data/new_poster.dart';
 import '../../data/poster_repository.dart';
 import '../../data/seed_reference.dart';
@@ -27,6 +30,19 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   bool _busy = false;
+
+  /// The FAB shrinks to its icon while scrolling down, extends on the way up.
+  bool _fabExtended = true;
+
+  /// Draft ids whose card is fading out (delete in progress).
+  final Set<String> _leaving = {};
+
+  bool _onScroll(UserScrollNotification n) {
+    if (n.depth != 0) return false;
+    final ext = n.direction != ScrollDirection.reverse;
+    if (ext != _fabExtended) setState(() => _fabExtended = ext);
+    return false;
+  }
 
   void _snack(String text) {
     if (!mounted) return;
@@ -110,12 +126,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         await ref.read(editorProvider.notifier).flush();
       }
       final openHere = editor.isOpen && editor.poster.id == p.id;
+      // The card fades and shrinks first, then the grid reflows.
+      if (mounted && Motion.enabled(context)) {
+        setState(() => _leaving.add(p.id));
+        await Future<void>.delayed(Motion.of(context, Motion.quick));
+      }
       await ref.read(postersProvider.notifier).remove(p.id);
       // Close it so no later edit/autosave can resurrect the deleted file.
       if (openHere) ref.read(editorProvider.notifier).close();
       _snack('تم حذف التقويم');
     } catch (_) {
       _snack('تعذّر حذف التقويم، حاول مرة أخرى');
+    } finally {
+      if (mounted) setState(() => _leaving.remove(p.id));
     }
   });
 
@@ -146,13 +169,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           : _DraftsGrid(
               key: const ValueKey('grid'),
               posters: list,
+              leaving: _leaving,
               onAction: _onAction,
             ),
       loading: () => const _SkeletonGrid(key: ValueKey('loading')),
-      error: (_, _) => _ErrorState(
-        key: const ValueKey('error'),
-        onRetry: _retryLoad,
-      ),
+      error: (_, _) =>
+          _ErrorState(key: const ValueKey('error'), onRetry: _retryLoad),
     );
 
     return Scaffold(
@@ -170,6 +192,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
       // Always present: the one "new" action reachable in every state.
       floatingActionButton: FloatingActionButton.extended(
+        isExtended: _fabExtended,
+        extendedIconLabelSpacing: _fabExtended ? 8 : 0,
         onPressed: _newPoster,
         backgroundColor: theme.colorScheme.primary,
         foregroundColor: theme.colorScheme.onPrimary,
@@ -179,10 +203,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       body: SafeArea(
         top: false,
         child: AnimatedSwitcher(
-          duration: const Duration(milliseconds: 250),
+          duration: Motion.of(context, Motion.base),
           switchInCurve: Curves.easeOut,
           switchOutCurve: Curves.easeIn,
-          child: body,
+          child: NotificationListener<UserScrollNotification>(
+            onNotification: _onScroll,
+            child: body,
+          ),
         ),
       ),
     );
@@ -214,9 +241,15 @@ const _fabClearance = 104.0;
 const _gridPadding = EdgeInsets.fromLTRB(_gutter, 8, _gutter, _fabClearance);
 
 class _DraftsGrid extends StatelessWidget {
-  const _DraftsGrid({super.key, required this.posters, required this.onAction});
+  const _DraftsGrid({
+    super.key,
+    required this.posters,
+    required this.onAction,
+    this.leaving = const {},
+  });
 
   final List<MonthPoster> posters;
+  final Set<String> leaving;
   final void Function(MonthPoster, DraftAction) onAction;
 
   @override
@@ -236,10 +269,14 @@ class _DraftsGrid extends StatelessWidget {
         },
         itemBuilder: (_, i) {
           final p = posters[i];
-          return DraftCard(
+          return FadeScaleOut(
             key: ValueKey(p.id),
-            poster: p,
-            onAction: (a) => onAction(p, a),
+            out: leaving.contains(p.id),
+            child: DraftCard(
+              key: ValueKey(p.id),
+              poster: p,
+              onAction: (a) => onAction(p, a),
+            ),
           );
         },
       ),
@@ -334,7 +371,7 @@ class _EmptyState extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const _EmptyIllustration(),
+              const OneShotEntrance(child: _EmptyIllustration()),
               const SizedBox(height: 28),
               Text(
                 'لا توجد تقاويم بعد',

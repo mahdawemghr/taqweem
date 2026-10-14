@@ -12,10 +12,11 @@ import 'package:taqweem/domain/models.dart';
 import 'package:taqweem/features/editor/editor_shell.dart';
 import 'package:taqweem/features/home/draft_card.dart';
 import 'package:taqweem/features/home/home_screen.dart';
-import 'package:taqweem/features/preview/poster_preview.dart';
+import 'package:taqweem/features/preview/poster_thumbnail.dart';
 import 'package:taqweem/state/editor_controller.dart';
 import 'package:taqweem/state/providers.dart';
 
+import '../test_helpers/instant_thumbnails.dart';
 import '../test_helpers/load_fonts.dart';
 
 /// Ordered log of saver / remove calls, shared by the fakes.
@@ -60,6 +61,7 @@ MonthPoster seed([String id = 'seed-a', int minutesAgo = 5]) =>
 
 void main() {
   setUpAll(loadAppFonts);
+  useInstantThumbnails();
 
   late FakePosters fake;
   late List<MonthPoster> saved;
@@ -184,10 +186,10 @@ void main() {
     tester,
   ) async {
     await pumpHome(tester, [seed('a', 1)]);
-    PosterPreview previewOf(String id) => tester.widget<PosterPreview>(
+    PosterThumbnail previewOf(String id) => tester.widget<PosterThumbnail>(
       find.descendant(
         of: find.byKey(ValueKey(id)),
-        matching: find.byType(PosterPreview),
+        matching: find.byType(PosterThumbnail),
       ),
     );
     final before = previewOf('a');

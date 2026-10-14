@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/app_theme.dart';
 import 'features/home/home_screen.dart';
+import 'features/splash/launch_reveal.dart';
 
 class TaqweemApp extends ConsumerWidget {
   const TaqweemApp({super.key});
@@ -19,6 +20,6 @@ class TaqweemApp extends ConsumerWidget {
       GlobalWidgetsLocalizations.delegate,
       GlobalCupertinoLocalizations.delegate,
     ],
-    home: const HomeScreen(),
+    home: const LaunchReveal(child: HomeScreen()),
   );
 }

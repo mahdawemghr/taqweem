@@ -13,6 +13,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
 
+import '../brand/brand_logo.dart';
 import '../domain/models.dart';
 import '../domain/time_format.dart';
 import 'kit/kit.dart';
@@ -381,8 +382,6 @@ final TableSpec emeraldMihrabTableSpec = TableSpec(
 // Template
 // ---------------------------------------------------------------------------
 
-const medallionEmeraldAsset = AssetImage('assets/logos/medallion_emerald.png');
-
 class EmeraldMihrabTemplate extends PosterTemplate {
   const EmeraldMihrabTemplate();
 
@@ -396,7 +395,7 @@ class EmeraldMihrabTemplate extends PosterTemplate {
   PosterTheme get theme => emeraldMihrabTheme;
 
   @override
-  List<ImageProvider> get images => const [medallionEmeraldAsset];
+  List<ImageProvider> get images => const [];
 
   @override
   Widget build(MonthPoster p) => EmeraldMihrabPage(poster: p);
@@ -520,14 +519,9 @@ class EmeraldMihrabPage extends StatelessWidget {
   Widget _title(String title) {
     final s = title.trim();
     if (s == defaultTitle) {
-      return const TitleBlock.image(
-        medallionEmeraldAsset,
+      return const BrandMedallion(
         key: ValueKey('em-title-image'),
-        fallbackText: defaultTitle,
-        style: _titleTextStyle,
-        maxSize: 80,
-        maxLines: 3,
-        fallbackPadding: EdgeInsets.all(_medSize * 0.17),
+        style: BrandMedallionStyle.emerald,
       );
     }
     return CustomPaint(

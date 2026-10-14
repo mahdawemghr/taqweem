@@ -123,9 +123,8 @@ void main() {
     expect(th.tableFont, 'Tajawal');
   });
 
-  test('uses the white title and gold finial assets (precached)', () {
-    expect(_t.images, const [titleWhiteAsset, finialGoldAsset]);
-    expect(titleWhiteAsset.assetName, 'assets/logos/title_white.png');
+  test('vector white title; only the gold finial asset is precached', () {
+    expect(_t.images, const [finialGoldAsset]);
     expect(finialGoldAsset.assetName, 'assets/logos/finial_gold.png');
   });
 
@@ -281,7 +280,7 @@ void main() {
     expect(shot.goldIn(m.sections['finial']!), greaterThan(300));
   });
 
-  testWidgets('control: without precache the capture has no logo', (
+  testWidgets('control: without precache the vector title is still drawn', (
     tester,
   ) async {
     // The global ImageCache keeps logos decoded by earlier tests; empty it so
@@ -292,7 +291,9 @@ void main() {
     await _pump(tester, seedReferenceMonth(), precache: false);
     final shot = await _capture(tester);
     final m = _m();
-    expect(shot.whiteIn(m.sections['title']!), lessThan(20));
+    // The title is vector art (no decoding); only the raster finial waits.
+    expect(shot.whiteIn(m.sections['title']!), greaterThan(800));
+    expect(shot.goldIn(m.sections['finial']!), lessThan(50));
   });
 
   testWidgets('no bleed: panels are opaque over rules, lattice and hairline', (

@@ -143,16 +143,14 @@ void main() {
       expect(th.tableHeaderBg, isNot(o.theme.tableHeaderBg), reason: id);
       expect(th.highlightBg, isNot(o.theme.highlightBg), reason: id);
       expect(th.rowBg, isNot(o.theme.rowBg), reason: id);
-      expect(o.images, isNot(contains(titleGoldAsset)), reason: id);
     }
-    // The signature pieces: gold title + dome, three glass panels.
-    expect(_t.images, const [titleGoldAsset, domeGreenAsset]);
+    // The signature pieces: gold (vector) title + dome, three glass panels.
+    expect(_t.images, const [domeGreenAsset]);
     expect(midnightDomeTableSpec.split, isTrue);
     expect(midnightDomeTableSpec.panels, hasLength(3));
   });
 
-  test('assets: gold title and green dome', () {
-    expect(titleGoldAsset.assetName, 'assets/logos/title_gold.png');
+  test('assets: vector gold title, raster green dome', () {
     expect(domeGreenAsset.assetName, 'assets/logos/dome_green.png');
   });
 
@@ -406,7 +404,7 @@ void main() {
     expect(shot.greenIn(s['dome']!.deflate(20)), greaterThan(300));
   });
 
-  testWidgets('control: without precache the logos are missing', (
+  testWidgets('control: without precache only the raster dome is missing', (
     tester,
   ) async {
     PaintingBinding.instance.imageCache
@@ -415,7 +413,8 @@ void main() {
     await _pump(tester, seedReferenceMonth(), precache: false);
     final shot = await _capture(tester);
     final s = _m().sections;
-    expect(shot.goldIn(s['title']!.deflate(20)), lessThan(50));
+    // The vector title needs no decoding: it is in the very first frame.
+    expect(shot.goldIn(s['title']!.deflate(20)), greaterThan(1500));
     expect(shot.greenIn(s['dome']!.deflate(20)), lessThan(20));
   });
 

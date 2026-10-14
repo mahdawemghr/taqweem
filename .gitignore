@@ -46,3 +46,7 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# flutter_test golden diff output
+test/templates/failures/
+build/

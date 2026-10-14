@@ -45,11 +45,11 @@ void main() {
     for (final t in allTemplates.where((t) => vector.contains(t.id))) {
       expect(t.images, isEmpty, reason: t.id);
     }
-    expect(const NavyCalligraphyTemplate().images, hasLength(2));
-    expect(const EmeraldMihrabTemplate().images, hasLength(1));
-    expect(const EmeraldGardenTemplate().images, hasLength(1));
-    expect(const IvoryMedallionTemplate().images, hasLength(1));
-    expect(const MidnightDomeTemplate().images, hasLength(2));
+    expect(const NavyCalligraphyTemplate().images, hasLength(1));
+    expect(const EmeraldMihrabTemplate().images, isEmpty);
+    expect(const EmeraldGardenTemplate().images, isEmpty);
+    expect(const IvoryMedallionTemplate().images, isEmpty);
+    expect(const MidnightDomeTemplate().images, hasLength(1));
   });
 
   testWidgets('default precache completes immediately without images', (
@@ -103,7 +103,7 @@ void main() {
       _host(PosterPreview(key: UniqueKey(), poster: p, width: 1000)),
     );
     final images = tester.widgetList<RawImage>(find.byType(RawImage));
-    expect(images, hasLength(2));
+    expect(images, hasLength(1));
     expect(images.every((r) => r.image != null), isTrue);
   });
 }

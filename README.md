@@ -49,6 +49,8 @@ flutter test
 ## القوالب والشعارات
 
 - مجموعة بناء القوالب: [`docs/design/template-kit.md`](docs/design/template-kit.md).
+- هوية الشعار (متجهي) وملفات التصدير: [`brand/README.md`](brand/README.md)، [`docs/design/brand-kit.md`](docs/design/brand-kit.md). الأيقونات: `python3 tool/gen_icons.py`.
+- الأداء والحركة: [`docs/design/performance.md`](docs/design/performance.md)، [`docs/design/motion.md`](docs/design/motion.md).
 - أصول الشعارات: [`docs/design/logo-assets.md`](docs/design/logo-assets.md). **تنبيه:** الشعارات
   نقطية بعرض 575–860 بكسل فقط، فتبدو ناعمة عند التصدير ×3 أو ×4 أو A3. يُوصى بشعار
   متجهي (SVG) أو عالي الدقة (2000 بكسل فأكثر) للطباعة.
@@ -112,6 +114,8 @@ lib/data/shia_occasions.dart  +  docs/shia-occasions/DATA-SUMMARY.md
 ### Templates and logos
 
 - Template kit: [`docs/design/template-kit.md`](docs/design/template-kit.md).
+- Vector brand logo + kit: [`brand/README.md`](brand/README.md), [`docs/design/brand-kit.md`](docs/design/brand-kit.md); app icons: `python3 tool/gen_icons.py`.
+- Performance and motion: [`docs/design/performance.md`](docs/design/performance.md), [`docs/design/motion.md`](docs/design/motion.md).
 - Logo assets: [`docs/design/logo-assets.md`](docs/design/logo-assets.md). **Limitation:** the raster
   logos are only 575-860 px wide, so they look soft at x3/x4/A3 export. A vector (SVG) or
   >= 2000 px logo is recommended for print.

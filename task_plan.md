@@ -4,8 +4,17 @@ Spec: docs/superpowers/specs/2026-10-12-taqweem-poster-design.md
 Plan: docs/superpowers/plans/2026-10-12-taqweem-poster-generator.md
 Execution: subagent-driven (ledger: .superpowers/sdd/2026-10-12-taqweem-poster-generator/progress.md). NO git commits (user rule).
 
+## QA & POLISH ROUND (2026-10-14, user request: "test the app, check everything, polish")
+- [x] Q1 Run the real app headless (Xvfb, NOT the user's :0 display) + screenshots of every screen/state
+- [x] Q2 Audit findings: bugs, visual defects, jank, a11y, RTL, text overflow, small screens, large text
+- [x] Q3 Fix everything found; add regression tests
+- [x] Q4 Remaining motion done: card->editor Hero, delete fade, picker page scale, stepper tween; template arrows fixed (RTL)
+- [x] Q5 Full verify: tests (capped memory!), analyze, linux build; report
+
 ## Next Step
-ALL PLANNED WORK DONE (T1-T21, Shia S1-S6, templates D1-D7; 876 tests, analyze clean, linux debug build OK). Waiting on USER decisions (see ledger PROJECT STATE). Nothing committed by me.
+(2026-10-14 late) Brand/Motion/Perf round DONE: vector logo + brand kit, app icons + native launch, FitText cache + thumbnail cache, motion system. 906 tests, analyze clean, linux debug build OK. Waiting on USER decisions. Nothing committed.
+
+(older) ALL PLANNED WORK DONE (T1-T21, Shia S1-S6, templates D1-D7; 876 tests, analyze clean, linux debug build OK). Waiting on USER decisions (see ledger PROJECT STATE). Nothing committed by me.
 
 ### Phases / Tasks
 - [x] T1 Foundation  - [x] T2 Time format  - [x] T3 Models  - [x] T4 CalendarFill  - [x] T5 Validation

@@ -20,6 +20,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
 
+import '../brand/brand_logo.dart';
 import '../domain/models.dart';
 import '../domain/time_format.dart';
 import 'kit/kit.dart';
@@ -840,10 +841,6 @@ final TableSpec emeraldGardenTableSpec = TableSpec(
 // Template
 // ---------------------------------------------------------------------------
 
-const medallionEmeraldBAsset = AssetImage(
-  'assets/logos/medallion_emerald_b.png',
-);
-
 class EmeraldGardenTemplate extends PosterTemplate {
   const EmeraldGardenTemplate();
 
@@ -857,7 +854,7 @@ class EmeraldGardenTemplate extends PosterTemplate {
   PosterTheme get theme => emeraldGardenTheme;
 
   @override
-  List<ImageProvider> get images => const [medallionEmeraldBAsset];
+  List<ImageProvider> get images => const [];
 
   @override
   Widget build(MonthPoster p) => EmeraldGardenPage(poster: p);
@@ -987,14 +984,9 @@ class EmeraldGardenPage extends StatelessWidget {
   Widget _title(String title) {
     final s = title.trim();
     if (s == defaultTitle) {
-      return const TitleBlock.image(
-        medallionEmeraldBAsset,
+      return const BrandMedallion(
         key: ValueKey('gd-title-image'),
-        fallbackText: defaultTitle,
-        style: _titleTextStyle,
-        maxSize: 76,
-        maxLines: 3,
-        fallbackPadding: EdgeInsets.all(_medSize * 0.17),
+        style: BrandMedallionStyle.emeraldDouble,
       );
     }
     return CustomPaint(

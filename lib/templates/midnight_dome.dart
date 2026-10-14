@@ -21,6 +21,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
 
+import '../brand/brand_logo.dart';
 import '../domain/models.dart';
 import '../domain/time_format.dart';
 import 'kit/kit.dart';
@@ -794,7 +795,6 @@ String mdAttribution(String a) => a.isEmpty ? '' : '[ $a ]';
 // Template
 // ---------------------------------------------------------------------------
 
-const titleGoldAsset = AssetImage('assets/logos/title_gold.png');
 const domeGreenAsset = AssetImage('assets/logos/dome_green.png');
 
 class MidnightDomeTemplate extends PosterTemplate {
@@ -810,7 +810,7 @@ class MidnightDomeTemplate extends PosterTemplate {
   PosterTheme get theme => midnightDomeTheme;
 
   @override
-  List<ImageProvider> get images => const [titleGoldAsset, domeGreenAsset];
+  List<ImageProvider> get images => const [domeGreenAsset];
 
   @override
   Widget build(MonthPoster p) => MidnightDomePage(poster: p);
@@ -873,8 +873,8 @@ class MidnightDomePage extends StatelessWidget {
                   fit: BoxFit.contain,
                   filterQuality: TitleBlock.imageQuality,
                   isAntiAlias: true,
-                  // The dome is decorative and may vanish; the title falls
-                  // back to text (TitleBlock.fallbackText).
+                  // The dome is decorative and may vanish (the title is
+                  // vector art and always draws).
                   errorBuilder: _noImage,
                 ),
               ),
@@ -968,13 +968,9 @@ class MidnightDomePage extends StatelessWidget {
   Widget _title(String title) {
     final s = title.trim();
     if (s == defaultTitle) {
-      return TitleBlock.image(
-        titleGoldAsset,
-        key: const ValueKey('md-title-image'),
-        fallbackText: defaultTitle,
-        style: _titleTextStyle,
-        maxSize: 84,
-        maxLines: 2,
+      return const BrandTitle(
+        key: ValueKey('md-title-image'),
+        style: BrandTitleStyle.gold,
       );
     }
     if (s.isEmpty) return const SizedBox.shrink();

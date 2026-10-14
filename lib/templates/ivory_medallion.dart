@@ -18,6 +18,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/widgets.dart';
 
+import '../brand/brand_logo.dart';
 import '../domain/models.dart';
 import '../domain/time_format.dart';
 import 'kit/kit.dart';
@@ -608,8 +609,6 @@ const double _blockLine = 1.4;
 // Template
 // ---------------------------------------------------------------------------
 
-const medallionIvoryAsset = AssetImage('assets/logos/medallion_ivory.png');
-
 class IvoryMedallionTemplate extends PosterTemplate {
   const IvoryMedallionTemplate();
 
@@ -623,7 +622,7 @@ class IvoryMedallionTemplate extends PosterTemplate {
   PosterTheme get theme => ivoryMedallionTheme;
 
   @override
-  List<ImageProvider> get images => const [medallionIvoryAsset];
+  List<ImageProvider> get images => const [];
 
   @override
   Widget build(MonthPoster p) => IvoryMedallionPage(poster: p);
@@ -775,14 +774,9 @@ class IvoryMedallionPage extends StatelessWidget {
   Widget _title(String title) {
     final s = title.trim();
     if (s == defaultTitle) {
-      return const TitleBlock.image(
-        medallionIvoryAsset,
+      return const BrandMedallion(
         key: ValueKey('iv-title-image'),
-        fallbackText: defaultTitle,
-        style: _titleTextStyle,
-        maxSize: 76,
-        maxLines: 3,
-        fallbackPadding: EdgeInsets.all(_medSize * 0.17),
+        style: BrandMedallionStyle.ivory,
       );
     }
     return CustomPaint(

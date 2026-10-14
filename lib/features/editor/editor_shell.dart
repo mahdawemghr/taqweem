@@ -3,9 +3,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/motion.dart';
+import '../../core/motion_widgets.dart';
 import '../../domain/models.dart';
 import '../../state/editor_controller.dart';
 import '../preview/poster_preview.dart';
+import '../preview/poster_thumbnail.dart';
 import 'invalid_times.dart';
 import 'step_export.dart';
 import 'step_grid.dart';
@@ -219,9 +222,12 @@ class _EditorShellState extends ConsumerState<EditorShell> {
             _StepHeader(current: _step, onTap: _goTo),
             Divider(height: 1, color: cs.outlineVariant.withValues(alpha: 0.6)),
             Expanded(
-              child: KeyedSubtree(
-                key: ValueKey('step-body-$_step'),
-                child: _steps[_step](poster),
+              child: FadeThrough(
+                token: _step,
+                child: KeyedSubtree(
+                  key: ValueKey('step-body-$_step'),
+                  child: _steps[_step](poster),
+                ),
               ),
             ),
           ],
@@ -250,8 +256,11 @@ class _StepHeader extends StatelessWidget {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
     final n = editorStepLabels.length;
+    final dur = Motion.of(context, Motion.base);
     Widget line(bool visible, bool active) => Expanded(
-      child: Container(
+      child: AnimatedContainer(
+        duration: dur,
+        curve: Motion.enter,
         height: 2,
         color: !visible
             ? Colors.transparent
@@ -298,11 +307,12 @@ class _StepHeader extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 4),
-                          Text(
-                            editorStepLabels[i],
+                          AnimatedDefaultTextStyle(
+                            duration: dur,
+                            curve: Motion.enter,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: theme.textTheme.labelLarge?.copyWith(
+                            style: theme.textTheme.labelLarge!.copyWith(
                               fontWeight: i == current
                                   ? FontWeight.w700
                                   : FontWeight.w400,
@@ -310,6 +320,7 @@ class _StepHeader extends StatelessWidget {
                                   ? cs.primary
                                   : cs.onSurfaceVariant,
                             ),
+                            child: Text(editorStepLabels[i]),
                           ),
                         ],
                       ),
@@ -344,7 +355,9 @@ class _StepDot extends StatelessWidget {
       ),
       _DotState.todo => (cs.surface, cs.onSurfaceVariant, cs.outline),
     };
-    return Container(
+    return AnimatedContainer(
+      duration: Motion.of(context, Motion.base),
+      curve: Motion.enter,
       width: 30,
       height: 30,
       alignment: Alignment.center,
@@ -497,19 +510,38 @@ class _SaveIndicator extends StatelessWidget {
           Text('جارٍ الحفظ…', style: style),
         ],
       ),
-      _SaveStatus.saved => Text(
-        'تم الحفظ ✓',
-        style: style?.copyWith(color: cs.primary),
+      _SaveStatus.saved => Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.check_rounded, size: 14, color: cs.primary),
+          const SizedBox(width: 4),
+          Text('تم الحفظ', style: style?.copyWith(color: cs.primary)),
+        ],
       ),
     };
     return Semantics(
       liveRegion: true,
-      child: FittedBox(fit: BoxFit.scaleDown, child: child),
+      child: AnimatedSwitcher(
+        duration: Motion.of(context, Motion.quick),
+        transitionBuilder: (c, a) => FadeTransition(
+          opacity: a,
+          child: ScaleTransition(
+            scale: Tween<double>(begin: 0.85, end: 1).animate(a),
+            child: c,
+          ),
+        ),
+        child: FittedBox(
+          key: ValueKey(status),
+          fit: BoxFit.scaleDown,
+          child: child,
+        ),
+      ),
     );
   }
 }
 
-/// A small live thumbnail of the poster; tapping it opens [_FullPreview].
+/// A small thumbnail of the poster (debounced cached raster); tapping it
+/// opens the live [_FullPreview].
 class _MiniPreview extends StatelessWidget {
   const _MiniPreview({required this.poster, required this.onTap});
   final MonthPoster poster;
@@ -537,7 +569,18 @@ class _MiniPreview extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(2),
-                  child: PosterPreview(poster: poster, width: 19),
+                  // A cached raster, refreshed once typing pauses: a commit
+                  // never re-lays-out a full poster just for this icon.
+                  // Shares a Hero tag with the Home card it was opened from.
+                  child: Hero(
+                    tag: posterHeroTag(poster.id),
+                    flightShuttleBuilder: posterHeroShuttle(poster),
+                    child: PosterThumbnail(
+                      poster: poster,
+                      width: 19,
+                      debounce: kThumbnailDebounce,
+                    ),
+                  ),
                 ),
               ),
             ),

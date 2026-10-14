@@ -142,12 +142,8 @@ void main() {
     expect(th.tableFont, 'Tajawal');
   });
 
-  test('uses the double-ring emerald medallion (precached)', () {
-    expect(_t.images, const [medallionEmeraldBAsset]);
-    expect(
-      medallionEmeraldBAsset.assetName,
-      'assets/logos/medallion_emerald_b.png',
-    );
+  test('the double-ring emerald medallion is vector art (nothing to precache)', () {
+    expect(_t.images, isEmpty);
   });
 
   group('contrast in the real composition (>= 4.5:1)', () {
@@ -418,7 +414,7 @@ void main() {
     expect(shot.goldIn(inner), greaterThan(800));
   });
 
-  testWidgets('control: without precache the medallion is missing', (
+  testWidgets('without precache the vector medallion is still drawn', (
     tester,
   ) async {
     PaintingBinding.instance.imageCache
@@ -432,8 +428,8 @@ void main() {
       width: med.width * 0.6,
       height: med.height * 0.6,
     );
-    // Only the dark backing disc remains under the (missing) medallion.
-    expect(shot.goldIn(inner), lessThan(300));
+    // Vector art needs no decoding: it is in the very first frame.
+    expect(shot.goldIn(inner), greaterThan(800));
   });
 
   testWidgets('no bleed: border band ornate, field and panels clean', (

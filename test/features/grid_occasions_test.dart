@@ -13,6 +13,7 @@ import 'package:taqweem/features/editor/editor_shell.dart';
 import 'package:taqweem/state/editor_controller.dart';
 import 'package:taqweem/state/providers.dart';
 
+import '../test_helpers/instant_thumbnails.dart';
 import '../test_helpers/load_fonts.dart';
 
 MonthPoster withDays(MonthPoster p, DayRow Function(int i, DayRow d) f) =>
@@ -35,6 +36,7 @@ List<String> texts(MonthPoster p, int i, {bool onlyVerifiedMains = false}) => [
 
 void main() {
   setUpAll(loadAppFonts);
+  useInstantThumbnails();
 
   Future<ProviderContainer> pumpGrid(
     WidgetTester tester,

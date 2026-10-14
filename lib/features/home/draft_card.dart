@@ -5,7 +5,7 @@ import '../../domain/models.dart';
 import '../../domain/month_names.dart';
 import '../../templates/poster_template.dart';
 import '../../templates/registry.dart';
-import '../preview/poster_preview.dart';
+import '../preview/poster_thumbnail.dart';
 
 /// `جمادى الأول 1448` — one line, unlike [MonthPoster.hijriHeader].
 String posterTitle(MonthPoster p) {
@@ -34,7 +34,7 @@ double draftCardFooterHeight(TextScaler scaler, double tileWidth) {
   return text < 64 ? 64 : text;
 }
 
-/// One draft in the home grid: live poster thumbnail, title, template name
+/// One draft in the home grid: cached raster thumbnail ([PosterThumbnail]), title, template name
 /// with last-edit time, and an overflow menu.
 class DraftCard extends StatefulWidget {
   const DraftCard({super.key, required this.poster, required this.onAction});
@@ -220,7 +220,8 @@ class _Menu extends StatelessWidget {
 }
 
 /// The poster scaled down, at a fixed 1000:2200 ratio, with rounded corners
-/// and a soft shadow. Isolated in a [RepaintBoundary].
+/// and a soft shadow. Isolated in a [RepaintBoundary]. Drawn from a cached
+/// low-resolution raster, so the Home grid never lays out live posters.
 class _Thumbnail extends StatelessWidget {
   const _Thumbnail({required this.poster});
   final MonthPoster poster;
@@ -243,7 +244,13 @@ class _Thumbnail extends StatelessWidget {
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(6),
-            child: ExcludeSemantics(child: PosterPreview(poster: poster)),
+            child: ExcludeSemantics(
+              child: Hero(
+                tag: posterHeroTag(poster.id),
+                flightShuttleBuilder: posterHeroShuttle(poster),
+                child: PosterThumbnail(poster: poster),
+              ),
+            ),
           ),
         ),
       ),

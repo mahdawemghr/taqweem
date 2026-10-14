@@ -138,13 +138,11 @@ void main() {
     expect(th.tableHeaderBg, isNot(cream.tableHeaderBg));
     expect(th.highlightBg, isNot(cream.highlightBg));
     expect(th.background, isNot(cream.background));
-    expect(_t.images, isNotEmpty);
     expect(templateById('cream_gold').images, isEmpty);
   });
 
-  test('uses the ivory medallion (precached)', () {
-    expect(_t.images, const [medallionIvoryAsset]);
-    expect(medallionIvoryAsset.assetName, 'assets/logos/medallion_ivory.png');
+  test('the ivory medallion is vector art (nothing to precache)', () {
+    expect(_t.images, isEmpty);
   });
 
   group('contrast in the real composition (>= 4.5:1)', () {
@@ -368,7 +366,7 @@ void main() {
     expect(shot.navyIn(inner), greaterThan(800));
   });
 
-  testWidgets('control: without precache the medallion is missing', (
+  testWidgets('without precache the vector medallion is still drawn', (
     tester,
   ) async {
     PaintingBinding.instance.imageCache
@@ -382,8 +380,8 @@ void main() {
       width: med.width * 0.6,
       height: med.height * 0.6,
     );
-    // Only the ivory backing disc remains under the (missing) medallion.
-    expect(shot.navyIn(inner), lessThan(50));
+    // Vector art needs no decoding: it is in the very first frame.
+    expect(shot.navyIn(inner), greaterThan(800));
   });
 
   testWidgets('no bleed: lattice faint, panels opaque, header separators', (

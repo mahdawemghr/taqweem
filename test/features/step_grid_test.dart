@@ -16,6 +16,7 @@ import 'package:taqweem/features/editor/time_cell.dart';
 import 'package:taqweem/state/editor_controller.dart';
 import 'package:taqweem/state/providers.dart';
 
+import '../test_helpers/instant_thumbnails.dart';
 import '../test_helpers/load_fonts.dart';
 
 MonthPoster blank() => MonthPoster(
@@ -49,6 +50,7 @@ MonthPoster withDays(MonthPoster p, DayRow Function(int i, DayRow d) f) =>
 
 void main() {
   setUpAll(loadAppFonts);
+  useInstantThumbnails();
 
   /// Opens [poster] in the editor shell and goes to Step 2.
   Future<ProviderContainer> pumpGrid(
@@ -315,9 +317,9 @@ void main() {
     expect(find.byKey(const ValueKey('uncertain-0-note')), findsOneWidget);
   });
 
-  testWidgets('a clean poster shows كل شيء سليم ✓', (tester) async {
+  testWidgets('a clean poster shows كل شيء سليم', (tester) async {
     await pumpGrid(tester, seedReferenceMonth());
-    expect(find.text('كل شيء سليم ✓'), findsOneWidget);
+    expect(find.text('كل شيء سليم'), findsOneWidget);
   });
 
   testWidgets('validation chip counts issues; the sheet jumps to the day', (
@@ -532,7 +534,7 @@ void main() {
     tester,
   ) async {
     final c = await pumpGrid(tester, seedReferenceMonth());
-    expect(find.text('كل شيء سليم ✓'), findsOneWidget);
+    expect(find.text('كل شيء سليم'), findsOneWidget);
     await tester.enterText(cell(0, PrayerSlot.zuhr), '99');
     await blur(tester);
     expect(find.text('تنبيه واحد'), findsOneWidget);
@@ -547,7 +549,7 @@ void main() {
     await tester.enterText(cell(0, PrayerSlot.zuhr), '11:30');
     await blur(tester);
     expect(posterOf(c).days[0].times.zuhr, 11 * 60 + 30);
-    expect(find.text('كل شيء سليم ✓'), findsOneWidget);
+    expect(find.text('كل شيء سليم'), findsOneWidget);
     // Clearing an invalid cell removes the entry too (now it is missing).
     await tester.enterText(cell(0, PrayerSlot.zuhr), '0');
     await blur(tester);

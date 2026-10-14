@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/widgets.dart';
 
 /// Absolute floor for [FitText]: below [FitText.minSize] the text keeps
@@ -19,6 +21,13 @@ const double kFitTextFloor = 6;
 ///
 /// Text scaling is always [TextScaler.noScaling] for both measuring and
 /// painting, so what is measured is exactly what is drawn.
+///
+/// Performance: the search result is a pure function of the text, the merged
+/// style, [maxSize], [minSize], [align], [maxLines] and the box size, so it is
+/// memoised in a bounded LRU ([kFitTextCacheSize] entries) keyed by exactly
+/// those inputs. A warm rebuild of a poster (same data, same size) performs no
+/// text layouts at all; the result is bit-for-bit what the search returns.
+/// The cache is dropped whenever the set of available fonts changes.
 class FitText extends StatelessWidget {
   const FitText(
     this.text, {
@@ -74,6 +83,67 @@ class FitText extends StatelessWidget {
   /// the line limit is dropped (wrapping is better than losing words).
   @visibleForTesting
   (double, int?, bool) fitFontSize(
+    TextStyle base,
+    double maxWidth,
+    double maxHeight,
+  ) {
+    if (!debugCacheEnabled) {
+      return fitFontSizeUncached(base, maxWidth, maxHeight);
+    }
+    _listenForFontChanges();
+    final key = _FitKey(
+      text,
+      base,
+      maxSize,
+      minSize,
+      align,
+      maxLines,
+      maxWidth,
+      maxHeight,
+    );
+    final hit = _cache.remove(key);
+    if (hit != null) {
+      debugCacheHits++;
+      _cache[key] = hit; // most recently used last
+      return hit;
+    }
+    final r = fitFontSizeUncached(base, maxWidth, maxHeight);
+    if (_cache.length >= kFitTextCacheSize) _cache.remove(_cache.keys.first);
+    _cache[key] = r;
+    return r;
+  }
+
+  /// Memoised results of [fitFontSize], least recently used first.
+  static final LinkedHashMap<_FitKey, (double, int?, bool)> _cache =
+      LinkedHashMap<_FitKey, (double, int?, bool)>();
+  static bool _listening = false;
+
+  static void _listenForFontChanges() {
+    if (_listening) return;
+    _listening = true;
+    // A newly loaded font can change every measurement.
+    PaintingBinding.instance.systemFonts.addListener(_cache.clear);
+  }
+
+  /// Whether [fitFontSize] uses the memo cache (test/benchmark switch).
+  @visibleForTesting
+  static bool debugCacheEnabled = true;
+
+  /// Number of [fitFontSize] calls answered from the cache.
+  @visibleForTesting
+  static int debugCacheHits = 0;
+
+  /// Number of entries currently memoised.
+  @visibleForTesting
+  static int get debugCacheLength => _cache.length;
+
+  /// Drops every memoised result.
+  @visibleForTesting
+  static void debugClearCache() => _cache.clear();
+
+  /// The binary search behind [fitFontSize], without the cache.
+  @visibleForTesting
+  (double, int?, bool) fitFontSizeUncached(
     TextStyle base,
     double maxWidth,
     double maxHeight,
@@ -141,4 +211,57 @@ class FitText extends StatelessWidget {
     }
     return fits;
   }
+}
+
+/// Upper bound of memoised [FitText] results (a poster has ~290 texts; this
+/// keeps a dozen posters at a few sizes warm while staying a few hundred KB).
+const int kFitTextCacheSize = 4096;
+
+/// Every input of [FitText.fitFontSize]; equal keys always give equal
+/// results.
+@immutable
+class _FitKey {
+  const _FitKey(
+    this.text,
+    this.style,
+    this.maxSize,
+    this.minSize,
+    this.align,
+    this.maxLines,
+    this.maxWidth,
+    this.maxHeight,
+  );
+
+  final String text;
+  final TextStyle style;
+  final double maxSize;
+  final double minSize;
+  final TextAlign align;
+  final int? maxLines;
+  final double maxWidth;
+  final double maxHeight;
+
+  @override
+  bool operator ==(Object other) =>
+      other is _FitKey &&
+      other.text == text &&
+      other.maxWidth == maxWidth &&
+      other.maxHeight == maxHeight &&
+      other.maxSize == maxSize &&
+      other.minSize == minSize &&
+      other.align == align &&
+      other.maxLines == maxLines &&
+      other.style == style;
+
+  @override
+  int get hashCode => Object.hash(
+    text,
+    style,
+    maxSize,
+    minSize,
+    align,
+    maxLines,
+    maxWidth,
+    maxHeight,
+  );
 }

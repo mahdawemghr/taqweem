@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/arabic_days.dart';
 import '../../core/arabic_digits.dart';
+import '../../core/motion.dart';
 import '../../domain/models.dart';
 import '../../domain/occasions_library.dart';
 import '../../domain/shia_occasion.dart';
@@ -157,6 +158,86 @@ class _GridNav {
 
   /// A cell to focus as soon as its row is built.
   (int, PrayerSlot)? pending;
+
+  /// Rows changed by a bulk action (auto-fill, time shift): built rows among
+  /// them flash gold once so the user sees what changed. A new [gen] = a new
+  /// event.
+  final flash = ValueNotifier<({int gen, Set<int> rows})>((
+    gen: 0,
+    rows: const {},
+  ));
+
+  void flashRows(Iterable<int> rows) =>
+      flash.value = (gen: flash.value.gen + 1, rows: rows.toSet());
+}
+
+/// A 600 ms gold tint that fades out over a row changed by a bulk action.
+/// Only the tiny overlay animates (opacity); the row itself is untouched.
+class _RowFlash extends StatefulWidget {
+  const _RowFlash({
+    required this.index,
+    required this.nav,
+    required this.child,
+  });
+  final int index;
+  final _GridNav nav;
+  final Widget child;
+
+  @override
+  State<_RowFlash> createState() => _RowFlashState();
+}
+
+class _RowFlashState extends State<_RowFlash>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _c = AnimationController(vsync: this);
+  int _gen = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _gen = widget.nav.flash.value.gen;
+    widget.nav.flash.addListener(_onFlash);
+  }
+
+  void _onFlash() {
+    final e = widget.nav.flash.value;
+    if (e.gen == _gen) return;
+    _gen = e.gen;
+    if (!e.rows.contains(widget.index) || !Motion.enabled(context)) return;
+    _c
+      ..value = 1
+      ..animateTo(
+        0,
+        duration: Motion.of(context, const Duration(milliseconds: 600)),
+        curve: Curves.easeOut,
+      );
+  }
+
+  @override
+  void dispose() {
+    widget.nav.flash.removeListener(_onFlash);
+    _c.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Always a Stack (stable tree: the row keeps its state and focus); the
+    // overlay costs nothing at opacity 0.
+    return Stack(
+      children: [
+        widget.child,
+        Positioned.fill(
+          child: IgnorePointer(
+            child: FadeTransition(
+              opacity: _c.drive(Tween<double>(begin: 0, end: 0.35)),
+              child: const ColoredBox(color: Color(0xFFC9A45E)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
 
 /// What a row needs from the step (stable for the step's lifetime).
@@ -331,6 +412,10 @@ class _StepGridState extends ConsumerState<StepGrid> {
         ],
       ),
     );
+    _nav.flashRows([
+      for (var i = 0; i < poster.days.length; i++)
+        if (poster.days[i].times[slot] != null) i,
+    ]);
     _snack(
       'تم إزاحة ${slot.labelAr} بمقدار ${signedMinutes(delta)} دقيقة',
       undo: true,
@@ -363,6 +448,7 @@ class _StepGridState extends ConsumerState<StepGrid> {
       }
       return p.copyWith(days: days);
     });
+    _nav.flashRows(fills.keys);
     _snack('تمت تعبئة ${arabicDays(filled)}', undo: true);
   }
 
@@ -380,11 +466,17 @@ class _StepGridState extends ConsumerState<StepGrid> {
     _reveal(i, focus: _slotOfIssue(issue));
   }
 
-  Widget _row(bool wide, int i) => _rowCache[(wide, i)] ??= _DayRowItem(
-    key: ValueKey('row-$i'),
-    index: i,
-    wide: wide,
-    scope: _scope,
+  Widget _row(bool wide, int i) => _rowCache[(wide, i)] ??= RepaintBoundary(
+    child: _RowFlash(
+      index: i,
+      nav: _nav,
+      child: _DayRowItem(
+        key: ValueKey('row-$i'),
+        index: i,
+        wide: wide,
+        scope: _scope,
+      ),
+    ),
   );
 
   @override
@@ -617,14 +709,23 @@ class _IssuesChip extends ConsumerWidget {
     if (n == 0) {
       return Semantics(
         liveRegion: true,
-        child: Text(
-          'كل شيء سليم ✓',
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: theme.textTheme.labelLarge?.copyWith(
-            color: cs.primary,
-            fontWeight: FontWeight.w700,
-          ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Text(
+                'كل شيء سليم',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.labelLarge?.copyWith(
+                  color: cs.primary,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            const SizedBox(width: 4),
+            Icon(Icons.check_circle_rounded, size: 18, color: cs.primary),
+          ],
         ),
       );
     }

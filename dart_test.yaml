@@ -1,0 +1,9 @@
+# `perf` benchmarks are skipped by default. Run them with:
+#   flutter test --run-skipped -t perf test/perf
+tags:
+  screenshots:
+    skip: "Writes build/screenshots: run with --run-skipped --tags screenshots"
+  perf:
+    skip: "Benchmark (tag perf): run with --run-skipped -t perf"
+  brand-export:
+    skip: "Writes brand/png: run with --run-skipped --tags brand-export test/brand"

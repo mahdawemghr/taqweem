@@ -15,6 +15,7 @@ import 'package:taqweem/features/editor/step_setup.dart';
 import 'package:taqweem/state/editor_controller.dart';
 import 'package:taqweem/state/providers.dart';
 
+import '../test_helpers/instant_thumbnails.dart';
 import '../test_helpers/load_fonts.dart';
 
 MonthPoster blank() => MonthPoster(
@@ -46,6 +47,7 @@ MonthPoster generated({int dayCount = 29}) {
 
 void main() {
   setUpAll(loadAppFonts);
+  useInstantThumbnails();
 
   late List<MonthPoster> saved;
   late Future<void> Function(MonthPoster) saver;
@@ -392,7 +394,7 @@ void main() {
       saved.add(p);
     };
     final c = await pumpShell(tester, generated());
-    expect(find.text('تم الحفظ ✓'), findsNothing);
+    expect(find.text('تم الحفظ'), findsNothing);
     c.read(editorProvider.notifier).update((p) => p.copyWith(hijriYear: 1449));
     await tester.pump();
     expect(find.text('جارٍ الحفظ…'), findsOneWidget);
@@ -407,7 +409,7 @@ void main() {
     await tester.tap(find.text('إعادة المحاولة'));
     await tester.pumpAndSettle();
     expect(saved.last.hijriYear, 1449);
-    expect(find.text('تم الحفظ ✓'), findsOneWidget);
+    expect(find.text('تم الحفظ'), findsOneWidget);
     expect(find.textContaining('تعذّر الحفظ'), findsNothing);
   });
 

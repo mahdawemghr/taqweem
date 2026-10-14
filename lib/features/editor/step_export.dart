@@ -5,6 +5,8 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/motion.dart';
+import '../../core/motion_widgets.dart';
 import '../../domain/models.dart';
 import '../../domain/validation.dart';
 import '../../export/poster_exporter.dart';
@@ -278,6 +280,7 @@ class _StepExportState extends ConsumerState<StepExport> {
 
   void _afterSuccess(_Kind kind, File file, ScaffoldMessengerState messenger) {
     if (kind == _Kind.share) return;
+    showSuccessStamp(context);
     final key = kind == _Kind.pdf ? _pdfKey : _pngKey;
     final api = ref.read(posterExporterProvider);
     messenger
@@ -555,7 +558,7 @@ class _Picker extends StatelessWidget {
               IconButton(
                 tooltip: 'القالب السابق',
                 onPressed: !busy && page > 0 ? () => onStep(-1) : null,
-                icon: const Icon(Icons.chevron_right_rounded),
+                icon: const Icon(Icons.chevron_left_rounded),
                 iconSize: 30,
                 constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
               )
@@ -630,7 +633,7 @@ class _Picker extends StatelessWidget {
               IconButton(
                 tooltip: 'القالب التالي',
                 onPressed: !busy && page < n - 1 ? () => onStep(1) : null,
-                icon: const Icon(Icons.chevron_left_rounded),
+                icon: const Icon(Icons.chevron_right_rounded),
                 iconSize: 30,
                 constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
               )
@@ -682,30 +685,34 @@ class _Picker extends StatelessWidget {
                 onPageChanged: onChanged,
                 itemBuilder: (_, i) {
                   final t = templates[i];
-                  return Center(
-                    child: Semantics(
-                      button: true,
-                      label: 'معاينة الملصق بقالب ${t.nameAr} — اضغط للتكبير',
-                      excludeSemantics: true,
-                      child: GestureDetector(
-                        key: ValueKey('preview-tap-$i'),
-                        behavior: HitTestBehavior.opaque,
-                        onTap: onZoom,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.18),
-                                blurRadius: 12,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
-                          ),
-                          child: PosterPreview(
-                            poster: poster,
-                            template: t,
-                            boundaryKey: keyFor(t.id),
-                            width: width,
+                  return _PageScale(
+                    controller: controller,
+                    index: i,
+                    child: Center(
+                      child: Semantics(
+                        button: true,
+                        label: 'معاينة الملصق بقالب ${t.nameAr} — اضغط للتكبير',
+                        excludeSemantics: true,
+                        child: GestureDetector(
+                          key: ValueKey('preview-tap-$i'),
+                          behavior: HitTestBehavior.opaque,
+                          onTap: onZoom,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.18),
+                                  blurRadius: 12,
+                                  offset: const Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: PosterPreview(
+                              poster: poster,
+                              template: t,
+                              boundaryKey: keyFor(t.id),
+                              width: width,
+                            ),
                           ),
                         ),
                       ),
@@ -999,27 +1006,29 @@ class _FailureDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     debugPrint('export failed: $error');
-    return AlertDialog(
-      title: const Text('تعذّر التصدير'),
-      content: Text(_reason),
-      actions: [
-        TextButton(
-          style: TextButton.styleFrom(minimumSize: const Size(48, 48)),
-          onPressed: () => Navigator.pop(context, _Failure.close),
-          child: const Text('إغلاق'),
-        ),
-        if (ratio > 2)
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(minimumSize: const Size(48, 48)),
-            onPressed: () => Navigator.pop(context, _Failure.lower),
-            child: const Text('جرّب ×2'),
+    return ShakeOnce(
+      child: AlertDialog(
+        title: const Text('تعذّر التصدير'),
+        content: Text(_reason),
+        actions: [
+          TextButton(
+            style: TextButton.styleFrom(minimumSize: const Size(48, 48)),
+            onPressed: () => Navigator.pop(context, _Failure.close),
+            child: const Text('إغلاق'),
           ),
-        FilledButton(
-          style: FilledButton.styleFrom(minimumSize: const Size(48, 48)),
-          onPressed: () => Navigator.pop(context, _Failure.retry),
-          child: const Text('إعادة المحاولة'),
-        ),
-      ],
+          if (ratio > 2)
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(minimumSize: const Size(48, 48)),
+              onPressed: () => Navigator.pop(context, _Failure.lower),
+              child: const Text('جرّب ×2'),
+            ),
+          FilledButton(
+            style: FilledButton.styleFrom(minimumSize: const Size(48, 48)),
+            onPressed: () => Navigator.pop(context, _Failure.retry),
+            child: const Text('إعادة المحاولة'),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -1074,6 +1083,35 @@ class _ZoomRoute extends ConsumerWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// Scales a template page 0.96 → 1 as it swipes into focus (transform only;
+/// the neighbours stay slightly smaller). Static with motion off.
+class _PageScale extends StatelessWidget {
+  const _PageScale({
+    required this.controller,
+    required this.index,
+    required this.child,
+  });
+  final PageController controller;
+  final int index;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!Motion.enabled(context)) return child;
+    return AnimatedBuilder(
+      animation: controller,
+      child: child,
+      builder: (context, child) {
+        final page = controller.hasClients && controller.position.haveDimensions
+            ? (controller.page ?? controller.initialPage.toDouble())
+            : controller.initialPage.toDouble();
+        final d = (page - index).abs().clamp(0.0, 1.0);
+        return Transform.scale(scale: 1 - 0.04 * d, child: child);
+      },
     );
   }
 }

@@ -1,9 +1,10 @@
 // Fix round A checks shared by the five kit templates (navy_calligraphy,
 // emerald_mihrab, emerald_garden, ivory_medallion, midnight_dome): logo
-// rasterisation quality and text fallback, painters that repaint only when
+// rasterisation quality (vector titles), TitleBlock text fallback, painters that repaint only when
 // their inputs change, bounded path caches, and the mihrab strip labels.
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:taqweem/brand/brand_logo.dart';
 import 'package:taqweem/data/seed_reference.dart';
 import 'package:taqweem/domain/models.dart';
 import 'package:taqweem/features/preview/poster_preview.dart';
@@ -62,23 +63,28 @@ void main() {
 
   group('logos: high-quality sampling and a text fallback', () {
     for (final id in _ids) {
-      testWidgets('$id draws every image with FilterQuality.high + AA', (
-        tester,
-      ) async {
+      testWidgets('$id draws its title as vector art; rasters use '
+          'FilterQuality.high + AA', (tester) async {
         await _pump(tester, id);
-        final images = tester.widgetList<Image>(find.byType(Image)).toList();
-        expect(images, isNotEmpty);
-        for (final img in images) {
+        // Remaining raster ornaments (finial, dome) sample high quality.
+        for (final img in tester.widgetList<Image>(find.byType(Image))) {
           expect(img.filterQuality, FilterQuality.high, reason: '${img.key}');
           expect(img.isAntiAlias, isTrue, reason: '${img.key}');
         }
-        // The title logo falls back to the poster title as text.
-        final titles = tester
-            .widgetList<TitleBlock>(find.byType(TitleBlock))
-            .where((t) => t.image != null && '${t.key}'.contains('title'))
-            .toList();
-        expect(titles, hasLength(1));
-        expect(titles.single.fallbackText, defaultTitle);
+        // The default title is the vector brand logo, never a raster.
+        expect(
+          tester
+              .widgetList<TitleBlock>(find.byType(TitleBlock))
+              .where((t) => t.image != null && '${t.key}'.contains('title')),
+          isEmpty,
+        );
+        final logos = tester.widgetList<BrandLogo>(find.byType(BrandLogo));
+        expect(logos, hasLength(1), reason: id);
+        expect(
+          find.bySemanticsLabel(brandName),
+          findsOneWidget,
+          reason: id,
+        );
       });
     }
 
@@ -272,10 +278,14 @@ void main() {
     expect(seen, 4);
   });
 
-  test('every new template keeps PosterTemplate images precacheable', () {
-    for (final id in _ids) {
-      final PosterTemplate t = templateById(id);
-      expect(t.images, isNotEmpty, reason: id);
+  test('only the raster ornaments are precached (logos are vector)', () {
+    final images = {
+      for (final id in _ids) id: templateById(id).images,
+    };
+    expect(images['navy_calligraphy'], const [finialGoldAsset]);
+    expect(images['midnight_dome'], const [domeGreenAsset]);
+    for (final id in ['emerald_mihrab', 'emerald_garden', 'ivory_medallion']) {
+      expect(images[id], isEmpty, reason: id);
     }
   });
 }
